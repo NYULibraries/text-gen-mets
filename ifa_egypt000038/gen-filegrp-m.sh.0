@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [[ $# -ne 2 ]]
+then
+    echo "incorrect usage: $0 <slot-label> <page-num>"
+    exit 1
+fi
+
+slot=$1
+let fnum=$2
+fnumpad=`printf '%08d' $fnum`
+let fnum=$fnum+1
+
+cat <<EOF
+            <file ID="f-${fnumpad}m" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./${slot}_m.tif"/>
+            </file>
+EOF

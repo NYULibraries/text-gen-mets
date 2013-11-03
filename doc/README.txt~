@@ -1,0 +1,17 @@
+#==============================================================================
+# Time-stamp: <2013-11-02 08:08:22 jgp>
+#------------------------------------------------------------------------------
+supported case:
+one to one
+
+input:
+
+directory containing:
+= properly named text image files
+= dmd files with ie_n_UUID_marcxml.xml
+= rmd files with ie_n_UUID_metsrights.xml
+= ie_n_boundaries.xml
+
+
+
+
