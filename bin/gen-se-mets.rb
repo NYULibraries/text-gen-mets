@@ -118,9 +118,6 @@ def emit_file(fname)
 end
 
 def emit_files(dir, pattern)
-  # Dir.glob(File.join(dir, pattern)).sort do |f|
-  #   emit_file(File.basename(f))
-  # end
   file_list = Dir.glob(File.join(dir, pattern))
   file_list.sort!
   file_list.each do |f|
