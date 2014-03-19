@@ -21,12 +21,12 @@
 #   
 
 
-
 def emit_xml_header
   puts <<'HERE_DOC_EOF' 
 <?xml version="1.0" encoding="UTF-8"?> 
 HERE_DOC_EOF
 end
+
 
 def emit_mets_open_tag(obj_id)
   puts <<-'HERE_DOC_EOF'
@@ -34,33 +34,73 @@ def emit_mets_open_tag(obj_id)
     xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version191/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink"
   HERE_DOC_EOF
 
-  puts "    xmlns:mods=\"http://www.loc.gov/mods/v3\" OBJID=\"#{obj_id}\">"
+  puts %{    xmlns:mods="http://www.loc.gov/mods/v3" OBJID="#{obj_id}">}
 end
 
-# def emit_mets_hdr(create  = Time.now.utc.strftime("%FT%TZ"), 
-#                   lastmod = Time.now.utc.strftime("%FT%TZ"),
-#                   status  = "DRAFT")
-#   puts<<HERE_DOC_EOF
-#   <metsHdr CREATEDATE="#{create}" LASTMODDATE="#{lastmod}" RECORDSTATUS="#{status}">
-#         <agent ROLE="DISSEMINATOR" TYPE="ORGANIZATION">
-#             <name>New York University Libraries</name>
-#         </agent>
-#         <agent ROLE="CREATOR" TYPE="INDIVIDUAL">
-#             <name>Joseph G. Pawletko</name>
-#         </agent>
-#     </metsHdr>
-# HERE_DOC_EOF
-# end
 
-def assert_file_inventory(dir)
+def emit_mets_hdr(create  = Time.now.utc.strftime("%FT%TZ"), 
+                  lastmod = Time.now.utc.strftime("%FT%TZ"),
+                  status  = "DRAFT")
+  puts %{  <metsHdr CREATEDATE="#{create}" LASTMODDATE="#{lastmod}" RECORDSTATUS="#{status}">}
+  puts <<-HERE_DOC_EOF
+        <agent ROLE="DISSEMINATOR" TYPE="ORGANIZATION">
+            <name>New York University Libraries</name>
+        </agent>
+        <agent ROLE="CREATOR" TYPE="INDIVIDUAL">
+            <name>Joseph G. Pawletko</name>
+        </agent>
+    </metsHdr>
+  HERE_DOC_EOF
+end
+
+
+def emit_dmd_marcxml(fname)
+  puts %{    <dmdSec ID="dmd-00000001">}
+  puts %{        <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="MARCXML" xlink:type="simple" xlink:href="#{fname}"/>}
+  puts %{    </dmdSec>}
+end
+
+def emit_dmd_mods(fname)
+  puts %{    <dmdSec ID="dmd-00000002">}
+  puts %{        <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="MARCXML" xlink:type="simple" xlink:href="#{fname}"/>}
+  puts %{    </dmdSec>}
+end
+
+def emit_amd_sec_open
+  puts "    <amdSec>"
+end
+
+def emit_rights_md(fname)
+  puts %{        <rightsMD ID="rmd-00000001">}
+  puts %{           <mdRef LOCTYPE="URL" MDTYPE="METSRIGHTS" xlink:type="simple" xlink:href="#{fname}"/>}
+  puts %{        </rightsMD>}
+end
+
+def get_md_file_inventory(dir)
+  inventory = { mods:        '_mods.xml', 
+                marcxml:     '_marcxml.xml',
+                metsrights:  '_metsrights.xml',
+                eoc:         '_eoc.csv',
+                target:      '_ztarget_m.tif'
+  }
+
+  fhash  = {}
   errors = []
-  %w(_mods.xml _marcxml.xml _metsrights.xml _eoc.csv _ztarget_m.tif).each do |f|
-    errors << "missing or too many files ending in #{f}\n" unless 
-      Dir.glob(File.join(dir, "*#{f}")).length == 1
+  inventory.each_pair do |k,f| 
+    result = Dir.glob(File.join(dir, "*#{f}"))
+    if result.length == 1
+      fhash[k] = File.basename(result[0])
+    else
+      errors << "missing or too many files ending in #{f}\n"
+    end
   end
+
   raise errors.to_s unless errors.empty?
+  fhash
 end
   
+
+
 
 #-------------------------------------------------------------------------------
 obj_id  = ARGV[0]
@@ -70,12 +110,17 @@ tgt_dir = ARGV[2] || src_dir
 puts "src_dir = #{src_dir}"
 puts "tgt_dir = #{tgt_dir}"
 
-assert_file_inventory(src_dir)
+files = get_md_file_inventory(src_dir)
 emit_xml_header
 emit_mets_open_tag(obj_id)
-
-exit
 emit_mets_hdr
+emit_dmd_marcxml(files[:marcxml])
+emit_dmd_mods(files[:mods])
+emit_amd_sec_open
+emit_rights_md(files[:metsrights])
+# emit_digiprov_target
+# emit_digiprov_eoc
+
 
 exit 0
 
