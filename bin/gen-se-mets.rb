@@ -76,6 +76,52 @@ def emit_rights_md(fname)
   puts %{        </rightsMD>}
 end
 
+def emit_digiprov_target(fname)
+  puts %{        <digiprovMD ID="dpmd-00000001">}
+  puts %{              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="CALIBRATION-TARGET-IMAGE" xlink:type="simple" xlink:href="#{fname}"/>}
+  puts %{        </digiprovMD>}
+end
+
+def emit_digiprov_eoc(fname)
+  puts %{        <digiprovMD ID="dpmd-00000002">}
+  puts %{              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="#{fname}"/>}
+  puts %{        </digiprovMD>}
+end
+
+def emit_amd_sec_close
+  puts "    </amdSec>"
+end
+
+def emit_file_sec_open
+  puts "    <fileSec>"
+end
+
+def emit_file_grp_master_open
+  puts %{        <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001 dmd-00000002">}
+end
+
+def emit_file(fname)
+  match = /(.+)\.tif\z/.match(fname)
+  raise "badly formed filename #{fname}" unless match
+  id = match[1]
+  puts %{            <file ID="f-#{id}" MIMETYPE="image/tiff">}
+  puts %{                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="#{fname}"/>}
+  puts %{            </file>}
+end
+
+def emit_files(dir, pattern)
+  # Dir.glob(File.join(dir, pattern)).sort do |f|
+  #   emit_file(File.basename(f))
+  # end
+  file_list = Dir.glob(File.join(dir, pattern))
+  file_list.sort!
+  file_list.each do |f|
+    next if /.+_ztarget_m.tif/.match(f)
+    emit_file(File.basename(f))
+  end
+end
+
+
 def get_md_file_inventory(dir)
   inventory = { mods:        '_mods.xml', 
                 marcxml:     '_marcxml.xml',
@@ -105,10 +151,8 @@ end
 #-------------------------------------------------------------------------------
 obj_id  = ARGV[0]
 src_dir = ARGV[1]
-tgt_dir = ARGV[2] || src_dir
 
 puts "src_dir = #{src_dir}"
-puts "tgt_dir = #{tgt_dir}"
 
 files = get_md_file_inventory(src_dir)
 emit_xml_header
@@ -118,9 +162,12 @@ emit_dmd_marcxml(files[:marcxml])
 emit_dmd_mods(files[:mods])
 emit_amd_sec_open
 emit_rights_md(files[:metsrights])
-# emit_digiprov_target
-# emit_digiprov_eoc
-
+emit_digiprov_target(files[:target])
+emit_digiprov_eoc(files[:eoc])
+emit_amd_sec_close
+emit_file_sec_open
+emit_file_grp_master_open
+emit_files(src_dir, '*_m.tif')
 
 exit 0
 
