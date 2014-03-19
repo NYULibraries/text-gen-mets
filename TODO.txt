@@ -1,0 +1,5 @@
+assume that directory has already been processed using ccg fix_names
+look for files named _mods, _rightsmd, _marcxml, _eoc
+blow up if there is more than one mods/marc/rights file
+
+emit header
