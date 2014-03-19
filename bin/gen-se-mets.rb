@@ -96,8 +96,16 @@ def emit_file_sec_open
   puts "    <fileSec>"
 end
 
+def emit_file_sec_close
+  puts "    </fileSec>"
+end
+
 def emit_file_grp_master_open
   puts %{        <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001 dmd-00000002">}
+end
+
+def emit_file_grp_dmaker_open
+  puts %{        <fileGrp ID="fg-dmaker" USE="DMAKER">}
 end
 
 def emit_file(fname)
@@ -119,6 +127,10 @@ def emit_files(dir, pattern)
     next if /.+_ztarget_m.tif/.match(f)
     emit_file(File.basename(f))
   end
+end
+
+def emit_file_grp_close
+  puts %{        </fileGrp>}
 end
 
 
@@ -168,6 +180,11 @@ emit_amd_sec_close
 emit_file_sec_open
 emit_file_grp_master_open
 emit_files(src_dir, '*_m.tif')
+emit_file_grp_close
+emit_file_grp_dmaker_open
+emit_files(src_dir, '*_d.tif')
+emit_file_grp_close
+emit_file_sec_close
 
 exit 0
 
