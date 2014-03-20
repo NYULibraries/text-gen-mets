@@ -1,9 +1,0 @@
-refactor:
-change get_md_file_inventory 
-to get_file_inventory
-create methods to get_d_files, get_m_files, get_slots
-(remember to filter target file from get_m_files,
- remember to basename each file)
-return those arrays sorted in files hash
-ruby gen-se-mets.rb foo /content/prod/rstar/content/nyu/aco/wip/se/nyu_aco000003/data  
-
