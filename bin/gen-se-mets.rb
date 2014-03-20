@@ -147,12 +147,27 @@ def emit_struct_map_inner_div_open
   puts %{        <div TYPE="INTELLECTUAL_ENTITY" ID="s-ie-00000001" DMDID="dmd-00000001 dmd-00000002" ADMID="rmd-00000001">}
 end
 
+def emit_struct_map_slot_div(slot_label, order)
+  puts "            <div ID=\"s-#{slot_label}\" ORDER=\"#{order}\"> "
+  puts "                <fptr FILEID=\"f-#{slot_label}_m\"/> "
+  puts "                <fptr FILEID=\"f-#{slot_label}_d\"/> "
+  puts "            </div> "
+end  
+
+def emit_struct_map_slot_divs(slot_list)
+  slot_list.each_index do |i|
+    emit_struct_map_slot_div(slot_list[i], i)
+  end
+end
+    
+
+
 
 #------------------------------------------------------------------------------
-
-
+# TODO : fold into validate_and_extract_args
 def get_md_file_inventory(dir)
-  inventory = { mods:        '_mods.xml', 
+  inventory = { 
+    mods:        '_mods.xml', 
     marcxml:     '_marcxml.xml',
     metsrights:  '_metsrights.xml',
     eoc:         '_eoc.csv',
@@ -316,4 +331,6 @@ emit_file_grp_close
 emit_file_sec_close
 emit_struct_map_open(args)
 emit_struct_map_div_open
+emit_struct_map_inner_div_open
+emit_struct_map_slot_divs(args[:slot_list])
 exit 0
