@@ -280,7 +280,7 @@ def assert_master_dmaker_match!(m, d)
 end
 
 #------------------------------------------------------------------------------
-validate_and_extract_args(ARGV)
+args = validate_and_extract_args(ARGV)
 
 obj_id     = ARGV[0]
 se_type    = ARGV[1]
@@ -290,11 +290,9 @@ read_order = ARGV[4]
 src_dir    = ARGV[5]
 
 
-puts "src_dir = #{src_dir}"
-
-files = get_md_file_inventory(src_dir)
+files = get_md_file_inventory(args[:dir])
 emit_xml_header
-emit_mets_open_tag(obj_id)
+emit_mets_open_tag(args[:obj_id])
 emit_mets_hdr
 emit_dmd_marcxml(files[:marcxml])
 emit_dmd_mods(files[:mods])
