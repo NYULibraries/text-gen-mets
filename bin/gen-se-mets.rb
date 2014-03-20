@@ -62,7 +62,7 @@ end
 
 def emit_dmd_mods(fname)
   puts %{    <dmdSec ID="dmd-00000002">}
-  puts %{        <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="MARCXML" xlink:type="simple" xlink:href="#{fname}"/>}
+  puts %{        <mdRef LOCTYPE="URL" MDTYPE="MODS" xlink:type="simple" xlink:href="#{fname}"/>}
   puts %{    </dmdSec>}
 end
 
