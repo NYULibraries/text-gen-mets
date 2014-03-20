@@ -114,13 +114,17 @@ def emit_file(fname)
   puts %{            </file>}
 end
 
-def emit_files(dir, pattern)
+def emit_files_deprecated(dir, pattern)
   file_list = Dir.glob(File.join(dir, pattern))
   file_list.sort!
   file_list.each do |f|
     next if /.+_ztarget_m.tif/.match(f)
     emit_file(File.basename(f))
   end
+end
+
+def emit_files(file_list)
+  file_list.each { |f| emit_file(File.basename(f)) }
 end
 
 def get_files(dir, pattern, exclude = nil)
@@ -282,31 +286,23 @@ end
 #------------------------------------------------------------------------------
 args = validate_and_extract_args(ARGV)
 
-obj_id     = ARGV[0]
-se_type    = ARGV[1]
-binding    = ARGV[2]
-scan_order = ARGV[3]
-read_order = ARGV[4]
-src_dir    = ARGV[5]
-
-
-files = get_md_file_inventory(args[:dir])
+md_files = get_md_file_inventory(args[:dir])
 emit_xml_header
 emit_mets_open_tag(args[:obj_id])
 emit_mets_hdr
-emit_dmd_marcxml(files[:marcxml])
-emit_dmd_mods(files[:mods])
+emit_dmd_marcxml(md_files[:marcxml])
+emit_dmd_mods(md_files[:mods])
 emit_amd_sec_open
-emit_rights_md(files[:metsrights])
-emit_digiprov_target(files[:target])
-emit_digiprov_eoc(files[:eoc])
+emit_rights_md(md_files[:metsrights])
+emit_digiprov_target(md_files[:target])
+emit_digiprov_eoc(md_files[:eoc])
 emit_amd_sec_close
 emit_file_sec_open
 emit_file_grp_master_open
-emit_files(src_dir, '*_m.tif')
+emit_files(args[:master_files])
 emit_file_grp_close
 emit_file_grp_dmaker_open
-emit_files(src_dir, '*_d.tif')
+emit_files(args[:dmaker_files])
 emit_file_grp_close
 emit_file_sec_close
 #emit_struct_map_open(
