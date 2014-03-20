@@ -26,15 +26,18 @@ HERE_DOC_EOF
 end
 
 
-def emit_mets_open_tag(obj_id)
+def emit_mets_open(obj_id)
   puts <<-'HERE_DOC_EOF'
-    <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version191/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink"
   HERE_DOC_EOF
 
   puts %{    xmlns:mods="http://www.loc.gov/mods/v3" OBJID="#{obj_id}">}
 end
 
+def emit_mets_close
+  puts "</mets>"
+end
 
 def emit_mets_hdr(create  = Time.now.utc.strftime("%FT%TZ"), 
                   lastmod = Time.now.utc.strftime("%FT%TZ"),
@@ -136,15 +139,24 @@ def emit_file_grp_close
 end
 
 def emit_struct_map_open(h)
-  puts %|    <structMap ID="smd-00000001" TYPE="#{h[:se_type]} BINDING_ORIENTATION:#{h[:binding]} %{SCAN_ORDER:#{h[:scan_order]} READ_ORDER:#{h[:read_order]}"> |
+  puts %|    <structMap ID="smd-00000001" TYPE="#{h[:se_type]} BINDING_ORIENTATION:#{h[:binding]} SCAN_ORDER:#{h[:scan_order]} READ_ORDER:#{h[:read_order]}"> |
+end
+def emit_struct_map_close
+  puts %|    </structMap>|
 end
 
 def emit_struct_map_div_open
   puts "      <div>"
 end
+def emit_struct_map_div_close
+  puts "      </div>"
+end
 
 def emit_struct_map_inner_div_open
   puts %{        <div TYPE="INTELLECTUAL_ENTITY" ID="s-ie-00000001" DMDID="dmd-00000001 dmd-00000002" ADMID="rmd-00000001">}
+end
+def emit_struct_map_inner_div_close
+  puts %{        </div>}
 end
 
 def emit_struct_map_slot_div(slot_label, order)
@@ -156,7 +168,7 @@ end
 
 def emit_struct_map_slot_divs(slot_list)
   slot_list.each_index do |i|
-    emit_struct_map_slot_div(slot_list[i], i)
+    emit_struct_map_slot_div(slot_list[i], i + 1)
   end
 end
     
@@ -193,7 +205,8 @@ end
 def print_usage
   $stderr.puts "#{$0} <object id> <source entity type> " +
     "<binding orientation> <scan order> <read order> " +
-    "<path-to-text dir>"
+    "<path-to-text dir>" 
+  $stderr.puts "   ruby gen-se-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT'  /content/prod/rstar/content/nyu/aco/wip/se/nyu_aco000003/data > foo_mets.xml"
 end  
 
 #------------------------------------------------------------------------------
@@ -312,7 +325,7 @@ args = validate_and_extract_args(ARGV)
 
 md_files = get_md_file_inventory(args[:dir])
 emit_xml_header
-emit_mets_open_tag(args[:obj_id])
+emit_mets_open(args[:obj_id])
 emit_mets_hdr
 emit_dmd_marcxml(md_files[:marcxml])
 emit_dmd_mods(md_files[:mods])
@@ -333,4 +346,9 @@ emit_struct_map_open(args)
 emit_struct_map_div_open
 emit_struct_map_inner_div_open
 emit_struct_map_slot_divs(args[:slot_list])
+emit_struct_map_inner_div_close
+emit_struct_map_div_close
+emit_struct_map_close
+emit_mets_close
+
 exit 0
