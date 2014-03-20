@@ -136,15 +136,16 @@ def emit_file_grp_close
 end
 
 def emit_struct_map_open(h)
-  puts "    <structMap ID=\"smd-00000001\" TYPE=\"#{h[:se_type]} " +
-    "BINDING_ORIENTATION:#{h[:binding]} " +
-    "SCAN_ORDER:#{h[:scan_order]} READ_ORDER:#{h[:read_order]}\">"
+  puts %|    <structMap ID="smd-00000001" TYPE="#{h[:se_type]} BINDING_ORIENTATION:#{h[:binding]} %{SCAN_ORDER:#{h[:scan_order]} READ_ORDER:#{h[:read_order]}"> |
 end
+
 def emit_struct_map_div_open
   puts "      <div>"
 end
 
-
+def emit_struct_map_inner_div_open
+  puts %{        <div TYPE="INTELLECTUAL_ENTITY" ID="s-ie-00000001" DMDID="dmd-00000001 dmd-00000002" ADMID="rmd-00000001">}
+end
 
 
 #------------------------------------------------------------------------------
