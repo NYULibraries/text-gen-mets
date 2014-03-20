@@ -123,6 +123,19 @@ def emit_files(dir, pattern)
   end
 end
 
+def get_files(dir, pattern, exclude = nil)
+  final_list = []
+
+  files = Dir.glob(File.join(dir, pattern))
+  files.each do |f|
+    unless exclude.nil?
+      next if exclude.match(f)
+    end
+    final_list << File.basename(f)
+  end
+  final_list.sort!
+end
+
 def emit_file_grp_close
   puts %{        </fileGrp>}
 end
@@ -239,15 +252,31 @@ end
 
 
 def get_master_files(dir)
+  get_files(dir, '*_m.tif', /.+_ztarget_m.tif/)
 end
 
 def get_dmaker_files(dir)
+  get_files(dir, '*_d.tif')
 end
 
 def gen_slot_list(dir)
+  # d files map one-to-one to the pages in the text
+  slots = get_files(dir, '*_d.tif')
+  slots.collect {|s| s.sub(/_d.tif\z/,'')}
 end
 
-def assert_master_dmaker_match(m, d)
+def assert_master_dmaker_match!(m, d)
+  raise "mismatch in master / dmaker file count" unless m.length == d.length
+  errors = []
+  m.each_index do |i|
+    m_base = m[i].sub(/_m.tif\z/,'')
+    d_base = d[i].sub(/_d.tif\z/,'')
+    errors << "prefix mismatch: #{m[i]} #{d[i]}" unless m_base == d_base
+  end
+  unless errors.empty?
+    estr = errors.join("\n")
+    raise "mismatches in master / dmaker files:\n #{estr}"
+  end
 end
 
 #------------------------------------------------------------------------------
