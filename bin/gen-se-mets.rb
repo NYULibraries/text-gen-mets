@@ -114,15 +114,6 @@ def emit_file(fname)
   puts %{            </file>}
 end
 
-def emit_files_deprecated(dir, pattern)
-  file_list = Dir.glob(File.join(dir, pattern))
-  file_list.sort!
-  file_list.each do |f|
-    next if /.+_ztarget_m.tif/.match(f)
-    emit_file(File.basename(f))
-  end
-end
-
 def emit_files(file_list)
   file_list.each { |f| emit_file(File.basename(f)) }
 end
@@ -143,6 +134,20 @@ end
 def emit_file_grp_close
   puts %{        </fileGrp>}
 end
+
+def emit_struct_map_open(h)
+  puts "    <structMap ID=\"smd-00000001\" TYPE=\"#{h[:se_type]} " +
+    "BINDING_ORIENTATION:#{h[:binding]} " +
+    "SCAN_ORDER:#{h[:scan_order]} READ_ORDER:#{h[:read_order]}\">"
+end
+def emit_struct_map_div_open
+  puts "      <div>"
+end
+
+
+
+
+#------------------------------------------------------------------------------
 
 
 def get_md_file_inventory(dir)
@@ -283,6 +288,9 @@ def assert_master_dmaker_match!(m, d)
   end
 end
 
+
+
+
 #------------------------------------------------------------------------------
 args = validate_and_extract_args(ARGV)
 
@@ -305,6 +313,6 @@ emit_file_grp_dmaker_open
 emit_files(args[:dmaker_files])
 emit_file_grp_close
 emit_file_sec_close
-#emit_struct_map_open(
-
+emit_struct_map_open(args)
+emit_struct_map_div_open
 exit 0
