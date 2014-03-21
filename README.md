@@ -1,6 +1,6 @@
 # text-gen-mets
 
-#### a simple script that generates a METS file for an NYU DLTS Text Source Entity
+#### NYU DLTS Text Entity METS file generator
 
 ## Current Status
 
