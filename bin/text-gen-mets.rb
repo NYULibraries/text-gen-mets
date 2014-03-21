@@ -1,30 +1,42 @@
-
-# assert that exactly one of each of the files are present
-#  eoc
-#  mods
-#  marcxml
-#  metsrights
-#  ztarget_m.tif 
+#------------------------------------------------------------------------------
+# script generates METS files for NYU DLTS text objects
+# 
+# invocation: 
+# - see "print_usage" method
+# 
+# preconditions: 
+# - text in directory must adhere to DLTS Text naming conventions
+#   this is typically accomplished by using the ccg toolset to
+#   normalize the filenames in a text object.
+#   see ccg toolset : https://github.com/NYULibraries/ccg
+#
+# - exactly one of each of the files must be present
+#   eoc
+#   mods
+#   marcxml
+#   metsrights
+#   ztarget_m.tif 
 #  
-#  open mets root 
-#  open metsHdr
-#    - using header template,
-#    + search and replace template strings
-#    + (be sure template includes R* identifier)
-#  close metsHdr 
-#  open dmdSec
-#    
-#  open amdSec
-#    emit rightsMD
-#    emit digiprovMD with calibration target
-#    emit digiprovMD with eoc file
-#   
+# input:
+# - a directory that conforms to the preconditions
+#
+# output:
+# - a METS file for a DLTS TEXT object 
+# - output is directed to $stdout  
+#
+# code flow:
+# - assert that all required files are present
+# - emit each portion of the METS document to stdout
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# XML emit methods:
+#------------------------------------------------------------------------------
 def emit_xml_header
   puts <<'HERE_DOC_EOF' 
 <?xml version="1.0" encoding="UTF-8"?> 
 HERE_DOC_EOF
 end
-
 
 def emit_mets_open(obj_id)
   puts <<-'HERE_DOC_EOF'
@@ -70,6 +82,10 @@ def emit_amd_sec_open
   puts "    <amdSec>"
 end
 
+def emit_amd_sec_close
+  puts "    </amdSec>"
+end
+
 def emit_rights_md(fname)
   puts %{        <rightsMD ID="rmd-00000001">}
   puts %{           <mdRef LOCTYPE="URL" MDTYPE="METSRIGHTS" xlink:type="simple" xlink:href="#{fname}"/>}
@@ -86,10 +102,6 @@ def emit_digiprov_eoc(fname)
   puts %{        <digiprovMD ID="dpmd-00000002">}
   puts %{              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="#{fname}"/>}
   puts %{        </digiprovMD>}
-end
-
-def emit_amd_sec_close
-  puts "    </amdSec>"
 end
 
 def emit_file_sec_open
@@ -141,6 +153,7 @@ end
 def emit_struct_map_open(h)
   puts %|    <structMap ID="smd-00000001" TYPE="#{h[:se_type]} BINDING_ORIENTATION:#{h[:binding]} SCAN_ORDER:#{h[:scan_order]} READ_ORDER:#{h[:read_order]}"> |
 end
+
 def emit_struct_map_close
   puts %|    </structMap>|
 end
@@ -148,6 +161,7 @@ end
 def emit_struct_map_div_open
   puts "      <div>"
 end
+
 def emit_struct_map_div_close
   puts "      </div>"
 end
@@ -155,6 +169,7 @@ end
 def emit_struct_map_inner_div_open
   puts %{        <div TYPE="INTELLECTUAL_ENTITY" ID="s-ie-00000001" DMDID="dmd-00000001 dmd-00000002" ADMID="rmd-00000001">}
 end
+
 def emit_struct_map_inner_div_close
   puts %{        </div>}
 end
@@ -172,8 +187,9 @@ def emit_struct_map_slot_divs(slot_list)
   end
 end
     
-
-
+#------------------------------------------------------------------------------
+# utility / validation / extraction methods:
+#------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
 # TODO : fold into validate_and_extract_args
@@ -233,7 +249,7 @@ def validate_and_extract_args(args_in)
     exit 1
   end
 
-  # assume object identifier present b/c arg count correct
+  # assume object identifier present because arg count is correct
   args_out[:obj_id]  = args_in[0]
 
   # construct array to validate arguments with controlled vocabularies
@@ -318,8 +334,8 @@ def assert_master_dmaker_match!(m, d)
 end
 
 
-
-
+#------------------------------------------------------------------------------
+# MAIN 
 #------------------------------------------------------------------------------
 args = validate_and_extract_args(ARGV)
 
