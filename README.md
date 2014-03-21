@@ -5,6 +5,7 @@
 ## Current Status
 
 ### *UNDER DEVELOPMENT*
+#### WARNING: this code may be merged with [nyudl-text](https://github.com/NYULibraries/nyudl-text) at some point in the future.
 
 ## Usage
 
