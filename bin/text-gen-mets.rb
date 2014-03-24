@@ -1,10 +1,10 @@
 #------------------------------------------------------------------------------
 # script generates METS files for NYU DLTS text objects
-# 
-# invocation: 
+#
+# invocation:
 # - see "print_usage" method
-# 
-# preconditions: 
+#
+# preconditions:
 # - text in directory must adhere to DLTS Text naming conventions
 #   this is typically accomplished by using the ccg toolset to
 #   normalize the filenames in a text object.
@@ -15,14 +15,14 @@
 #   mods
 #   marcxml
 #   metsrights
-#   ztarget_m.tif 
-#  
+#   ztarget_m.tif
+#
 # input:
 # - a directory that conforms to the preconditions
 #
 # output:
-# - a METS file for a DLTS TEXT object 
-# - output is directed to $stdout  
+# - a METS file for a DLTS TEXT object
+# - output is directed to $stdout
 #
 # code flow:
 # - assert that all required files are present
@@ -32,9 +32,12 @@
 #------------------------------------------------------------------------------
 # XML emit methods:
 #------------------------------------------------------------------------------
+def emit_template_version
+  puts %w{<?se-text-wip version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.1"?>}
+end
 def emit_xml_header
-  puts <<'HERE_DOC_EOF' 
-<?xml version="1.0" encoding="UTF-8"?> 
+  puts <<'HERE_DOC_EOF'
+<?xml version="1.0" encoding="UTF-8"?>
 HERE_DOC_EOF
 end
 
@@ -51,7 +54,7 @@ def emit_mets_close
   puts "</mets>"
 end
 
-def emit_mets_hdr(create  = Time.now.utc.strftime("%FT%TZ"), 
+def emit_mets_hdr(create  = Time.now.utc.strftime("%FT%TZ"),
                   lastmod = Time.now.utc.strftime("%FT%TZ"),
                   status  = "DRAFT")
   puts %{  <metsHdr CREATEDATE="#{create}" LASTMODDATE="#{lastmod}" RECORDSTATUS="#{status}">}
@@ -179,14 +182,14 @@ def emit_struct_map_slot_div(slot_label, order)
   puts "                <fptr FILEID=\"f-#{slot_label}_m\"/> "
   puts "                <fptr FILEID=\"f-#{slot_label}_d\"/> "
   puts "            </div> "
-end  
+end
 
 def emit_struct_map_slot_divs(slot_list)
   slot_list.each_index do |i|
     emit_struct_map_slot_div(slot_list[i], i + 1)
   end
 end
-    
+
 #------------------------------------------------------------------------------
 # utility / validation / extraction methods:
 #------------------------------------------------------------------------------
@@ -194,17 +197,17 @@ end
 #------------------------------------------------------------------------------
 # TODO : fold into validate_and_extract_args
 def get_md_file_inventory(dir)
-  inventory = { 
-    mods:        '_mods.xml', 
+  inventory = {
+    mods:        '_mods.xml',
     marcxml:     '_marcxml.xml',
     metsrights:  '_metsrights.xml',
     eoc:         '_eoc.csv',
     target:      '_ztarget_m.tif'
   }
-  
+
   fhash  = {}
   errors = []
-  inventory.each_pair do |k,f| 
+  inventory.each_pair do |k,f|
     result = Dir.glob(File.join(dir, "*#{f}"))
     if result.length == 1
       fhash[k] = File.basename(result[0])
@@ -221,9 +224,9 @@ end
 def print_usage
   $stderr.puts "#{$0} <object id> <source entity type> " +
     "<binding orientation> <scan order> <read order> " +
-    "<path-to-text dir>" 
+    "<path-to-text dir>"
   $stderr.puts "   ruby gen-se-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT'  /content/prod/rstar/content/nyu/aco/wip/se/nyu_aco000003/data > foo_mets.xml"
-end  
+end
 
 #------------------------------------------------------------------------------
 # obj_id     = ARGV[0]
@@ -238,13 +241,13 @@ def validate_and_extract_args(args_in)
   valid_bindings    = %w(VERTICAL HORIZONTAL)
   valid_scan_orders = %w(LEFT_TO_RIGHT RIGHT_TO_LEFT TOP_TO_BOTTOM BOTTOM_TO_TOP)
   valid_read_orders = %w(LEFT_TO_RIGHT RIGHT_TO_LEFT TOP_TO_BOTTOM BOTTOM_TO_TOP)
-  
+
   args_out = {}
   errors   = []
 
   # argument count correct?
   unless args_in.length == 6
-    $stderr.puts "incorrect number of arguments" 
+    $stderr.puts "incorrect number of arguments"
     print_usage
     exit 1
   end
@@ -261,17 +264,17 @@ def validate_and_extract_args(args_in)
    {idx: 2, key: :binding,    values: valid_bindings,    msg: "binding orientation"},
    {idx: 3, key: :scan_order, values: valid_scan_orders, msg: "scan order"},
    {idx: 4, key: :read_order, values: valid_read_orders, msg: "read order"}].each do |x|
-    
+
     # extract the candidate value
     candidate = args_in[x[:idx]]
-    
+
     if x[:values].include?(candidate)
       args_out[x[:key]] = candidate
     else
       errors << "incorrect #{x[:msg]} : #{candidate}"
     end
   end
-  
+
   candidate = args_in[5]
   if Dir.exists?(candidate)
     args_out[:dir] = candidate
@@ -279,28 +282,28 @@ def validate_and_extract_args(args_in)
     errors << "directory does not exist: #{candidate}"
   end
 
-  
+
   # assemble file lists
   master_files = get_master_files(args_out[:dir])
   dmaker_files = get_dmaker_files(args_out[:dir])
   slot_list    = gen_slot_list(args_out[:dir])
   begin
     assert_master_dmaker_match!(master_files, dmaker_files)
-  rescue Exception => e 
+  rescue Exception => e
     errors << "master / dmaker file mismatch! #{e.message}"
   end
-  
+
   args_out[:master_files] = master_files
   args_out[:dmaker_files] = dmaker_files
   args_out[:slot_list]    = slot_list
-  
+
   unless errors.empty?
     estr = errors.join("\n")
     $stderr.puts "ERROR:\n #{estr}"
     print_usage
     exit 1
   end
-  
+
   args_out
 end
 
@@ -335,13 +338,14 @@ end
 
 
 #------------------------------------------------------------------------------
-# MAIN 
+# MAIN
 #------------------------------------------------------------------------------
 args = validate_and_extract_args(ARGV)
 
 md_files = get_md_file_inventory(args[:dir])
 emit_xml_header
 emit_mets_open(args[:obj_id])
+emit_template_version
 emit_mets_hdr
 emit_dmd_marcxml(md_files[:marcxml])
 emit_dmd_mods(md_files[:mods])
