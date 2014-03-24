@@ -36,6 +36,8 @@
 - [METS](http://www.loc.gov/standards/mets/) XML for the specified DLTS TEXT object
 - output is directed to ```$stdout```
 
+
+#### Example:
 ```
 ruby text-gen-mets.rb 'one-awesome-text' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' \
  'RIGHT_TO_LEFT' one-awesome-text/data | tee one-awesome-text/data/one-awesome-text_mets.xml
