@@ -1,6 +1,6 @@
 # text-gen-mets
 
-#### NYU DLTS Text Entity METS file generator
+#### NYU DLTS Text Entity METS XML generator
 
 ## Current Status
 
