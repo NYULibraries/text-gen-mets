@@ -33,7 +33,7 @@
 # XML emit methods:
 #------------------------------------------------------------------------------
 def emit_template_version
-  puts %w{<?se-text-wip version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.1"?>}
+  puts '<?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.1"?>'
 end
 def emit_xml_header
   puts <<'HERE_DOC_EOF'
