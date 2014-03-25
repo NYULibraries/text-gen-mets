@@ -276,11 +276,13 @@ def validate_and_extract_args(args_in)
     end
   end
 
+  # test directory
   candidate = args_in[5]
   if Dir.exists?(candidate)
     args_out[:dir] = candidate
   else
-    errors << "directory does not exist: #{candidate}"
+    $stderr.puts "directory does not exist: #{candidate}"
+    exit 1
   end
 
 
@@ -304,7 +306,6 @@ def validate_and_extract_args(args_in)
     errors << "problem with metadata files: #{e.message}"
   end
   args_out[:md_files] = md_files
-  puts "====================> #{md_files} <=========================="
 
   unless errors.empty?
     estr = errors.join("\n")
