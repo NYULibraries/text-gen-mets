@@ -3,8 +3,11 @@ require 'open3'
 
 class TestTextGenMets < Test::Unit::TestCase
 
+  VALID_TEXT_PATH = 'test/texts/valid'
+  EMPTY_TEXT_PATH = 'test/texts/empty-dir'
+
   def test_exit_status_with_valid_invocation
-    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' test/text")
+    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT_PATH}")
     assert(s == 0, "incorrect exit status")
     assert_match(/<mets xmlns/, o, "no mets output detected")
   end
@@ -24,35 +27,35 @@ class TestTextGenMets < Test::Unit::TestCase
   end
 
   def test_invalid_se_type
-    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'INVALID' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' test/text")
+    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'INVALID' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT_PATH}")
     assert(s != 0)
     assert(o == '')
     assert_match(/incorrect se type/, e, 'unexpected error message')
   end
 
   def test_invalid_binding_orientation
-    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'INVALID' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' test/text")
+    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'INVALID' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT_PATH}")
     assert(s != 0)
     assert(o == '')
     assert_match(/incorrect binding orientation/, e, 'unexpected error message')
   end
 
   def test_invalid_scan_order
-    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'INVALID' 'RIGHT_TO_LEFT' test/text")
+    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'INVALID' 'RIGHT_TO_LEFT' #{VALID_TEXT_PATH}")
     assert(s != 0)
     assert(o == '')
     assert_match(/incorrect scan order/, e, 'unexpected error message')
   end
 
   def test_invalid_read_order
-    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'INVALID' test/text")
+    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'INVALID' #{VALID_TEXT_PATH}")
     assert(s != 0)
     assert(o == '')
     assert_match(/incorrect read order/, e, 'unexpected error message')
   end
 
   def test_missing_md_files
-    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' test/empty-dir")
+    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' #{EMPTY_TEXT_PATH}")
     assert(s != 0)
     assert(o == '')
     assert_match(/missing or too many files ending in _mods\.xml/, e)
