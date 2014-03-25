@@ -5,6 +5,7 @@ class TestTextGenMets < Test::Unit::TestCase
 
   VALID_TEXT_PATH = 'test/texts/valid'
   EMPTY_TEXT_PATH = 'test/texts/empty-dir'
+  INVALID_M_D_TEXT_PATH = 'test/texts/invalid-m-d'
 
   def test_exit_status_with_valid_invocation
     o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT_PATH}")
@@ -63,6 +64,13 @@ class TestTextGenMets < Test::Unit::TestCase
     assert_match(/missing or too many files ending in _metsrights\.xml/, e)
     assert_match(/missing or too many files ending in _eoc\.csv/, e)
     assert_match(/missing or too many files ending in _ztarget_m\.tif/, e)
+  end
+
+  def test_mismatched_master_dmaker_files
+    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' #{INVALID_M_D_TEXT_PATH}")
+    assert(s != 0)
+    assert(o == '')
+    assert_match(/mismatch in master \/ dmaker file count/, e)
   end
 
 end
