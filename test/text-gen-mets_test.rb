@@ -44,4 +44,11 @@ class TestTextGenMets < Test::Unit::TestCase
     assert_match(/incorrect scan order/, e, 'unexpected error message')
   end
 
+  def test_invalid_read_order
+    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'INVALID' test/text")
+    assert(s != 0)
+    assert(o == '')
+    assert_match(/incorrect read order/, e, 'unexpected error message')
+  end
+
 end
