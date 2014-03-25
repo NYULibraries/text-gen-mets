@@ -225,7 +225,8 @@ def print_usage
   $stderr.puts "#{$0} <object id> <source entity type> " +
     "<binding orientation> <scan order> <read order> " +
     "<path-to-text dir>"
-  $stderr.puts "   ruby gen-se-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT'  /content/prod/rstar/content/nyu/aco/wip/se/nyu_aco000003/data > foo_mets.xml"
+  $stderr.puts "   e.g., "
+  $stderr.puts "   ruby #{$0} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT'  /content/prod/rstar/content/nyu/aco/wip/se/nyu_aco000003/data > foo_mets.xml"
 end
 
 #------------------------------------------------------------------------------
@@ -297,6 +298,14 @@ def validate_and_extract_args(args_in)
   args_out[:dmaker_files] = dmaker_files
   args_out[:slot_list]    = slot_list
 
+  begin
+    md_files = get_md_file_inventory(args_in[5])
+  rescue Exception => e
+    errors << "problem with metadata files: #{e.message}"
+  end
+  args_out[:md_files] = md_files
+  puts "====================> #{md_files} <=========================="
+
   unless errors.empty?
     estr = errors.join("\n")
     $stderr.puts "ERROR:\n #{estr}"
@@ -342,7 +351,7 @@ end
 #------------------------------------------------------------------------------
 args = validate_and_extract_args(ARGV)
 
-md_files = get_md_file_inventory(args[:dir])
+md_files = args[:md_files]
 emit_xml_header
 emit_mets_open(args[:obj_id])
 emit_template_version

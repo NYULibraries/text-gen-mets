@@ -1,8 +1,9 @@
 # #!/usr/bin/env ruby
 require 'rake/testtask'
 
-Rake::TestTask.new do |t|
+Rake::TestTask.new { |t|
   t.libs << "test"
-  t.test_files = FileList['test/test*.rb']
+  t.pattern = 'test/**/*_test.rb'
+  t.warning = true
   t.verbose = true
-end
+}
