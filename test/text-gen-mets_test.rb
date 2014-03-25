@@ -51,4 +51,15 @@ class TestTextGenMets < Test::Unit::TestCase
     assert_match(/incorrect read order/, e, 'unexpected error message')
   end
 
+  def test_missing_md_files
+    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' test/empty-dir")
+    assert(s != 0)
+    assert(o == '')
+    assert_match(/missing or too many files ending in _mods\.xml/, e)
+    assert_match(/missing or too many files ending in _marcxml\.xml/, e)
+    assert_match(/missing or too many files ending in _metsrights\.xml/, e)
+    assert_match(/missing or too many files ending in _eoc\.csv/, e)
+    assert_match(/missing or too many files ending in _ztarget_m\.tif/, e)
+  end
+
 end
