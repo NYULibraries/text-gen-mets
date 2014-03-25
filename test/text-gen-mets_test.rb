@@ -30,4 +30,11 @@ class TestTextGenMets < Test::Unit::TestCase
     assert_match(/incorrect se type/, e, 'unexpected error message')
   end
 
+  def test_invalid_binding_orientation
+    o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'INVALID' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' test/text")
+    assert(s != 0)
+    assert(o == '')
+    assert_match(/incorrect binding orientation/, e, 'unexpected error message')
+  end
+
 end
