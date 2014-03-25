@@ -294,7 +294,7 @@ def validate_and_extract_args(args_in)
   begin
     assert_master_dmaker_match!(master_files, dmaker_files)
   rescue Exception => e
-    errors << "master / dmaker file mismatch! #{e.message}"
+    errors << "#{e.message}"
   end
 
   args_out[:master_files] = master_files
