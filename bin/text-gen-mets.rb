@@ -222,7 +222,7 @@ end
 
 
 def print_usage
-  $stderr.puts "#{$0} <object id> <source entity type> " +
+  $stderr.puts "Usage: #{$0} <object id> <source entity type> " +
     "<binding orientation> <scan order> <read order> " +
     "<path-to-text dir>"
   $stderr.puts "   e.g., "
