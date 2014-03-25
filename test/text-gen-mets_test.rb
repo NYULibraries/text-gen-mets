@@ -7,21 +7,22 @@ class TestTextGenMets < Test::Unit::TestCase
   EMPTY_TEXT = 'test/texts/empty-dir'
   BAD_M_D_COUNT_TEXT  = 'test/texts/bad-m-d-file-count'
   BAD_M_D_PREFIX_TEXT = 'test/texts/bad-m-d-prefix'
+  CANONICAL_XML       = 'test/canonical/valid_mets.xml'
 
-  def test_exit_status_with_valid_invocation
+  def test_exit_status_with_valid_text
     o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT}")
     assert(s == 0, "incorrect exit status")
     assert_match(/<mets xmlns/, o, "no mets output detected")
   end
 
-  def test_exit_status_with_incorrect_argument_count
+  def test_with_incorrect_argument_count
     o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb")
     assert(s != 0, "incorrect argument count")
     assert(o == '')
     assert_match(/incorrect number of arguments/, e, 'unexpected error message')
   end
 
-  def test_exit_status_with_invalid_dir
+  def test_with_invalid_dir
     o, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' invalid-dir-path")
     assert(s != 0, "incorrect exit status")
     assert(o == '')
@@ -86,6 +87,27 @@ class TestTextGenMets < Test::Unit::TestCase
     assert(s != 0)
     assert(o == '')
     assert_match(/prefix mismatch:/, e)
+  end
+
+  def test_output_with_valid_text
+    new_xml, e, s = Open3.capture3("ruby bin/text-gen-mets.rb 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT}")
+    assert(s == 0)
+    old_xml, e, s = Open3.capture3("cat #{CANONICAL_XML}")
+    new_xml_a = new_xml.split("\n")
+    old_xml_a = old_xml.split("\n")
+
+    new_xml_a.each_index do |i|
+      new = new_xml_a[i].strip
+      old = old_xml_a[i].strip
+
+      # replace dates
+      if /metsHdr/.match(new)
+        timestamp_regex = /[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z/
+        new.gsub!(timestamp_regex,'')
+        old.gsub!(timestamp_regex,'')
+      end
+      assert(new == old, "xml mismatch: #{new} #{old}")
+    end
   end
 
 end

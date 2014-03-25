@@ -1,4 +1,3 @@
-====================> {:mods=>"bcaa1b64-bc6a-4150-8d80-660f7a4939bd_mods.xml", :marcxml=>"bcaa1b64-bc6a-4150-8d80-660f7a4939bd_marcxml.xml", :metsrights=>"bcaa1b64-bc6a-4150-8d80-660f7a4939bd_metsrights.xml", :eoc=>"nyu_aco000003_eoc.csv", :target=>"nyu_aco000003_ztarget_m.tif"} <==========================
 <?xml version="1.0" encoding="UTF-8"?>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version191/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink"
