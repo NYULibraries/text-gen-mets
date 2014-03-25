@@ -281,6 +281,7 @@ def validate_and_extract_args(args_in)
   if Dir.exists?(candidate)
     args_out[:dir] = candidate
   else
+    # CANNOT CONTINUE
     $stderr.puts "directory does not exist: #{candidate}"
     exit 1
   end
