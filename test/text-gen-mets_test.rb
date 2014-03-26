@@ -78,13 +78,6 @@ class TestTextGenMets < Test::Unit::TestCase
   end
 
   def test_mismatched_master_dmaker_file_prefixes
-    o, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' #{BAD_M_D_COUNT_TEXT}")
-    assert(s != 0)
-    assert(o == '')
-    assert_match(/mismatch in master \/ dmaker file count/, e)
-  end
-
-  def test_mismatched_master_dmaker_file_prefixes
     o, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' #{BAD_M_D_PREFIX_TEXT}")
     assert(s != 0)
     assert(o == '')

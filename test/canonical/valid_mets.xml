@@ -2,7 +2,7 @@
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version191/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:mods="http://www.loc.gov/mods/v3" OBJID="nyu_aco000003">
-<?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.1"?>
+<?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.2"?>
   <metsHdr CREATEDATE="2014-03-25T15:23:42Z" LASTMODDATE="2014-03-25T15:23:42Z" RECORDSTATUS="DRAFT">
         <agent ROLE="DISSEMINATOR" TYPE="ORGANIZATION">
             <name>New York University Libraries</name>
@@ -17,7 +17,7 @@
     <dmdSec ID="dmd-00000002">
         <mdRef LOCTYPE="URL" MDTYPE="MODS" xlink:type="simple" xlink:href="bcaa1b64-bc6a-4150-8d80-660f7a4939bd_mods.xml"/>
     </dmdSec>
-    <amdSec>
+    <amdSec ID="amd-00000001">
         <rightsMD ID="rmd-00000001">
            <mdRef LOCTYPE="URL" MDTYPE="METSRIGHTS" xlink:type="simple" xlink:href="bcaa1b64-bc6a-4150-8d80-660f7a4939bd_metsrights.xml"/>
         </rightsMD>
@@ -28,7 +28,7 @@
               <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="nyu_aco000003_eoc.csv"/>
         </digiprovMD>
     </amdSec>
-    <fileSec>
+    <fileSec ID="fsec-00000001">
         <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001 dmd-00000002">
             <file ID="f-nyu_aco000003_afr01_m" MIMETYPE="image/tiff">
                 <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_afr01_m.tif"/>
