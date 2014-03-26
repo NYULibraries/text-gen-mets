@@ -33,7 +33,7 @@
 # XML emit methods:
 #------------------------------------------------------------------------------
 def emit_template_version
-  puts '<?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.1"?>'
+  puts '<?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.2"?>'
 end
 def emit_xml_header
   puts <<'HERE_DOC_EOF'
@@ -82,7 +82,7 @@ def emit_dmd_mods(fname)
 end
 
 def emit_amd_sec_open
-  puts "    <amdSec>"
+  puts %Q{    <amdSec ID="amd-00000001">}
 end
 
 def emit_amd_sec_close
@@ -108,7 +108,7 @@ def emit_digiprov_eoc(fname)
 end
 
 def emit_file_sec_open
-  puts "    <fileSec>"
+  puts %Q{    <fileSec ID="fsec-00000001">}
 end
 
 def emit_file_sec_close
