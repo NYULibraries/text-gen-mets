@@ -38,7 +38,7 @@
 # XML emit methods:
 #------------------------------------------------------------------------------
 def emit_template_version
-  puts '<?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.2"?>'
+  puts '<?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.3"?>'
 end
 def emit_xml_header
   puts <<'HERE_DOC_EOF'
@@ -121,7 +121,7 @@ def emit_file_sec_close
 end
 
 def emit_file_grp_master_open
-  puts %{        <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001 dmd-00000002">}
+  puts %{        <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001">}
 end
 
 def emit_file_grp_dmaker_open
