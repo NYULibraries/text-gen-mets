@@ -12,7 +12,7 @@ class TestTextGenMets < MiniTest::Unit::TestCase
   CANONICAL_XML       = 'test/canonical/valid_mets.xml'
 
   def test_exit_status_with_valid_text
-    o, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT}")
+    o, _, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT}")
     assert(s.exitstatus == 0, "incorrect exit status")
     assert_match(/<mets xmlns/, o, "no mets output detected")
   end

@@ -12,15 +12,13 @@ class TestTextGenMetsNoEoc < MiniTest::Unit::TestCase
   BAD_M_D_PREFIX_TEXT = 'test/texts/bad-m-d-prefix'
   CANONICAL_XML       = 'test/canonical/valid_mets-no-eoc.xml'
 
-  def test_exit_status_with_valid_text
-    o, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT}")
-    puts o
-    puts e
+  def test_exit_status_with_text_that_has_eoc_file
+    _, _, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{TEXT_WITH_EOC}")
     assert(s.exitstatus == 1, "incorrect exit status")
   end
 
   def test_exit_status_with_valid_text
-    o, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT}")
+    o, _, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT}")
     assert(s.exitstatus == 0, "incorrect exit status")
     assert_match(/<mets xmlns/, o, "no mets output detected")
   end
