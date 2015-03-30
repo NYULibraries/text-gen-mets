@@ -290,6 +290,10 @@ def validate_and_extract_args(args_in)
   master_files = get_master_files(args_out[:dir])
   dmaker_files = get_dmaker_files(args_out[:dir])
   slot_list    = gen_slot_list(args_out[:dir])
+
+  # reverse slot list if read order and scan order differ
+  slot_list.reverse! if args_out[:scan_order] != args_out[:read_order]
+
   begin
     assert_master_dmaker_match!(master_files, dmaker_files)
   rescue Exception => e
