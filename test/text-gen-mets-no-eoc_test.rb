@@ -91,7 +91,7 @@ class TestTextGenMetsNoEoc < MiniTest::Unit::TestCase
   end
 
   def test_output_with_valid_text
-    new_xml, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT}")
+    new_xml, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'RIGHT_TO_LEFT' 'RIGHT_TO_LEFT' #{VALID_TEXT}")
     assert(s.exitstatus == 0)
     old_xml, e, s = Open3.capture3("cat #{CANONICAL_XML}")
     new_xml_a = new_xml.split("\n")
