@@ -11,6 +11,9 @@ class TestTextGenMets < MiniTest::Unit::TestCase
   BAD_M_D_PREFIX_TEXT = 'test/fixtures/texts/bad-m-d-prefix'
   CANONICAL_XML       = 'test/fixtures/canonical/valid_mets.xml'
 
+  VALID_TEXT_DIFF_SCAN_READ    = 'test/fixtures/texts/valid-diff-scan-read-order'
+  CANONICAL_XML_DIFF_SCAN_READ = 'test/fixtures/canonical/valid_mets-diff-scan-read-order.xml'
+
   def test_exit_status_with_valid_text
     o, _, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT}")
     assert(s.exitstatus == 0, "incorrect exit status")
@@ -88,6 +91,28 @@ class TestTextGenMets < MiniTest::Unit::TestCase
     new_xml, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{VALID_TEXT}")
     assert(s.exitstatus == 0)
     old_xml, e, s = Open3.capture3("cat #{CANONICAL_XML}")
+    new_xml_a = new_xml.split("\n")
+    old_xml_a = old_xml.split("\n")
+
+    new_xml_a.each_index do |i|
+      new = new_xml_a[i].strip
+      old = old_xml_a[i].strip
+
+      # replace dates
+      if /metsHdr/.match(new)
+        timestamp_regex = /[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z/
+        new.gsub!(timestamp_regex,'')
+        old.gsub!(timestamp_regex,'')
+      end
+      assert(new == old, "xml mismatch: #{new} #{old}")
+    end
+  end
+
+
+  def test_output_with_valid_text_with_different_scan_and_read_order
+    new_xml, e, s = Open3.capture3("#{COMMAND} 'foo_aco000045' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' #{VALID_TEXT_DIFF_SCAN_READ}")
+    assert(s.exitstatus == 0)
+    old_xml, e, s = Open3.capture3("cat #{CANONICAL_XML_DIFF_SCAN_READ}")
     new_xml_a = new_xml.split("\n")
     old_xml_a = old_xml.split("\n")
 
