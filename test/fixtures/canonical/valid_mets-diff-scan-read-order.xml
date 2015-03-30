@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version191/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:mods="http://www.loc.gov/mods/v3" OBJID="foo_aco000045">
+<?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.3"?>
+  <metsHdr CREATEDATE="2015-03-30T13:50:16Z" LASTMODDATE="2015-03-30T13:50:16Z" RECORDSTATUS="DRAFT">
+        <agent ROLE="DISSEMINATOR" TYPE="ORGANIZATION">
+            <name>New York University Libraries</name>
+        </agent>
+        <agent ROLE="CREATOR" TYPE="INDIVIDUAL">
+            <name>Joseph G. Pawletko</name>
+        </agent>
+    </metsHdr>
+    <dmdSec ID="dmd-00000001">
+        <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="MARCXML" xlink:type="simple" xlink:href="bcaa1b64-bc6a-4150-8d80-660f7a4939bd_marcxml.xml"/>
+    </dmdSec>
+    <dmdSec ID="dmd-00000002">
+        <mdRef LOCTYPE="URL" MDTYPE="MODS" xlink:type="simple" xlink:href="bcaa1b64-bc6a-4150-8d80-660f7a4939bd_mods.xml"/>
+    </dmdSec>
+    <amdSec ID="amd-00000001">
+        <rightsMD ID="rmd-00000001">
+           <mdRef LOCTYPE="URL" MDTYPE="METSRIGHTS" xlink:type="simple" xlink:href="bcaa1b64-bc6a-4150-8d80-660f7a4939bd_metsrights.xml"/>
+        </rightsMD>
+        <digiprovMD ID="dpmd-00000001">
+              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="CALIBRATION-TARGET-IMAGE" xlink:type="simple" xlink:href="foo_aco000045_ztarget_m.tif"/>
+        </digiprovMD>
+        <digiprovMD ID="dpmd-00000002">
+              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="foo_aco000045_eoc.csv"/>
+        </digiprovMD>
+    </amdSec>
+    <fileSec ID="fsec-00000001">
+        <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001 dpmd-00000002">
+            <file ID="f-foo_aco000045_afr01_m" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_afr01_m.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_afr02_m" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_afr02_m.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_n000001_m" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_n000001_m.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_n000002_m" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_n000002_m.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_n000003_m" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_n000003_m.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_n000004_m" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_n000004_m.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_n000005_m" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_n000005_m.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_zbk01_m" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_zbk01_m.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_zbk02_m" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_zbk02_m.tif"/>
+            </file>
+        </fileGrp>
+        <fileGrp ID="fg-dmaker" USE="DMAKER">
+            <file ID="f-foo_aco000045_afr01_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_afr01_d.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_afr02_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_afr02_d.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_n000001_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_n000001_d.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_n000002_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_n000002_d.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_n000003_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_n000003_d.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_n000004_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_n000004_d.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_n000005_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_n000005_d.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_zbk01_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_zbk01_d.tif"/>
+            </file>
+            <file ID="f-foo_aco000045_zbk02_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="foo_aco000045_zbk02_d.tif"/>
+            </file>
+        </fileGrp>
+    </fileSec>
+    <structMap ID="smd-00000001" TYPE="SOURCE_ENTITY:TEXT BINDING_ORIENTATION:VERTICAL SCAN_ORDER:RIGHT_TO_LEFT READ_ORDER:LEFT_TO_RIGHT"> 
+      <div>
+        <div TYPE="INTELLECTUAL_ENTITY" ID="s-ie-00000001" DMDID="dmd-00000001 dmd-00000002" ADMID="rmd-00000001">
+            <div ID="s-foo_aco000045_zbk02" ORDER="1"> 
+                <fptr FILEID="f-foo_aco000045_zbk02_m"/> 
+                <fptr FILEID="f-foo_aco000045_zbk02_d"/> 
+            </div> 
+            <div ID="s-foo_aco000045_zbk01" ORDER="2"> 
+                <fptr FILEID="f-foo_aco000045_zbk01_m"/> 
+                <fptr FILEID="f-foo_aco000045_zbk01_d"/> 
+            </div> 
+            <div ID="s-foo_aco000045_n000005" ORDER="3"> 
+                <fptr FILEID="f-foo_aco000045_n000005_m"/> 
+                <fptr FILEID="f-foo_aco000045_n000005_d"/> 
+            </div> 
+            <div ID="s-foo_aco000045_n000004" ORDER="4"> 
+                <fptr FILEID="f-foo_aco000045_n000004_m"/> 
+                <fptr FILEID="f-foo_aco000045_n000004_d"/> 
+            </div> 
+            <div ID="s-foo_aco000045_n000003" ORDER="5"> 
+                <fptr FILEID="f-foo_aco000045_n000003_m"/> 
+                <fptr FILEID="f-foo_aco000045_n000003_d"/> 
+            </div> 
+            <div ID="s-foo_aco000045_n000002" ORDER="6"> 
+                <fptr FILEID="f-foo_aco000045_n000002_m"/> 
+                <fptr FILEID="f-foo_aco000045_n000002_d"/> 
+            </div> 
+            <div ID="s-foo_aco000045_n000001" ORDER="7"> 
+                <fptr FILEID="f-foo_aco000045_n000001_m"/> 
+                <fptr FILEID="f-foo_aco000045_n000001_d"/> 
+            </div> 
+            <div ID="s-foo_aco000045_afr02" ORDER="8"> 
+                <fptr FILEID="f-foo_aco000045_afr02_m"/> 
+                <fptr FILEID="f-foo_aco000045_afr02_d"/> 
+            </div> 
+            <div ID="s-foo_aco000045_afr01" ORDER="9"> 
+                <fptr FILEID="f-foo_aco000045_afr01_m"/> 
+                <fptr FILEID="f-foo_aco000045_afr01_d"/> 
+            </div> 
+        </div>
+      </div>
+    </structMap>
+</mets>
