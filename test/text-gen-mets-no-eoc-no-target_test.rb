@@ -5,13 +5,13 @@ class TestTextGenMetsNoEocNoTarget < MiniTest::Unit::TestCase
 
   COMMAND = 'ruby bin/text-gen-mets-no-eoc-no-target.rb'
 
-  VALID_TEXT          = 'test/texts/valid-no-eoc-no-target'
-  TEXT_WITH_EOC       = 'test/texts/valid'             # this should fail as "no-eoc-no-target" script should not be used with texts that have eoc    files
-  TEXT_WITH_TARGET    = 'test/texts/valid-no-eoc'      # this should fail as "no-eoc-no-target" script should not be used with texts that have target files
-  EMPTY_TEXT          = 'test/texts/empty-dir'
-  BAD_M_D_COUNT_TEXT  = 'test/texts/bad-m-d-file-count'
-  BAD_M_D_PREFIX_TEXT = 'test/texts/bad-m-d-prefix'
-  CANONICAL_XML       = 'test/canonical/valid_mets-no-eoc-no-target.xml'
+  VALID_TEXT          = 'test/fixtures/texts/valid-no-eoc-no-target'
+  TEXT_WITH_EOC       = 'test/fixtures/texts/valid'             # this should fail as "no-eoc-no-target" script should not be used with texts that have eoc    files
+  TEXT_WITH_TARGET    = 'test/fixtures/texts/valid-no-eoc'      # this should fail as "no-eoc-no-target" script should not be used with texts that have target files
+  EMPTY_TEXT          = 'test/fixtures/texts/empty-dir'
+  BAD_M_D_COUNT_TEXT  = 'test/fixtures/texts/bad-m-d-file-count'
+  BAD_M_D_PREFIX_TEXT = 'test/fixtures/texts/bad-m-d-prefix'
+  CANONICAL_XML       = 'test/fixtures/canonical/valid_mets-no-eoc-no-target.xml'
 
   def test_exit_status_with_text_that_has_eoc_file
     _, _, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT' #{TEXT_WITH_EOC}")
