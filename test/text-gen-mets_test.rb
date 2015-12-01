@@ -14,6 +14,9 @@ class TestTextGenMets < MiniTest::Unit::TestCase
   VALID_TEXT_DIFF_SCAN_READ    = 'test/fixtures/texts/valid-diff-scan-read-order'
   CANONICAL_XML_DIFF_SCAN_READ = 'test/fixtures/canonical/valid_mets-diff-scan-read-order.xml'
 
+  VALID_TEXT_OVERSIZED    = 'test/fixtures/texts/oversized'
+  CANONICAL_XML_OVERSIZED = 'test/fixtures/canonical/valid_mets-oversized.xml'
+
   def test_exit_status_with_valid_text
     o, _, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'LEFT_TO_RIGHT' #{VALID_TEXT}")
     assert(s.exitstatus == 0, "incorrect exit status")
@@ -108,7 +111,6 @@ class TestTextGenMets < MiniTest::Unit::TestCase
     end
   end
 
-
   def test_output_with_valid_text_with_different_scan_and_read_order
     new_xml, e, s = Open3.capture3("#{COMMAND} 'foo_aco000045' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' #{VALID_TEXT_DIFF_SCAN_READ}")
     assert(s.exitstatus == 0)
@@ -130,4 +132,24 @@ class TestTextGenMets < MiniTest::Unit::TestCase
     end
   end
 
+  def test_output_with_valid_oversized_text
+    new_xml, e, s = Open3.capture3("#{COMMAND} 'ifa_egypt000061' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' #{VALID_TEXT_OVERSIZED}")
+    assert(s.exitstatus == 0, "incorrect exit status. Errors: #{e}")
+    old_xml, e, s = Open3.capture3("cat #{CANONICAL_XML_OVERSIZED}")
+    new_xml_a = new_xml.split("\n")
+    old_xml_a = old_xml.split("\n")
+
+    new_xml_a.each_index do |i|
+      new = new_xml_a[i].strip
+      old = old_xml_a[i].strip
+
+      # replace dates
+      if /metsHdr/.match(new)
+        timestamp_regex = /[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z/
+        new.gsub!(timestamp_regex,'')
+        old.gsub!(timestamp_regex,'')
+      end
+      assert(new == old, "xml mismatch: #{new} #{old}")
+    end
+  end
 end
