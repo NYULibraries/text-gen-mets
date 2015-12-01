@@ -10,7 +10,7 @@
 ## Usage
 
 #### preconditions:
-     
+
 - text in directory must adhere to DLTS Text naming conventions
   this is typically accomplished by using the ccg toolset to
   normalize the filenames in a text object.
@@ -25,7 +25,7 @@
 
 #### input:
 - object identifier
-- source entity type 
+- source entity type
   - not hard coded because this tool could be used for ```ONE_TO_ONE_ENTITY:TEXT```s as well
 - binding orientation
 - scan order
