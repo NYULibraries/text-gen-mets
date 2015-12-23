@@ -30,6 +30,7 @@
 # - assert that all required files are present
 # - emit each portion of the METS document to stdout
 #------------------------------------------------------------------------------
+require 'English'
 
 #------------------------------------------------------------------------------
 # XML emit methods:
@@ -85,11 +86,11 @@ def emit_dmd_mods(fname)
 end
 
 def emit_amd_sec_open
-  puts %Q{    <amdSec ID="amd-00000001">}
+  puts '    <amdSec ID="amd-00000001">'
 end
 
 def emit_amd_sec_close
-  puts "    </amdSec>"
+  puts '    </amdSec>'
 end
 
 def emit_rights_md(fname)
@@ -153,38 +154,38 @@ def get_files(dir, pattern, exclude = nil)
 end
 
 def emit_file_grp_close
-  puts %{        </fileGrp>}
+  puts '        </fileGrp>'
 end
 
 def emit_struct_map_open(h)
-  puts %|    <structMap ID="smd-00000001" TYPE="#{h[:se_type]} BINDING_ORIENTATION:#{h[:binding]} SCAN_ORDER:#{h[:scan_order]} READ_ORDER:#{h[:read_order]}"> |
+  puts %(    <structMap ID="smd-00000001" TYPE="#{h[:se_type]} BINDING_ORIENTATION:#{h[:binding]} SCAN_ORDER:#{h[:scan_order]} READ_ORDER:#{h[:read_order]}"> )
 end
 
 def emit_struct_map_close
-  puts %|    </structMap>|
+  puts '    </structMap>'
 end
 
 def emit_struct_map_div_open
-  puts "      <div>"
+  puts '      <div>'
 end
 
 def emit_struct_map_div_close
-  puts "      </div>"
+  puts '      </div>'
 end
 
 def emit_struct_map_inner_div_open
-  puts %{        <div TYPE="INTELLECTUAL_ENTITY" ID="s-ie-00000001" DMDID="dmd-00000001 dmd-00000002" ADMID="rmd-00000001">}
+  puts %(        <div TYPE="INTELLECTUAL_ENTITY" ID="s-ie-00000001" DMDID="dmd-00000001 dmd-00000002" ADMID="rmd-00000001">)
 end
 
 def emit_struct_map_inner_div_close
-  puts %{        </div>}
+  puts '        </div>'
 end
 
 def emit_struct_map_slot_div(slot_label, order)
   puts "            <div ID=\"s-#{slot_label}\" ORDER=\"#{order}\"> "
   puts "                <fptr FILEID=\"f-#{slot_label}_m\"/> "
   puts "                <fptr FILEID=\"f-#{slot_label}_d\"/> "
-  puts "            </div> "
+  puts '            </div> '
 end
 
 def emit_struct_map_slot_divs(slot_list)
@@ -220,13 +221,12 @@ def get_md_file_inventory(dir)
   fhash
 end
 
-
 def print_usage
-  $stderr.puts "Usage: #{$0} <object id> <source entity type> " +
-    "<binding orientation> <scan order> <read order> " +
-    "<path-to-text dir>"
-  $stderr.puts "   e.g., "
-  $stderr.puts "   ruby #{$0} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT'  /content/prod/rstar/content/nyu/aco/wip/se/nyu_aco000003/data > foo_mets.xml"
+  $stderr.puts "Usage: #{$PROGRAM_NAME} <object id> <source entity type> " \
+    '<binding orientation> <scan order> <read order> ' \
+    '<path-to-text dir>'
+  $stderr.puts '   e.g., '
+  $stderr.puts "   ruby #{$PROGRAM_NAME} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT'  /content/prod/rstar/content/nyu/aco/wip/se/nyu_aco000003/data > foo_mets.xml"
 end
 
 #------------------------------------------------------------------------------
@@ -261,11 +261,10 @@ def validate_and_extract_args(args_in)
   # key:    key   for          args_out hash
   # values: controlled vocabulary against which to validate
   # msg:    text for error message
-  [{idx: 1, key: :se_type,    values: valid_se_types,    msg: "se type"},
-   {idx: 2, key: :binding,    values: valid_bindings,    msg: "binding orientation"},
-   {idx: 3, key: :scan_order, values: valid_scan_orders, msg: "scan order"},
-   {idx: 4, key: :read_order, values: valid_read_orders, msg: "read order"}].each do |x|
-
+  [{ idx: 1, key: :se_type,    values: valid_se_types,    msg: "se type" },
+   { idx: 2, key: :binding,    values: valid_bindings,    msg: "binding orientation" },
+   { idx: 3, key: :scan_order, values: valid_scan_orders, msg: "scan order" },
+   { idx: 4, key: :read_order, values: valid_read_orders, msg: "read order" }].each do |x|
     # extract the candidate value
     candidate = args_in[x[:idx]]
 
