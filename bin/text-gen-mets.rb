@@ -50,17 +50,17 @@ def emit_mets_open(obj_id)
     xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version191/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink"
   HERE_DOC_EOF
 
-  puts %{    xmlns:mods="http://www.loc.gov/mods/v3" OBJID="#{obj_id}">}
+  puts %(    xmlns:mods="http://www.loc.gov/mods/v3" OBJID="#{obj_id}">)
 end
 
 def emit_mets_close
   puts '</mets>'
 end
 
-def emit_mets_hdr(create  = Time.now.utc.strftime("%FT%TZ"),
-                  lastmod = Time.now.utc.strftime("%FT%TZ"),
-                  status  = "DRAFT")
-  puts %{  <metsHdr CREATEDATE="#{create}" LASTMODDATE="#{lastmod}" RECORDSTATUS="#{status}">}
+def emit_mets_hdr(create  = Time.now.utc.strftime('%FT%TZ'),
+                  lastmod = Time.now.utc.strftime('%FT%TZ'),
+                  status  = 'DRAFT')
+  puts %(  <metsHdr CREATEDATE="#{create}" LASTMODDATE="#{lastmod}" RECORDSTATUS="#{status}">)
   puts <<-HERE_DOC_EOF
         <agent ROLE="DISSEMINATOR" TYPE="ORGANIZATION">
             <name>New York University Libraries</name>
@@ -73,15 +73,15 @@ def emit_mets_hdr(create  = Time.now.utc.strftime("%FT%TZ"),
 end
 
 def emit_dmd_marcxml(fname)
-  puts %{    <dmdSec ID="dmd-00000001">}
-  puts %{        <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="MARCXML" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{    </dmdSec>}
+  puts %(    <dmdSec ID="dmd-00000001">)
+  puts %(        <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="MARCXML" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(    </dmdSec>)
 end
 
 def emit_dmd_mods(fname)
-  puts %{    <dmdSec ID="dmd-00000002">}
-  puts %{        <mdRef LOCTYPE="URL" MDTYPE="MODS" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{    </dmdSec>}
+  puts %(    <dmdSec ID="dmd-00000002">)
+  puts %(        <mdRef LOCTYPE="URL" MDTYPE="MODS" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(    </dmdSec>)
 end
 
 def emit_amd_sec_open
@@ -93,46 +93,46 @@ def emit_amd_sec_close
 end
 
 def emit_rights_md(fname)
-  puts %{        <rightsMD ID="rmd-00000001">}
-  puts %{           <mdRef LOCTYPE="URL" MDTYPE="METSRIGHTS" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{        </rightsMD>}
+  puts %(        <rightsMD ID="rmd-00000001">)
+  puts %(           <mdRef LOCTYPE="URL" MDTYPE="METSRIGHTS" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(        </rightsMD>)
 end
 
 def emit_digiprov_target(fname)
-  puts %{        <digiprovMD ID="dpmd-00000001">}
-  puts %{              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="CALIBRATION-TARGET-IMAGE" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{        </digiprovMD>}
+  puts %(        <digiprovMD ID="dpmd-00000001">)
+  puts %(              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="CALIBRATION-TARGET-IMAGE" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(        </digiprovMD>)
 end
 
 def emit_digiprov_eoc(fname)
-  puts %{        <digiprovMD ID="dpmd-00000002">}
-  puts %{              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{        </digiprovMD>}
+  puts %(        <digiprovMD ID="dpmd-00000002">)
+  puts %(              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(        </digiprovMD>)
 end
 
 def emit_file_sec_open
-  puts %Q{    <fileSec ID="fsec-00000001">}
+  puts '    <fileSec ID="fsec-00000001">'
 end
 
 def emit_file_sec_close
-  puts "    </fileSec>"
+  puts '    </fileSec>'
 end
 
 def emit_file_grp_master_open
-  puts %{        <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001 dpmd-00000002">}
+  puts %(        <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001 dpmd-00000002">)
 end
 
 def emit_file_grp_dmaker_open
-  puts %{        <fileGrp ID="fg-dmaker" USE="DMAKER">}
+  puts %(        <fileGrp ID="fg-dmaker" USE="DMAKER">)
 end
 
 def emit_file(fname)
   match = /(.+)\.tif\z/.match(fname)
-  raise "badly formed filename #{fname}" unless match
+  fail "badly formed filename #{fname}" unless match
   id = match[1]
-  puts %{            <file ID="f-#{id}" MIMETYPE="image/tiff">}
-  puts %{                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{            </file>}
+  puts %(            <file ID="f-#{id}" MIMETYPE="image/tiff">)
+  puts %(                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(            </file>)
 end
 
 def emit_files(file_list)
