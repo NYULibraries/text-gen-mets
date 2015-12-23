@@ -37,6 +37,7 @@
 def emit_template_version
   puts '<?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.3"?>'
 end
+
 def emit_xml_header
   puts <<'HERE_DOC_EOF'
 <?xml version="1.0" encoding="UTF-8"?>
@@ -53,7 +54,7 @@ def emit_mets_open(obj_id)
 end
 
 def emit_mets_close
-  puts "</mets>"
+  puts '</mets>'
 end
 
 def emit_mets_hdr(create  = Time.now.utc.strftime("%FT%TZ"),
@@ -285,7 +286,6 @@ def validate_and_extract_args(args_in)
     exit 1
   end
 
-
   # assemble file lists
   master_files = get_master_files(args_out[:dir])
   dmaker_files = get_dmaker_files(args_out[:dir])
@@ -296,7 +296,7 @@ def validate_and_extract_args(args_in)
 
   begin
     assert_master_dmaker_match!(master_files, dmaker_files)
-  rescue Exception => e
+  rescue StandardError => e
     errors << "#{e.message}"
   end
 
@@ -306,7 +306,7 @@ def validate_and_extract_args(args_in)
 
   begin
     md_files = get_md_file_inventory(args_in[5])
-  rescue Exception => e
+  rescue StandardError => e
     errors << "problem with metadata files: #{e.message}"
   end
   args_out[:md_files] = md_files
@@ -321,7 +321,6 @@ def validate_and_extract_args(args_in)
   args_out
 end
 
-
 def get_master_files(dir)
   get_files(dir, '*_m.tif', /.+_ztarget_m.tif/)
 end
@@ -333,11 +332,11 @@ end
 def gen_slot_list(dir)
   # d files map one-to-one to the pages in the text
   slots = get_files(dir, '*_d.tif')
-  slots.collect {|s| s.sub(/_d.tif\z/,'')}
+  slots.collect { |s| s.sub(/_d.tif\z/,'') }
 end
 
 def assert_master_dmaker_match!(m, d)
-  raise "mismatch in master / dmaker file count" unless m.length == d.length
+  fail 'mismatch in master / dmaker file count' unless m.length == d.length
   errors = []
   m.each_index do |i|
     m_base = m[i].sub(/_m.tif\z/,'')
@@ -346,10 +345,9 @@ def assert_master_dmaker_match!(m, d)
   end
   unless errors.empty?
     estr = errors.join("\n")
-    raise "mismatches in master / dmaker files:\n #{estr}"
+    fail "mismatches in master / dmaker files:\n #{estr}"
   end
 end
-
 
 #------------------------------------------------------------------------------
 # MAIN
