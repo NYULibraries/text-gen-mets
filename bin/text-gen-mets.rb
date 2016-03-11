@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Time-stamp: <2014-12-02 16:54:10 pawletko>
+# Time-stamp: <2016-01-04 11:43:48 jgp>
 #------------------------------------------------------------------------------
 # script generates METS files for NYU DLTS text objects
 #
@@ -335,6 +335,15 @@ def gen_slot_list(dir)
 end
 
 def assert_master_dmaker_match!(m, d)
+  # assert that all slots have a dmaker file
+  # assert that all slots have at least one master file
+  # algorithm:
+  # for each dmaker
+  # see if there is a matching master file
+  # if not, see if there is a master file with sub components
+  # assert that all dmaker files have associated master files
+  # assert that all master files have associated dmaker files
+  # 
   fail 'mismatch in master / dmaker file count' unless m.length == d.length
   errors = []
   m.each_index do |i|
@@ -347,6 +356,20 @@ def assert_master_dmaker_match!(m, d)
     fail "mismatches in master / dmaker files:\n #{estr}"
   end
 end
+
+# def assert_master_dmaker_match!(m, d)
+#   fail 'mismatch in master / dmaker file count' unless m.length == d.length
+#   errors = []
+#   m.each_index do |i|
+#     m_base = m[i].sub(/_m.tif\z/,'')
+#     d_base = d[i].sub(/_d.tif\z/,'')
+#     errors << "prefix mismatch: #{m[i]} #{d[i]}" unless m_base == d_base
+#   end
+#   unless errors.empty?
+#     estr = errors.join("\n")
+#     fail "mismatches in master / dmaker files:\n #{estr}"
+#   end
+# end
 
 #------------------------------------------------------------------------------
 # MAIN
