@@ -18,5 +18,9 @@ class FilenameTest < MiniTest::Unit::TestCase
     assert_equal expected, filename.extension
   end
     
+  def test_rootname
+    expected = 'foo_d'
+    assert_equal expected, filename.rootname
+  end
   
 end
