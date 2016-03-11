@@ -13,6 +13,10 @@ class FilenameTest < MiniTest::Unit::TestCase
     assert_equal expected, filename.path
   end
   
+  def test_extension
+    expected = '.tif'
+    assert_equal expected, filename.extension
+  end
     
   
 end

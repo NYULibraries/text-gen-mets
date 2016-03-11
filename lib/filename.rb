@@ -8,10 +8,15 @@ class Filename
   #  path
   #  role
 
-  attr_accessor :path
+  attr_reader :path, :extension
   def initialize(path)
     @path = path
+    @extension = File.extname(path)
   end
+
+
+
+  
 end
   
     
