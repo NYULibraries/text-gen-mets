@@ -34,4 +34,14 @@ class FilenameTest < MiniTest::Unit::TestCase
     assert_equal expected, filename_no_ext.rootname
   end
 
+  def test_name
+    expected = 'foo_d.tif'
+    assert_equal expected, filename.name
+  end
+
+  def test_name_no_extension
+    expected = 'bar_d'
+    assert_equal expected, filename_no_ext.name
+  end
+
 end

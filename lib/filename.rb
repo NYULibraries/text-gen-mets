@@ -8,11 +8,12 @@ class Filename
   #  path
   #  role
 
-  attr_reader :path, :extension, :rootname
+  attr_reader :path, :extension, :rootname, :name
   def initialize(path)
     @path = path
     @extension = File.extname(path)
-    @rootname  = File.basename(path).sub(/#{extension}\z/, '')
+    @name      = File.basename(path)
+    @rootname  = name.sub(/#{extension}\z/, '')
   end
 end
   
