@@ -15,7 +15,6 @@ class Filename
     else :unknown
     end
   end
-
   
   attr_reader :path, :extension, :rootname, :name, :role
   def initialize(path)

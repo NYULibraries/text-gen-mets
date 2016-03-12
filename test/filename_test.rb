@@ -9,6 +9,27 @@ class FilenameTest < MiniTest::Unit::TestCase
     @filename_no_ext = Filename.new('d/e/f/bar_d')
   end
 
+  def test_class_method_role_detect_master
+    string   = 'baz_m'
+    expected = :master
+
+    assert_equal expected, Filename.role(string)
+  end
+
+  def test_class_method_role_detect_dmaker
+    string   = 'baz_d'
+    expected = :dmaker
+
+    assert_equal expected, Filename.role(string)
+  end
+
+  def test_class_method_role_detect_unknown
+    string   = 'baz_xyz'
+    expected = :unknown
+
+    assert_equal expected, Filename.role(string)
+  end
+
   def test_path
     expected = 'a/b/c/foo_m.tif'
     assert_equal expected, filename.path
@@ -44,26 +65,13 @@ class FilenameTest < MiniTest::Unit::TestCase
     assert_equal expected, filename_no_ext.name
   end
 
-  def test_class_method_role_detect_master
-    string   = 'baz_m'
+  def test_role
     expected = :master
-
-    assert_equal expected, Filename.role(string)
+    assert_equal expected, filename.role
   end
 
-  def test_class_method_role_detect_dmaker
-    string   = 'baz_d'
+  def test_name_no_extension
     expected = :dmaker
-
-    assert_equal expected, Filename.role(string)
+    assert_equal expected, filename_no_ext.role
   end
-
-  def test_class_method_role_detect_unknown
-    string   = 'baz_xyz'
-    expected = :unknown
-
-    assert_equal expected, Filename.role(string)
-  end
-
-  
 end
