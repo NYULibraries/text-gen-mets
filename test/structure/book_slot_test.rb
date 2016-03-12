@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Structure::SlotTest < MiniTest::Unit::TestCase
+class Structure::BookSlotTest < MiniTest::Unit::TestCase
 
   attr_accessor :slot
   
