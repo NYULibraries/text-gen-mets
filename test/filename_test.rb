@@ -51,5 +51,19 @@ class FilenameTest < MiniTest::Unit::TestCase
     assert_equal expected, Filename.role(string)
   end
 
+  def test_class_method_role_detect_dmaker
+    string   = 'baz_d'
+    expected = :dmaker
+
+    assert_equal expected, Filename.role(string)
+  end
+
+  def test_class_method_role_detect_unknown
+    string   = 'baz_xyz'
+    expected = :unknown
+
+    assert_equal expected, Filename.role(string)
+  end
+
   
 end

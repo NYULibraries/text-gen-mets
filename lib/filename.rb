@@ -11,6 +11,7 @@ class Filename
   def self.role(rn)
     case rn
     when /_m\z/ then :master
+    when /_d\z/ then :dmaker
     else :unknown
     end
   end
