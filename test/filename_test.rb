@@ -5,12 +5,12 @@ class FilenameTest < MiniTest::Unit::TestCase
   attr_accessor :filename, :filename_no_ext
   
   def setup
-    @filename        = Filename.new('a/b/c/foo_d.tif')
+    @filename        = Filename.new('a/b/c/foo_m.tif')
     @filename_no_ext = Filename.new('d/e/f/bar_d')
   end
 
   def test_path
-    expected = 'a/b/c/foo_d.tif'
+    expected = 'a/b/c/foo_m.tif'
     assert_equal expected, filename.path
   end
   
@@ -25,7 +25,7 @@ class FilenameTest < MiniTest::Unit::TestCase
   end
 
   def test_rootname
-    expected = 'foo_d'
+    expected = 'foo_m'
     assert_equal expected, filename.rootname
   end
 
@@ -35,7 +35,7 @@ class FilenameTest < MiniTest::Unit::TestCase
   end
 
   def test_name
-    expected = 'foo_d.tif'
+    expected = 'foo_m.tif'
     assert_equal expected, filename.name
   end
 
