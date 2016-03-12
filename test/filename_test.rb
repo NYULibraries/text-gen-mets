@@ -44,4 +44,12 @@ class FilenameTest < MiniTest::Unit::TestCase
     assert_equal expected, filename_no_ext.name
   end
 
+  def test_class_method_role_detect_master
+    string   = 'baz_m'
+    expected = :master
+
+    assert_equal expected, Filename.role(string)
+  end
+
+  
 end
