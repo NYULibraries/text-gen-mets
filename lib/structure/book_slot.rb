@@ -7,9 +7,10 @@
 
 module Structure
   class BookSlot
-    attr_accessor :label
+    attr_accessor :label, :name
     def initialize(args = {})
       @label = args[:label] || ''
+      @name  = args[:name]
     end
   end
 end
