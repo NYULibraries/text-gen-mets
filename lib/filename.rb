@@ -2,12 +2,12 @@
 class Filename
 
   # messages:
-  #  name            nyu_aco000123_n000987_m.tif
-  #  extension       .tif
-  #  rootname        nyu_aco000123_n000987_m
-  #  label           nyu_aco000123_n000987
-  #  path            ./foo/bar/baz/quux/nyu_aco000123_n000987_m.tif
-  #  role            :master
+  #  name                nyu_aco000123_n000987_m.tif
+  #  extension           .tif
+  #  rootname            nyu_aco000123_n000987_m
+  #  rootname_minus_role nyu_aco000123_n000987
+  #  path                ./foo/bar/baz/quux/nyu_aco000123_n000987_m.tif
+  #  role                :master
 
   # TODO : probably an abstraction here: RoleIdentifier
   MASTER_ROLE_REGEXP = /(_m)\z/
@@ -30,14 +30,14 @@ class Filename
     end
   end
   
-  attr_reader :path, :extension, :rootname, :name, :role, :label
+  attr_reader :path, :extension, :rootname, :name, :role, :rootname_minus_role
   def initialize(path)
     @path      = path
     @extension = File.extname(path)
     @name      = File.basename(path)
     @rootname  = name.sub(/#{extension}\z/, '')
     @role      = self.class.role(rootname)
-    @label     = self.class.strip_role_string(rootname)
+    @rootname_minus_role = self.class.strip_role_string(rootname)
   end
 end
   

@@ -81,13 +81,13 @@ class FilenameTest < MiniTest::Unit::TestCase
     assert_equal expected, filename_unknown_role.role
   end
 
-  def test_label
+  def test_rootname_minus_role
     expected = 'foo'
-    assert_equal expected, filename.label
+    assert_equal expected, filename.rootname_minus_role
   end
 
-  def test_label_no_extension
+  def test_rootname_minus_role_no_extension
     expected = 'bar'
-    assert_equal expected, filename_no_ext.label
+    assert_equal expected, filename_no_ext.rootname_minus_role
   end
 end
