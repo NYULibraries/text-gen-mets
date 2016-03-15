@@ -8,6 +8,10 @@ class Structure::BookSlotTest < MiniTest::Unit::TestCase
     @slot = Structure::BookSlot.new()
     @slot_with_label = Structure::BookSlot.new(label: 'howdy!',
                                                name:  'nyu_aco000123_n0009897')
+    
+    files = [Filename.new('a_m.tif'), Filename.new('a_d.tif')]
+    @slot_with_files = Structure::BookSlot.new(label: 'howdy!',
+                                               name:  'a')
   end
 
   def test_empty_label
@@ -24,4 +28,15 @@ class Structure::BookSlotTest < MiniTest::Unit::TestCase
     expected = 'nyu_aco000123_n0009897'
     assert_equal expected, slot_with_label.name
   end    
+
+  def test_label
+    expected = 'nyu_aco000123_n0009897'
+    assert_equal expected, slot_with_label.name
+  end
+
+
+  def test_default_files
+    expected = {}
+    assert_equal expected, slot.files
+  end
 end
