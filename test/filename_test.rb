@@ -2,12 +2,12 @@ require 'test_helper'
 
 class FilenameTest < MiniTest::Unit::TestCase
 
-  attr_accessor :filename, :filename_no_ext, :filename_no_role
+  attr_accessor :filename, :filename_no_ext, :filename_unknown_role
   
   def setup
     @filename         = Filename.new('a/b/c/foo_m.tif')
     @filename_no_ext  = Filename.new('d/e/f/bar_d')
-    @filename_no_role = Filename.new('x/y/z/baz')
+    @filename_unknown_role = Filename.new('x/y/z/baz')
   end
 
   def test_class_method_role_detect_master
@@ -78,7 +78,7 @@ class FilenameTest < MiniTest::Unit::TestCase
 
   def test_role_unknown
     expected = :unknown
-    assert_equal expected, filename_no_role.role
+    assert_equal expected, filename_unknown_role.role
   end
 
   def test_label
