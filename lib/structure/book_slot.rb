@@ -1,23 +1,30 @@
 # class handles book digitization slots
 # objects of this class respond to the following messages:
 #  label
-#  masters -> array of filename objects
-#  dmakers -> array of filename objects
 #  valid?
 
 module Structure
   class BookSlot
-    attr_accessor :label, :name, :files
+    attr_accessor :label, :name, :filenames
+
+    VALID_ROLES = [:master, :dmaker]
     def initialize(args = {})
       @label = args[:label] || ''
       @name  = args[:name]
-      @files = args[:files] || {}
+      @filenames = args[:filenames] || {}
     end
+
     def add(filename)
-      type = filename.type
-      # if there is already an array for this filetype, then add filename
+      role = filename.role
+      raise ArgumentError unless VALID_ROLES.include?(role)
+
+      # if there is already an array for this role, then add filename
       # otherwise, insert a new key/value pair
-      files[type] ? files[type] << filename : files[type] = [filename]
+      if filenames[role]
+        filenames[role] << filename
+      else
+        filenames[role] = [filename]
+      end
     end
   end
 end
