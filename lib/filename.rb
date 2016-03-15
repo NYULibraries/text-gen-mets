@@ -2,27 +2,42 @@
 class Filename
 
   # messages:
-  #  extension
-  #  rootname
-  #  name
-  #  path
-  #  role
+  #  name            nyu_aco000123_n000987_m.tif
+  #  extension       .tif
+  #  rootname        nyu_aco000123_n000987_m
+  #  label           nyu_aco000123_n000987
+  #  path            ./foo/bar/baz/quux/nyu_aco000123_n000987_m.tif
+  #  role            :master
 
+  # TODO : probably an abstraction here: RoleIdentifier
+  MASTER_ROLE_REGEXP = /(_m)\z/
+  DMAKER_ROLE_REGEXP = /(_d)\z/
+  
+  def self.strip_role_string(rn)
+    case rn
+    when MASTER_ROLE_REGEXP then rn.sub(MASTER_ROLE_REGEXP, '')
+    when DMAKER_ROLE_REGEXP then rn.sub(DMAKER_ROLE_REGEXP, '')
+    else rn
+    end
+  end
+    
+  
   def self.role(rn)
     case rn
-    when /_m\z/ then :master
-    when /_d\z/ then :dmaker
+    when MASTER_ROLE_REGEXP then :master
+    when DMAKER_ROLE_REGEXP then :dmaker
     else :unknown
     end
   end
   
-  attr_reader :path, :extension, :rootname, :name, :role
+  attr_reader :path, :extension, :rootname, :name, :role, :label
   def initialize(path)
     @path      = path
     @extension = File.extname(path)
     @name      = File.basename(path)
     @rootname  = name.sub(/#{extension}\z/, '')
     @role      = self.class.role(rootname)
+    @label     = self.class.strip_role_string(rootname)
   end
 end
   

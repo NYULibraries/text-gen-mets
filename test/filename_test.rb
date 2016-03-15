@@ -70,8 +70,13 @@ class FilenameTest < MiniTest::Unit::TestCase
     assert_equal expected, filename.role
   end
 
-  def test_name_no_extension
-    expected = :dmaker
-    assert_equal expected, filename_no_ext.role
+  def test_label
+    expected = 'foo'
+    assert_equal expected, filename.label
+  end
+
+  def test_label_no_extension
+    expected = 'bar'
+    assert_equal expected, filename_no_ext.label
   end
 end
