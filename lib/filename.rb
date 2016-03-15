@@ -39,6 +39,10 @@ class Filename
     @role      = self.class.role(rootname)
     @rootname_minus_role = self.class.strip_role_string(rootname)
   end
+
+  def <=>(other)
+    name <=> other.name
+  end
 end
   
     

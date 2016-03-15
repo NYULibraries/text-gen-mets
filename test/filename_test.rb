@@ -2,12 +2,16 @@ require 'test_helper'
 
 class FilenameTest < MiniTest::Unit::TestCase
 
-  attr_accessor :filename, :filename_no_ext, :filename_unknown_role
+  attr_accessor :filename, :filename_no_ext, :filename_unknown_role, :dmaker, :dmaker2
   
   def setup
     @filename         = Filename.new('a/b/c/foo_m.tif')
     @filename_no_ext  = Filename.new('d/e/f/bar_d')
     @filename_unknown_role = Filename.new('x/y/z/baz')
+
+    @dmaker  = Filename.new('x/y/z/a_d.tif')
+    @dmaker2 = Filename.new('d/e/f/b_d.tif')
+
   end
 
   def test_class_method_role_detect_master
@@ -89,5 +93,10 @@ class FilenameTest < MiniTest::Unit::TestCase
   def test_rootname_minus_role_no_extension
     expected = 'bar'
     assert_equal expected, filename_no_ext.rootname_minus_role
+  end
+
+  def test_spaceship_operator
+    expected = [dmaker, dmaker2]
+    assert_equal expected, [dmaker2, dmaker].sort
   end
 end
