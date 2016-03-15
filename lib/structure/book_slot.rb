@@ -1,9 +1,5 @@
-# class handles book digitization slots
-# objects of this class respond to the following messages:
-#  label
-#  valid?
-
 module Structure
+  # class deals with book digitization slots file grouping
   class BookSlot
     attr_accessor :label, :name, :filenames
 
@@ -24,6 +20,14 @@ module Structure
         filenames[role] << filename
       else
         filenames[role] = [filename]
+      end
+    end
+
+    # create accessors for filename arrays
+    VALID_ROLES.each do |sym|
+      # note pluralized form of role, e.g., #dmakers
+      define_method("#{sym}s") do
+        filenames[sym]
       end
     end
   end

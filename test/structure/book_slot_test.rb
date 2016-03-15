@@ -68,4 +68,9 @@ class Structure::BookSlotTest < MiniTest::Unit::TestCase
   def test_exception_on_invalid_role
     assert_raises(ArgumentError) { slot.add(unknown) }
   end
+
+  def test_retrieve_filenames
+    expected = [dmaker, dmaker2]
+    assert_equal expected, slot_multiple.dmakers
+  end
 end
