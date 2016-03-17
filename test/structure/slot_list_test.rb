@@ -9,21 +9,16 @@ class Structure::SlotListTest < MiniTest::Unit::TestCase
     @args = OpenStruct.new
     @args.slot_class = Structure::BookSlot
 
-    @dmaker1 = Filename.new('j/k/x_d.tif')
-    @dmaker2 = Filename.new('j/k/y_d.tif')
-    @dmakers = [dmaker1, dmaker2]
-
-    @master1 = Filename.new('j/k/x_m.tif')
-    @master2 = Filename.new('j/k/y_m.tif')
-    @masters = [master1, master2]
+    @dmakers = ['j/k/x_d.tif', 'j/k/y_d.tif'].collect { |d| Filename.new(d) }
+    @masters = ['j/k/x_m.tif', 'j/k/y_m.tif'].collect { |m| Filename.new(m) }
 
     @slots   = begin
                  one = Structure::BookSlot.new
-                 one.add(dmaker1)
-                 one.add(master1)
+                 one.add(dmakers[0])
+                 one.add(masters[0])
                  two = Structure::BookSlot.new
-                 two.add(dmaker2)
-                 two.add(master2)
+                 two.add(dmakers[1])
+                 two.add(masters[1])
                  [one, two]
                end
   end
