@@ -9,6 +9,7 @@ module Structure
       @masters = args.masters
 
       raise(ArgumentError, 'dmakers cannot be nil') unless dmakers
+      raise(ArgumentError, 'masters cannot be nil') unless masters
     end
   end
 end
