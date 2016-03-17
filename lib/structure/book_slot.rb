@@ -7,7 +7,7 @@ module Structure
     def initialize(args = {})
       @label = args[:label] || ''
       @name  = args[:name]
-      @filenames = args[:filenames] || {}
+      @filenames = {}
     end
 
     def add(filename)
