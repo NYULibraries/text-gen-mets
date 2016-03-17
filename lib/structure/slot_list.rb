@@ -21,7 +21,9 @@ module Structure
     private
 
     def gen_slots
-#      result = dmakers.collect { |dmaker| slot_class.new(dmaker) }
+      result = dmakers.collect do |dmaker|
+        slot_class.new(name: dmaker.rootname_minus_role)
+      end
     end
   end
 end
