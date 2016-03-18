@@ -3,8 +3,8 @@ require 'ostruct'
 # test class for SlotList
 class Structure::SlotListTest < MiniTest::Unit::TestCase
 
-  attr_accessor :slot_list, :args, :dmakers, :masters, :slots,
-                :dmaker1, :dmaker2, :master1, :master2
+  attr_accessor :slot_list, :args, :dmakers, :masters, :slots
+
   def setup
     @args = OpenStruct.new
     @args.slot_class = Structure::BookSlot
@@ -13,13 +13,13 @@ class Structure::SlotListTest < MiniTest::Unit::TestCase
     @masters = ['j/k/x_m.tif', 'j/k/y_m.tif'].collect { |m| Filename.new(m) }
 
     @slots   = begin
-                 one = Structure::BookSlot.new
-                 one.add(dmakers[0])
-                 one.add(masters[0])
-                 two = Structure::BookSlot.new
-                 two.add(dmakers[1])
-                 two.add(masters[1])
-                 [one, two]
+                 a = []
+                 dmakers.each_index do |i|
+                   a[i] = Structure::BookSlot.new
+                   a[i].add(dmakers[i])
+                   a[i].add(masters[i])
+                 end
+                 a
                end
   end
 
