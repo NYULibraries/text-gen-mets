@@ -3,7 +3,8 @@ module Structure
   class BookSlot
     attr_accessor :label, :name, :filenames
 
-    VALID_ROLES = [:master, :dmaker]
+    VALID_ROLES = [:master, :dmaker].freeze
+
     def initialize(args = {})
       @label = args[:label] || ''
       @name  = args[:name]
