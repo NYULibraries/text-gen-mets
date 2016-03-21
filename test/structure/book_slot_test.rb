@@ -76,9 +76,14 @@ module Structure
       assert_raises(ArgumentError) { slot.add(unknown) }
     end
 
-    def test_retrieve_filenames
+    def test_retrieve_dmakers
       expected = [dmaker, dmaker2]
       assert_equal expected, slot_multiple.dmakers
+    end
+
+    def test_retrieve_masters
+      expected = [master, master2]
+      assert_equal expected, slot_multiple.masters
     end
 
     def test_equals_true
