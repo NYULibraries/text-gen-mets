@@ -31,5 +31,12 @@ module Structure
         filenames[sym]
       end
     end
+
+    def ==(other)
+      result = true
+      result &&= (self.label == other.label)
+      result &&= (self.name  == other.name)
+      result &&= (self.filenames == other.filenames)
+    end
   end
 end
