@@ -111,4 +111,9 @@ class FilenameTest < MiniTest::Unit::TestCase
     expected = 'q'
     assert_equal expected, master_oversized.rootname_minus_index_and_role
   end
+
+  def test_rootname_minus_index_and_role_filename_has_no_index
+    expected = 'a'
+    assert_equal expected, dmaker.rootname_minus_index_and_role
+  end
 end
