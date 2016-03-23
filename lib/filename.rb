@@ -10,9 +10,9 @@ class Filename
   #  role                :master
 
   # TODO : probably an abstraction here: RoleIdentifier
-  MASTER_ROLE_REGEXP = /(_m)\z/
-  DMAKER_ROLE_REGEXP = /(_d)\z/
-  
+  MASTER_ROLE_REGEXP = /(_m)\z/.freeze
+  DMAKER_ROLE_REGEXP = /(_d)\z/.freeze
+
   def self.strip_role_string(rn)
     case rn
     when MASTER_ROLE_REGEXP then rn.sub(MASTER_ROLE_REGEXP, '')
@@ -20,8 +20,7 @@ class Filename
     else rn
     end
   end
-    
-  
+
   def self.role(rn)
     case rn
     when MASTER_ROLE_REGEXP then :master
@@ -29,7 +28,7 @@ class Filename
     else :unknown
     end
   end
-  
+
   attr_reader :path, :extension, :rootname, :name, :role, :rootname_minus_role
   def initialize(path)
     @path      = path
@@ -44,5 +43,3 @@ class Filename
     name <=> other.name
   end
 end
-  
-    
