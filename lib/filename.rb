@@ -42,4 +42,12 @@ class Filename
   def <=>(other)
     name <=> other.name
   end
+
+  # this tests whether a filename may have an index, as in the case
+  # of masters for oversized pages. These files end in _NN or _zNN,
+  # e.g., partner_abc000123_n000456_z02_m.tif
+  #       partner_abc000123_000456_02_m.tif
+  def has_index?
+    /_?\d{2}\z/ =~ rootname_minus_role
+  end
 end
