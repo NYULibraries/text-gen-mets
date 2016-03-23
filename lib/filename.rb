@@ -12,7 +12,8 @@ class Filename
   # TODO : probably an abstraction here: RoleIdentifier
   MASTER_ROLE_REGEXP = /(_m)\z/.freeze
   DMAKER_ROLE_REGEXP = /(_d)\z/.freeze
-
+  INDEX_REGEXP = /_?\d{2}\z/.freeze
+  
   def self.strip_role_string(rn)
     case rn
     when MASTER_ROLE_REGEXP then rn.sub(MASTER_ROLE_REGEXP, '')
@@ -48,6 +49,10 @@ class Filename
   # e.g., partner_abc000123_n000456_z02_m.tif
   #       partner_abc000123_000456_02_m.tif
   def has_index?
-    /_?\d{2}\z/ =~ rootname_minus_role
+    INDEX_REGEXP =~ rootname_minus_role
+  end
+
+  def rootname_minus_index_and_role
+    rootname_minus_role.gsub(INDEX_REGEXP, '')
   end
 end

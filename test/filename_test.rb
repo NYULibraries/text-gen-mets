@@ -106,4 +106,9 @@ class FilenameTest < MiniTest::Unit::TestCase
   def test_has_index?
     assert master_oversized.has_index?
   end
+
+  def test_rootname_minus_index_and_role
+    expected = 'q'
+    assert_equal expected, master_oversized.rootname_minus_index_and_role
+  end
 end
