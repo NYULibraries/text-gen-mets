@@ -4,7 +4,8 @@ require 'test_helper'
 class FilenameTest < MiniTest::Unit::TestCase
 
   attr_accessor :filename, :filename_no_ext, :filename_unknown_role,
-                :dmaker, :dmaker2, :master_oversized
+                :dmaker, :dmaker2, :master_oversized,
+                :master_oversized_normalized
 
   def setup
     @filename         = Filename.new('a/b/c/foo_m.tif')
@@ -15,6 +16,7 @@ class FilenameTest < MiniTest::Unit::TestCase
     @dmaker2 = Filename.new('d/e/f/b_d.tif')
 
     @master_oversized = Filename.new('d/e/f/q_01_m.tif')
+    @master_oversized_normalized = Filename.new('d/e/f/q_z01_m.tif')
   end
 
   def test_class_method_role_detect_master
@@ -110,6 +112,11 @@ class FilenameTest < MiniTest::Unit::TestCase
   def test_rootname_minus_index_and_role
     expected = 'q'
     assert_equal expected, master_oversized.rootname_minus_index_and_role
+  end
+
+  def test_rootname_minus_index_and_role_filename_normalized
+    expected = 'q'
+    assert_equal expected, master_oversized_normalized.rootname_minus_index_and_role
   end
 
   def test_rootname_minus_index_and_role_filename_has_no_index

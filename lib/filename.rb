@@ -12,7 +12,7 @@ class Filename
   # TODO : probably an abstraction here: RoleIdentifier
   MASTER_ROLE_REGEXP = /(_m)\z/.freeze
   DMAKER_ROLE_REGEXP = /(_d)\z/.freeze
-  INDEX_REGEXP = /_?\d{2}\z/.freeze
+  INDEX_REGEXP = /(_z?\d{2})\z/.freeze
   
   def self.strip_role_string(rn)
     case rn
