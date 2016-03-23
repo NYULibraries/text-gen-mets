@@ -13,7 +13,7 @@ class Filename
   MASTER_ROLE_REGEXP = /(_m)\z/.freeze
   DMAKER_ROLE_REGEXP = /(_d)\z/.freeze
   INDEX_REGEXP = /(_z?\d{2})\z/.freeze
-  
+
   def self.strip_role_string(rn)
     case rn
     when MASTER_ROLE_REGEXP then rn.sub(MASTER_ROLE_REGEXP, '')
