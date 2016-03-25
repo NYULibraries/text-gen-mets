@@ -48,16 +48,16 @@ module Structure
       dmakers.each do |dmaker|
         slot_name = dmaker_to_slot_name(dmaker)
         slot = slots[slot_name]
-        raise(RuntimeError, "missing slot for #{slot_name}") unless slot
+        raise "missing slot for #{dmaker.path}" unless slot
         slot.add(dmaker)
       end
     end
 
     def load_masters
       masters.each do |master|
-        slot_name = master_to_slot_name(master)
-        slot = slots[slot_name]
-        raise(RuntimeError, "missing slot for #{slot_name}") unless slot
+        slot = slots[master_to_slot_name(master)] ||
+               slots[master_to_slot_name_parent(master)]
+        raise "missing slot for #{master.path}" unless slot
         slot.add(master)
       end
     end
@@ -68,6 +68,10 @@ module Structure
 
     def master_to_slot_name(master)
       master.rootname_minus_role
+    end
+
+    def master_to_slot_name_parent(master)
+      master.rootname_minus_index_and_role
     end
   end
 end
