@@ -14,7 +14,9 @@ module Structure
       @masters = ['j/k/x_m.tif', 'j/k/y_m.tif'].collect { |m| Filename.new(m) }
       @masters_oversized = ['j/k/x_m.tif',
                             'j/k/y_z01_m.tif',
-                            'j/k/y_z02_m.tif'].collect { |m| Filename.new(m) }
+                            'j/k/y_z02_m.tif',
+                            'j/k/y_z03_m.tif',
+                            'j/k/y_z04_m.tif'].collect { |m| Filename.new(m) }
 
       @slots = begin
                      a = {}
@@ -47,6 +49,8 @@ module Structure
                       a[dmakers[0].rootname_minus_role].add(masters_oversized[0])
                       a[dmakers[1].rootname_minus_role].add(masters_oversized[1])
                       a[dmakers[1].rootname_minus_role].add(masters_oversized[2])
+                      a[dmakers[1].rootname_minus_role].add(masters_oversized[3])
+                      a[dmakers[1].rootname_minus_role].add(masters_oversized[4])
                       a
                     end
     end
