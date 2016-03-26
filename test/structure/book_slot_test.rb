@@ -3,8 +3,41 @@ module Structure
   # test class for BookSlot
   class BookSlotTest < MiniTest::Unit::TestCase
     attr_accessor :slot, :slot_with_label, :master, :dmaker, :master2, :dmaker2,
-                  :dmaker3, :unknown, :slot_multiple, :slot_multiple2
+                  :dmaker3, :dmaker4, :master4_01, :master4_02,
+                  :unknown, :slot_valid_multiple
 
+    def slot_multiple
+      @slot_multiple ||= begin
+                           x = Structure::BookSlot.new
+                           x.add(dmaker)
+                           x.add(master)
+                           x.add(dmaker2)
+                           x.add(master2)
+                           x
+                         end
+    end
+
+    def slot_multiple2
+      @slot_multiple2 ||= begin
+                           x = Structure::BookSlot.new
+                           x.add(dmaker)
+                           x.add(master)
+                           x.add(dmaker2)
+                           x.add(master2)
+                           x
+                         end
+    end
+
+    def slot_valid_multiple
+      @slot_valid_multiple ||= begin
+                                 x = Structure::BookSlot.new
+                                 x.add(dmaker4)
+                                 x.add(master4_01)
+                                 x.add(master4_02)
+                                 x
+                               end
+    end
+    
     def setup
       @slot = Structure::BookSlot.new
       @slot_with_label = Structure::BookSlot.new(label: 'howdy!',
@@ -14,18 +47,9 @@ module Structure
       @master2 = Filename.new('b_m.tif')
       @dmaker2 = Filename.new('b_d.tif')
       @dmaker3 = Filename.new('c_d.tif')
-
-      @slot_multiple = Structure::BookSlot.new
-      slot_multiple.add(dmaker)
-      slot_multiple.add(master)
-      slot_multiple.add(dmaker2)
-      slot_multiple.add(master2)
-
-      @slot_multiple2 = Structure::BookSlot.new
-      slot_multiple2.add(dmaker)
-      slot_multiple2.add(master)
-      slot_multiple2.add(dmaker2)
-      slot_multiple2.add(master2)
+      @dmaker4 = Filename.new('x_d.tif')
+      @master4_01 = Filename.new('x_01_m.tif')
+      @master4_02 = Filename.new('x_02_m.tif')
 
       @unknown = Filename.new('c_blerf.xyz')
     end
@@ -105,8 +129,12 @@ module Structure
       refute slot_multiple == slot_multiple2
     end
 
-    def test_valid?
+    def test_valid_invalid_state_multiple_dmakers
       refute slot_multiple.valid?
+    end
+
+    def test_valid_valid_state_mulitple_masters
+      assert slot_valid_multiple.valid?
     end
   end
 end
