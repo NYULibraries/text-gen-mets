@@ -3,8 +3,8 @@ module Structure
   # test class for BookSlot
   class BookSlotTest < MiniTest::Unit::TestCase
     attr_accessor :slot, :slot_with_label, :master, :dmaker, :master2, :dmaker2,
-                  :dmaker3, :dmaker4, :master4_01, :master4_02,
-                  :unknown, :slot_valid_multiple
+                  :dmaker3, :dmaker4, :master4, :master4_01, :master4_02,
+                  :unknown
 
     def slot_multiple
       @slot_multiple ||= begin
@@ -37,7 +37,44 @@ module Structure
                                  x
                                end
     end
-    
+
+    def slot_valid_one_to_one
+      @slot_valid_multiple ||= begin
+                                 x = Structure::BookSlot.new
+                                 x.add(dmaker4)
+                                 x.add(master4)
+                                 x
+                               end
+    end
+
+    def slot_invalid_multiple_dmakers
+      @slot_invalid_multiple_dmakers ||= begin
+                                           x = Structure::BookSlot.new
+                                           x.add(dmaker)
+                                           x.add(master)
+                                           x.add(dmaker2)
+                                           x
+                                         end
+    end
+
+    def slot_invalid_multiple_dmakers
+      @slot_invalid_multiple_dmakers ||= begin
+                                           x = Structure::BookSlot.new
+                                           x.add(dmaker)
+                                           x.add(master)
+                                           x.add(dmaker2)
+                                           x
+                                         end
+    end
+
+    def slot_invalid_missing_dmaker
+      @slot_invalid_multiple_dmaker ||= begin
+                                          x = Structure::BookSlot.new
+                                          x.add(master)
+                                          x
+                                        end
+    end
+
     def setup
       @slot = Structure::BookSlot.new
       @slot_with_label = Structure::BookSlot.new(label: 'howdy!',
@@ -48,6 +85,7 @@ module Structure
       @dmaker2 = Filename.new('b_d.tif')
       @dmaker3 = Filename.new('c_d.tif')
       @dmaker4 = Filename.new('x_d.tif')
+      @master4 = Filename.new('x_m.tif')
       @master4_01 = Filename.new('x_01_m.tif')
       @master4_02 = Filename.new('x_02_m.tif')
 
@@ -130,11 +168,19 @@ module Structure
     end
 
     def test_valid_invalid_state_multiple_dmakers
-      refute slot_multiple.valid?
+      refute slot_invalid_multiple_dmakers.valid?
+    end
+
+    def test_valid_invalid_state_missing_dmaker
+      refute slot_invalid_missing_dmaker.valid?
     end
 
     def test_valid_valid_state_mulitple_masters
       assert slot_valid_multiple.valid?
+    end
+
+    def test_valid_valid_state_one_to_one
+      assert slot_valid_one_to_one.valid?
     end
   end
 end

@@ -28,7 +28,7 @@ module Structure
     VALID_ROLES.each do |sym|
       # note pluralized form of role, e.g., #dmakers
       define_method("#{sym}s") do
-        filenames[sym]
+        filenames[sym] ||= []
       end
     end
 
