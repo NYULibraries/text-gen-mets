@@ -4,16 +4,18 @@ require 'test_helper'
 class FilenameTest < MiniTest::Unit::TestCase
 
   attr_accessor :filename, :filename_no_ext, :filename_unknown_role,
-                :dmaker, :dmaker2, :master_oversized,
-                :master_oversized_normalized
+                :dmaker, :dmaker2, :master_oversized, :dmaker_front_matter,
+                :master_oversized_normalized, :dmaker_front_matter_oversized
 
   def setup
     @filename         = Filename.new('a/b/c/foo_m.tif')
     @filename_no_ext  = Filename.new('d/e/f/bar_d')
     @filename_unknown_role = Filename.new('x/y/z/baz')
 
+    @dmaker_front_matter = Filename.new('nyu_aco000003_afr01_d.tif')
     @dmaker  = Filename.new('x/y/z/a_d.tif')
     @dmaker2 = Filename.new('d/e/f/b_d.tif')
+    @dmaker_front_matter_oversized = Filename.new('nyu_aco000004_afr01_z01_d.tif')
 
     @master_oversized = Filename.new('d/e/f/q_01_m.tif')
     @master_oversized_normalized = Filename.new('d/e/f/q_z01_m.tif')
@@ -122,5 +124,20 @@ class FilenameTest < MiniTest::Unit::TestCase
   def test_rootname_minus_index_and_role_filename_has_no_index
     expected = 'a'
     assert_equal expected, dmaker.rootname_minus_index_and_role
+  end
+
+  def test_rootname_minus_role_front_matter
+    expected = 'nyu_aco000003_afr01'
+    assert_equal expected, dmaker_front_matter.rootname_minus_role
+  end
+
+  def test_rootname_minus_index_and_role_front_matter
+    expected = 'nyu_aco000003_afr01'
+    assert_equal expected, dmaker_front_matter.rootname_minus_index_and_role
+  end
+
+  def test_rootname_minus_index_and_role_front_matter_oversized
+    expected = 'nyu_aco000004_afr01'
+    assert_equal expected, dmaker_front_matter_oversized.rootname_minus_index_and_role
   end
 end
