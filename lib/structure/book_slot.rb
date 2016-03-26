@@ -38,5 +38,17 @@ module Structure
       result &&= (self.name  == other.name)
       result &&= (self.filenames == other.filenames)
     end
+
+    def valid?
+      assert_d_m_count
+    end
+
+    private
+
+    def assert_d_m_count
+      result = true
+      result &&= (dmakers.count == 1)
+      result &&= (masters.count >= 1)
+    end
   end
 end

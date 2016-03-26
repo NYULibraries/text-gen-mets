@@ -104,5 +104,9 @@ module Structure
       slot_multiple2.name = 'foo foo foo'
       refute slot_multiple == slot_multiple2
     end
+
+    def test_valid?
+      refute slot_multiple.valid?
+    end
   end
 end
