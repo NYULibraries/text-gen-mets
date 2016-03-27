@@ -84,6 +84,13 @@ module Structure
       assert_equal(slots, sl.slots)
     end
 
+    def test_default_reversed?
+      args.dmakers = dmakers
+      args.masters = masters
+      sl = Structure::SlotList.new(args)
+      refute sl.reversed?
+    end
+
     def test_oversized_assignment
       args.dmakers = dmakers
       args.masters = masters_oversized

@@ -10,12 +10,14 @@ module Structure
   # if slot not found for master
   class SlotList
     attr_reader :dmakers, :masters, :slot_class
-    attr_accessor :slots
+    attr_accessor :slots, :reverse
+
     def initialize(args)
       @dmakers = args.dmakers
       @masters = args.masters
       @slot_class = args.slot_class
       @slots = {}
+      @reverse = false
 
       raise(ArgumentError, 'dmakers cannot be nil') unless dmakers
       raise(ArgumentError, 'masters cannot be nil') unless masters
@@ -31,6 +33,10 @@ module Structure
 
     def valid?
       slots.values.inject { |a = true, e| a && e.valid? }
+    end
+
+    def reversed?
+      reverse
     end
 
     private
