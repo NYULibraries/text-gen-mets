@@ -90,5 +90,19 @@ module Structure
       sl = Structure::SlotList.new(args)
       assert_equal(slots_oversized, sl.slots)
     end
+
+    def test_valid?
+      args.dmakers = dmakers
+      args.masters = masters_oversized
+      sl = Structure::SlotList.new(args)
+      assert sl.valid?
+    end
+
+    def test_not_valid?
+      args.dmakers = dmakers
+      args.masters = [Filename.new('j/k/x_m.tif')]
+      sl = Structure::SlotList.new(args)
+      refute sl.valid?
+    end
   end
 end

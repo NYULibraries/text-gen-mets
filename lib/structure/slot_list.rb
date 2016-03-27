@@ -29,6 +29,10 @@ module Structure
       result
     end
 
+    def valid?
+      slots.values.inject { |a = true, e| a && e.valid? }
+    end
+
     private
 
     def populate_slots
