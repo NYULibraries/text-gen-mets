@@ -3,8 +3,7 @@ require 'ostruct'
 module Structure
   # test class for SlotList
   class SlotListTest < MiniTest::Test
-    attr_accessor :args, :dmakers, :masters,
-                  :masters_oversized, :slots_oversized
+    attr_accessor :args, :dmakers, :masters, :masters_oversized
 
     def slots
       @slots ||= begin
@@ -20,16 +19,33 @@ module Structure
     end
 
     def slots1
-          @slots1 ||= begin
-                      a = {}
-                      dmakers.each_index do |i|
-                        slot_name = dmakers[i].rootname_minus_role
-                        a[slot_name] = Structure::BookSlot.new(name: slot_name)
-                        a[slot_name].add(dmakers[i])
-                        a[slot_name].add(masters[i])
-                      end
-                      a
+      @slots1 ||= begin
+                    a = {}
+                    dmakers.each_index do |i|
+                      slot_name = dmakers[i].rootname_minus_role
+                      a[slot_name] = Structure::BookSlot.new(name: slot_name)
+                      a[slot_name].add(dmakers[i])
+                      a[slot_name].add(masters[i])
                     end
+                    a
+                  end
+    end
+
+    def slots_oversized
+      @slots_oversized ||= begin
+                             a = {}
+                             dmakers.each_index do |i|
+                               slot_name = dmakers[i].rootname_minus_role
+                               a[slot_name] = Structure::BookSlot.new(name: slot_name)
+                               a[slot_name].add(dmakers[i])
+                             end
+                             a[dmakers[0].rootname_minus_role].add(masters_oversized[0])
+                             a[dmakers[1].rootname_minus_role].add(masters_oversized[1])
+                             a[dmakers[1].rootname_minus_role].add(masters_oversized[2])
+                             a[dmakers[1].rootname_minus_role].add(masters_oversized[3])
+                             a[dmakers[1].rootname_minus_role].add(masters_oversized[4])
+                             a
+                           end
     end
 
     def setup
@@ -43,21 +59,6 @@ module Structure
                             'j/k/y_z02_m.tif',
                             'j/k/y_z03_m.tif',
                             'j/k/y_z04_m.tif'].collect { |m| Filename.new(m) }
-
-      @slots_oversized = begin
-                      a = {}
-                      dmakers.each_index do |i|
-                        slot_name = dmakers[i].rootname_minus_role
-                        a[slot_name] = Structure::BookSlot.new(name: slot_name)
-                        a[slot_name].add(dmakers[i])
-                      end
-                      a[dmakers[0].rootname_minus_role].add(masters_oversized[0])
-                      a[dmakers[1].rootname_minus_role].add(masters_oversized[1])
-                      a[dmakers[1].rootname_minus_role].add(masters_oversized[2])
-                      a[dmakers[1].rootname_minus_role].add(masters_oversized[3])
-                      a[dmakers[1].rootname_minus_role].add(masters_oversized[4])
-                      a
-                    end
     end
 
     def test_incoming_arguments_slot_class_nil
