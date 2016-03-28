@@ -3,8 +3,21 @@ require 'ostruct'
 module Structure
   # test class for SlotList
   class SlotListTest < MiniTest::Test
-    attr_accessor :args, :dmakers, :masters, :slots, :slots1,
+    attr_accessor :args, :dmakers, :masters, :slots1,
                   :masters_oversized, :slots_oversized
+
+    def slots
+      @slots ||= begin
+                     a = {}
+                     dmakers.each_index do |i|
+                       slot_name = dmakers[i].rootname_minus_role
+                       a[slot_name] = Structure::BookSlot.new(name: slot_name)
+                       a[slot_name].add(dmakers[i])
+                       a[slot_name].add(masters[i])
+                     end
+                     a
+                   end
+    end
 
     def setup
       @args = OpenStruct.new
@@ -18,16 +31,6 @@ module Structure
                             'j/k/y_z03_m.tif',
                             'j/k/y_z04_m.tif'].collect { |m| Filename.new(m) }
 
-      @slots = begin
-                     a = {}
-                     dmakers.each_index do |i|
-                       slot_name = dmakers[i].rootname_minus_role
-                       a[slot_name] = Structure::BookSlot.new(name: slot_name)
-                       a[slot_name].add(dmakers[i])
-                       a[slot_name].add(masters[i])
-                     end
-                     a
-                   end
 
       @slots1 = begin
                       a = {}
@@ -98,6 +101,15 @@ module Structure
       refute sl.reversed?
       sl.reverse!
       assert sl.reversed?
+    end
+
+    def test_reversed_slots
+      args.dmakers = dmakers
+      args.masters = masters
+      sl = Structure::SlotList.new(args)
+      assert_equal(slots, sl.slots)
+      sl.reverse!
+      assert_equal(slots, sl.slots)
     end
 
     def test_oversized_assignment
