@@ -91,6 +91,15 @@ module Structure
       refute sl.reversed?
     end
 
+    def test_reversed!
+      args.dmakers = dmakers
+      args.masters = masters
+      sl = Structure::SlotList.new(args)
+      refute sl.reversed?
+      sl.reverse!
+      assert sl.reversed?
+    end
+
     def test_oversized_assignment
       args.dmakers = dmakers
       args.masters = masters_oversized

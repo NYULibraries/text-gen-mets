@@ -10,7 +10,7 @@ module Structure
   # if slot not found for master
   class SlotList
     attr_reader :dmakers, :masters, :slot_class
-    attr_accessor :slots, :reverse
+    attr_accessor :slots
 
     def initialize(args)
       @dmakers = args.dmakers
@@ -36,7 +36,11 @@ module Structure
     end
 
     def reversed?
-      reverse
+      @reverse
+    end
+
+    def reverse!
+      @reverse = !@reverse
     end
 
     private
