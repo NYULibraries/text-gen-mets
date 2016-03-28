@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version191/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink"
-      xmlns:mods="http://www.loc.gov/mods/v3" OBJID="nyu_aco000003">
+      xmlns:mods="http://www.loc.gov/mods/v3" OBJID="ifa_egypt000061">
   <?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.3"?>
   <metsHdr CREATEDATE="2014-03-25T15:23:42Z" LASTMODDATE="2014-03-25T15:23:42Z" RECORDSTATUS="DRAFT">
     <agent ROLE="DISSEMINATOR" TYPE="ORGANIZATION">
