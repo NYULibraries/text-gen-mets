@@ -31,7 +31,7 @@ class Filename
   end
 
   attr_reader :path, :extension, :rootname, :name, :role, :rootname_minus_role
-  alias to_s path
+  alias to_str path
 
   def initialize(path)
     @path      = path

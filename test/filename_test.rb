@@ -141,8 +141,8 @@ class FilenameTest < MiniTest::Unit::TestCase
     assert_equal expected, dmaker_front_matter_oversized.rootname_minus_index_and_role
   end
 
-  def test_to_s
+  def test_to_str
     expected = 'a/b/c/foo_m.tif'
-    assert_equal expected, filename.to_s
+    assert_equal expected, filename.to_str
   end
 end
