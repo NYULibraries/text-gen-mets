@@ -117,6 +117,14 @@ module Structure
       assert_equal(array, sl.to_a)
     end
 
+    def test_to_a_reversed
+      args.dmakers = dmakers
+      args.masters = masters
+      sl = Structure::SlotList.new(args)
+      sl.reverse!
+      assert_equal(array.reverse, sl.to_a)
+    end
+
     def test_oversized_assignment
       args.dmakers = dmakers
       args.masters = masters_oversized

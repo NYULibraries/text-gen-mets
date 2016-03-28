@@ -44,9 +44,9 @@ module Structure
     end
 
     def to_a
-      slots.values
+      reversed? ? slots.values.reverse : slots.values
     end
-    
+
     private
 
     def populate_slots
