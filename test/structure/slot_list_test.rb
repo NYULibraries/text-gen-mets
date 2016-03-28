@@ -18,6 +18,10 @@ module Structure
                    end
     end
 
+    def array
+      @each ||= slots.values
+    end
+
     def slots1
       @slots1 ||= begin
                     a = {}
@@ -106,13 +110,11 @@ module Structure
       assert sl.reversed?
     end
 
-    def test_reversed_slots
+    def test_to_a
       args.dmakers = dmakers
       args.masters = masters
       sl = Structure::SlotList.new(args)
-      assert_equal(slots, sl.slots)
-      sl.reverse!
-      assert_equal(slots, sl.slots)
+      assert_equal(array, sl.to_a)
     end
 
     def test_oversized_assignment

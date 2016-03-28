@@ -43,6 +43,10 @@ module Structure
       @reverse = !@reverse
     end
 
+    def to_a
+      slots.values
+    end
+    
     private
 
     def populate_slots
