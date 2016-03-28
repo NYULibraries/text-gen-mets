@@ -3,7 +3,7 @@ require 'ostruct'
 module Structure
   # test class for SlotList
   class SlotListTest < MiniTest::Test
-    attr_accessor :args, :dmakers, :masters, :slots1,
+    attr_accessor :args, :dmakers, :masters,
                   :masters_oversized, :slots_oversized
 
     def slots
@@ -19,6 +19,19 @@ module Structure
                    end
     end
 
+    def slots1
+          @slots1 ||= begin
+                      a = {}
+                      dmakers.each_index do |i|
+                        slot_name = dmakers[i].rootname_minus_role
+                        a[slot_name] = Structure::BookSlot.new(name: slot_name)
+                        a[slot_name].add(dmakers[i])
+                        a[slot_name].add(masters[i])
+                      end
+                      a
+                    end
+    end
+
     def setup
       @args = OpenStruct.new
       @args.slot_class = Structure::BookSlot
@@ -31,17 +44,6 @@ module Structure
                             'j/k/y_z03_m.tif',
                             'j/k/y_z04_m.tif'].collect { |m| Filename.new(m) }
 
-
-      @slots1 = begin
-                      a = {}
-                      dmakers.each_index do |i|
-                        slot_name = dmakers[i].rootname_minus_role
-                        a[slot_name] = Structure::BookSlot.new(name: slot_name)
-                        a[slot_name].add(dmakers[i])
-                        a[slot_name].add(masters[i])
-                      end
-                      a
-                    end
       @slots_oversized = begin
                       a = {}
                       dmakers.each_index do |i|
