@@ -31,6 +31,9 @@
 # - emit each portion of the METS document to stdout
 #------------------------------------------------------------------------------
 require 'English'
+require 'ostruct'
+require_relative '../lib/structure'
+require_relative '../lib/filename'
 
 #------------------------------------------------------------------------------
 # XML emit methods:
@@ -181,18 +184,36 @@ def emit_struct_map_inner_div_close
   puts '        </div>'
 end
 
-def emit_struct_map_slot_div(slot_label, order)
-  puts "            <div ID=\"s-#{slot_label}\" ORDER=\"#{order}\"> "
-  puts "                <fptr FILEID=\"f-#{slot_label}_m\"/> "
-  puts "                <fptr FILEID=\"f-#{slot_label}_d\"/> "
+def emit_struct_map_slot_div(slot, order)
+  puts "            <div ID=\"s-#{slot.name}\" ORDER=\"#{order}\"> "
+  slot.masters.each do |m|
+    puts "                <fptr FILEID=\"f-#{m.rootname}\"/> "
+  end
+  slot.dmakers.each do |d|
+    puts "                <fptr FILEID=\"f-#{d.rootname}\"/> "
+  end
   puts '            </div> '
 end
 
+# def emit_struct_map_slot_div(slot_label, order)
+#   puts "            <div ID=\"s-#{slot_label}\" ORDER=\"#{order}\"> "
+#   puts "                <fptr FILEID=\"f-#{slot_label}_m\"/> "
+#   puts "                <fptr FILEID=\"f-#{slot_label}_d\"/> "
+#   puts '            </div> '
+# end
+
 def emit_struct_map_slot_divs(slot_list)
-  slot_list.each_index do |i|
-    emit_struct_map_slot_div(slot_list[i], i + 1)
+  array = slot_list.to_a
+  array.each_index do |i|
+    emit_struct_map_slot_div(array[i], i + 1)
   end
 end
+
+# def emit_struct_map_slot_divs(slot_list)
+#   slot_list.each_index do |i|
+#     emit_struct_map_slot_div(slot_list[i], i + 1)
+#   end
+# end
 
 #------------------------------------------------------------------------------
 # utility / validation / extraction methods:
@@ -288,13 +309,21 @@ def validate_and_extract_args(args_in)
   # assemble file lists
   master_files = get_master_files(args_out[:dir])
   dmaker_files = get_dmaker_files(args_out[:dir])
-  slot_list    = gen_slot_list(args_out[:dir])
+
+  args = OpenStruct.new
+  args.masters = master_files
+  args.dmakers = dmaker_files
+  args.slot_class = Structure::BookSlot
+
+  slot_list = Structure::SlotList.new(args)
+  # slot_list    = gen_slot_list(args_out[:dir])
 
   # reverse slot list if read order and scan order differ
   slot_list.reverse! if args_out[:scan_order] != args_out[:read_order]
 
   begin
-    assert_master_dmaker_match!(master_files, dmaker_files)
+#    assert_master_dmaker_match!(master_files, dmaker_files)
+    raise 'invalid slot list' unless slot_list.valid?
   rescue StandardError => e
     errors << "#{e.message}"
   end
@@ -321,18 +350,26 @@ def validate_and_extract_args(args_in)
 end
 
 def get_master_files(dir)
-  get_files(dir, '*_m.tif', /.+_ztarget_m.tif/)
+  get_files(dir, '*_m.tif', /.+_ztarget_m.tif/).collect { |f| Filename.new(f) }
 end
 
 def get_dmaker_files(dir)
-  get_files(dir, '*_d.tif')
+  get_files(dir, '*_d.tif').collect { |f| Filename.new(f) }
 end
 
-def gen_slot_list(dir)
-  # d files map one-to-one to the pages in the text
-  slots = get_files(dir, '*_d.tif')
-  slots.collect { |s| s.sub(/_d.tif\z/,'') }
-end
+# def get_master_files(dir)
+#   get_files(dir, '*_m.tif', /.+_ztarget_m.tif/)
+# end
+
+# def get_dmaker_files(dir)
+#   get_files(dir, '*_d.tif')
+# end
+
+# def gen_slot_list(dir)
+#   # d files map one-to-one to the pages in the text
+#   slots = get_files(dir, '*_d.tif')
+#   slots.collect { |s| s.sub(/_d.tif\z/,'') }
+# end
 
 def assert_master_dmaker_match!(m, d)
   # assert that all slots have a dmaker file
@@ -343,7 +380,7 @@ def assert_master_dmaker_match!(m, d)
   # if not, see if there is a master file with sub components
   # assert that all dmaker files have associated master files
   # assert that all master files have associated dmaker files
-  # 
+  #
   fail 'mismatch in master / dmaker file count' unless m.length == d.length
   errors = []
   m.each_index do |i|
