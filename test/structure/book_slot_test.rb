@@ -57,16 +57,6 @@ module Structure
                                          end
     end
 
-    def slot_invalid_multiple_dmakers
-      @slot_invalid_multiple_dmakers ||= begin
-                                           x = Structure::BookSlot.new
-                                           x.add(dmaker)
-                                           x.add(master)
-                                           x.add(dmaker2)
-                                           x
-                                         end
-    end
-
     def slot_invalid_missing_dmaker
       @slot_invalid_multiple_dmaker ||= begin
                                           x = Structure::BookSlot.new
