@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Time-stamp: <2016-01-04 11:43:48 jgp>
+# Time-stamp: <2016-03-29 10:02:12 jgp>
 #------------------------------------------------------------------------------
 # script generates METS files for NYU DLTS text objects
 #
@@ -132,7 +132,7 @@ end
 
 def emit_file(fname)
   match = /(.+)\.tif\z/.match(fname)
-  fail "badly formed filename #{fname}" unless match
+  raise "badly formed filename #{fname}" unless match
   id = match[1]
   puts %(            <file ID="f-#{id}" MIMETYPE="image/tiff">)
   puts %(                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="#{fname}"/>)
