@@ -1,7 +1,7 @@
 require 'test_helper'
 require 'open3'
 
-class TestTextGenMetsNoEocNoTarget < MiniTest::Unit::TestCase
+class TestTextGenMetsNoEocNoTarget < MiniTest::Test
 
   COMMAND = 'ruby bin/text-gen-mets-no-eoc-no-target.rb'
 
@@ -78,8 +78,6 @@ class TestTextGenMetsNoEocNoTarget < MiniTest::Unit::TestCase
     assert_match(/missing or too many files ending in _mods\.xml/, e)
     assert_match(/missing or too many files ending in _marcxml\.xml/, e)
     assert_match(/missing or too many files ending in _metsrights\.xml/, e)
-    # assert_match(/missing or too many files ending in _eoc\.csv/, e)
-    # assert_match(/missing or too many files ending in _ztarget_m\.tif/, e)
   end
 
   def test_mismatched_master_dmaker_file_count
