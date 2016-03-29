@@ -1,7 +1,7 @@
 require 'test_helper'
 require 'open3'
 
-class TestTextGenMetsNoEoc < MiniTest::Unit::TestCase
+class TestTextGenMetsNoEoc <  Minitest::Test
 
   COMMAND = 'ruby bin/text-gen-mets-no-eoc.rb'
 
@@ -72,7 +72,6 @@ class TestTextGenMetsNoEoc < MiniTest::Unit::TestCase
     assert_match(/missing or too many files ending in _mods\.xml/, e)
     assert_match(/missing or too many files ending in _marcxml\.xml/, e)
     assert_match(/missing or too many files ending in _metsrights\.xml/, e)
-#    assert_match(/missing or too many files ending in _eoc\.csv/, e)
     assert_match(/missing or too many files ending in _ztarget_m\.tif/, e)
   end
 
@@ -80,14 +79,14 @@ class TestTextGenMetsNoEoc < MiniTest::Unit::TestCase
     o, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' #{BAD_M_D_COUNT_TEXT}")
     assert(s.exitstatus != 0)
     assert(o == '')
-    assert_match(/mismatch in master \/ dmaker file count/, e)
+    assert_match(/invalid slot list/, e)
   end
 
   def test_mismatched_master_dmaker_file_prefixes
     o, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' #{BAD_M_D_PREFIX_TEXT}")
     assert(s.exitstatus != 0)
     assert(o == '')
-    assert_match(/prefix mismatch:/, e)
+    assert_match(/missing slot/, e)
   end
 
   def test_output_with_valid_text
