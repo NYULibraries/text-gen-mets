@@ -1,7 +1,7 @@
 require 'test_helper'
 require 'open3'
 
-class TestTextGenMets < MiniTest::Unit::TestCase
+class TestTextGenMets < MiniTest::Test
 
   COMMAND = 'ruby bin/text-gen-mets.rb'
 
