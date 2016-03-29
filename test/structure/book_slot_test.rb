@@ -1,7 +1,7 @@
 require 'test_helper'
 module Structure
   # test class for BookSlot
-  class BookSlotTest < MiniTest::Unit::TestCase
+  class BookSlotTest < MiniTest::Test
     attr_accessor :slot, :slot_with_label, :master, :dmaker, :master2, :dmaker2,
                   :dmaker3, :dmaker4, :master4, :master4_01, :master4_02,
                   :unknown
