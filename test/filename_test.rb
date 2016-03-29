@@ -1,7 +1,6 @@
 require 'test_helper'
 
-# test class for Filename
-class FilenameTest < MiniTest::Unit::TestCase
+class FilenameTest < MiniTest::Test
 
   attr_accessor :filename, :filename_no_ext, :filename_unknown_role,
                 :dmaker, :dmaker2, :master_oversized, :dmaker_front_matter,
