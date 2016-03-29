@@ -195,25 +195,12 @@ def emit_struct_map_slot_div(slot, order)
   puts '            </div> '
 end
 
-# def emit_struct_map_slot_div(slot_label, order)
-#   puts "            <div ID=\"s-#{slot_label}\" ORDER=\"#{order}\"> "
-#   puts "                <fptr FILEID=\"f-#{slot_label}_m\"/> "
-#   puts "                <fptr FILEID=\"f-#{slot_label}_d\"/> "
-#   puts '            </div> '
-# end
-
 def emit_struct_map_slot_divs(slot_list)
   array = slot_list.to_a
   array.each_index do |i|
     emit_struct_map_slot_div(array[i], i + 1)
   end
 end
-
-# def emit_struct_map_slot_divs(slot_list)
-#   slot_list.each_index do |i|
-#     emit_struct_map_slot_div(slot_list[i], i + 1)
-#   end
-# end
 
 #------------------------------------------------------------------------------
 # utility / validation / extraction methods:
@@ -310,23 +297,21 @@ def validate_and_extract_args(args_in)
   master_files = get_master_files(args_out[:dir])
   dmaker_files = get_dmaker_files(args_out[:dir])
 
+  slot_list = ''
   args = OpenStruct.new
   args.masters = master_files
   args.dmakers = dmaker_files
   args.slot_class = Structure::BookSlot
 
-  slot_list = Structure::SlotList.new(args)
-  # slot_list    = gen_slot_list(args_out[:dir])
+  begin
+    slot_list = Structure::SlotList.new(args)
+    raise 'invalid slot list' unless slot_list.valid?
+  rescue StandardError => e
+    errors << e.message.to_s
+  end
 
   # reverse slot list if read order and scan order differ
   slot_list.reverse! if args_out[:scan_order] != args_out[:read_order]
-
-  begin
-#    assert_master_dmaker_match!(master_files, dmaker_files)
-    raise 'invalid slot list' unless slot_list.valid?
-  rescue StandardError => e
-    errors << "#{e.message}"
-  end
 
   args_out[:master_files] = master_files
   args_out[:dmaker_files] = dmaker_files
@@ -356,57 +341,6 @@ end
 def get_dmaker_files(dir)
   get_files(dir, '*_d.tif').collect { |f| Filename.new(f) }
 end
-
-# def get_master_files(dir)
-#   get_files(dir, '*_m.tif', /.+_ztarget_m.tif/)
-# end
-
-# def get_dmaker_files(dir)
-#   get_files(dir, '*_d.tif')
-# end
-
-# def gen_slot_list(dir)
-#   # d files map one-to-one to the pages in the text
-#   slots = get_files(dir, '*_d.tif')
-#   slots.collect { |s| s.sub(/_d.tif\z/,'') }
-# end
-
-def assert_master_dmaker_match!(m, d)
-  # assert that all slots have a dmaker file
-  # assert that all slots have at least one master file
-  # algorithm:
-  # for each dmaker
-  # see if there is a matching master file
-  # if not, see if there is a master file with sub components
-  # assert that all dmaker files have associated master files
-  # assert that all master files have associated dmaker files
-  #
-  fail 'mismatch in master / dmaker file count' unless m.length == d.length
-  errors = []
-  m.each_index do |i|
-    m_base = m[i].sub(/_m.tif\z/,'')
-    d_base = d[i].sub(/_d.tif\z/,'')
-    errors << "prefix mismatch: #{m[i]} #{d[i]}" unless m_base == d_base
-  end
-  unless errors.empty?
-    estr = errors.join("\n")
-    fail "mismatches in master / dmaker files:\n #{estr}"
-  end
-end
-
-# def assert_master_dmaker_match!(m, d)
-#   fail 'mismatch in master / dmaker file count' unless m.length == d.length
-#   errors = []
-#   m.each_index do |i|
-#     m_base = m[i].sub(/_m.tif\z/,'')
-#     d_base = d[i].sub(/_d.tif\z/,'')
-#     errors << "prefix mismatch: #{m[i]} #{d[i]}" unless m_base == d_base
-#   end
-#   unless errors.empty?
-#     estr = errors.join("\n")
-#     fail "mismatches in master / dmaker files:\n #{estr}"
-#   end
-# end
 
 #------------------------------------------------------------------------------
 # MAIN
