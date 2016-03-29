@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Time-stamp: <2014-12-02 14:49:13 pawletko>
+# Time-stamp: <2016-03-29 11:03:05 jgp>
 #------------------------------------------------------------------------------
 #
 # NOTE: THIS CODE DOES ***NOT*** REQUIRE THAT AN EOC    FILE IS PRESENT
@@ -32,6 +32,10 @@
 # - assert that all required files are present
 # - emit each portion of the METS document to stdout
 #------------------------------------------------------------------------------
+require 'English'
+require 'ostruct'
+require_relative '../lib/structure'
+require_relative '../lib/filename'
 
 #------------------------------------------------------------------------------
 # XML emit methods:
@@ -39,6 +43,7 @@
 def emit_template_version
   puts '<?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.3"?>'
 end
+
 def emit_xml_header
   puts <<'HERE_DOC_EOF'
 <?xml version="1.0" encoding="UTF-8"?>
@@ -51,17 +56,17 @@ def emit_mets_open(obj_id)
     xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version191/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink"
   HERE_DOC_EOF
 
-  puts %{    xmlns:mods="http://www.loc.gov/mods/v3" OBJID="#{obj_id}">}
+  puts %(    xmlns:mods="http://www.loc.gov/mods/v3" OBJID="#{obj_id}">)
 end
 
 def emit_mets_close
-  puts "</mets>"
+  puts '</mets>'
 end
 
-def emit_mets_hdr(create  = Time.now.utc.strftime("%FT%TZ"),
-                  lastmod = Time.now.utc.strftime("%FT%TZ"),
-                  status  = "DRAFT")
-  puts %{  <metsHdr CREATEDATE="#{create}" LASTMODDATE="#{lastmod}" RECORDSTATUS="#{status}">}
+def emit_mets_hdr(create  = Time.now.utc.strftime('%FT%TZ'),
+                  lastmod = Time.now.utc.strftime('%FT%TZ'),
+                  status  = 'DRAFT')
+  puts %(  <metsHdr CREATEDATE="#{create}" LASTMODDATE="#{lastmod}" RECORDSTATUS="#{status}">)
   puts <<-HERE_DOC_EOF
         <agent ROLE="DISSEMINATOR" TYPE="ORGANIZATION">
             <name>New York University Libraries</name>
@@ -74,66 +79,66 @@ def emit_mets_hdr(create  = Time.now.utc.strftime("%FT%TZ"),
 end
 
 def emit_dmd_marcxml(fname)
-  puts %{    <dmdSec ID="dmd-00000001">}
-  puts %{        <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="MARCXML" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{    </dmdSec>}
+  puts %(    <dmdSec ID="dmd-00000001">)
+  puts %(        <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="MARCXML" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(    </dmdSec>)
 end
 
 def emit_dmd_mods(fname)
-  puts %{    <dmdSec ID="dmd-00000002">}
-  puts %{        <mdRef LOCTYPE="URL" MDTYPE="MODS" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{    </dmdSec>}
+  puts %(    <dmdSec ID="dmd-00000002">)
+  puts %(        <mdRef LOCTYPE="URL" MDTYPE="MODS" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(    </dmdSec>)
 end
 
 def emit_amd_sec_open
-  puts %Q{    <amdSec ID="amd-00000001">}
+  puts '    <amdSec ID="amd-00000001">'
 end
 
 def emit_amd_sec_close
-  puts "    </amdSec>"
+  puts '    </amdSec>'
 end
 
 def emit_rights_md(fname)
-  puts %{        <rightsMD ID="rmd-00000001">}
-  puts %{           <mdRef LOCTYPE="URL" MDTYPE="METSRIGHTS" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{        </rightsMD>}
+  puts %(        <rightsMD ID="rmd-00000001">)
+  puts %(           <mdRef LOCTYPE="URL" MDTYPE="METSRIGHTS" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(        </rightsMD>)
 end
 
 def emit_digiprov_target(fname)
-  puts %{        <digiprovMD ID="dpmd-00000001">}
-  puts %{              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="CALIBRATION-TARGET-IMAGE" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{        </digiprovMD>}
+  puts %(        <digiprovMD ID="dpmd-00000001">)
+  puts %(              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="CALIBRATION-TARGET-IMAGE" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(        </digiprovMD>)
 end
 
 def emit_digiprov_eoc(fname)
-  puts %{        <digiprovMD ID="dpmd-00000002">}
-  puts %{              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{        </digiprovMD>}
+  puts %(        <digiprovMD ID="dpmd-00000002">)
+  puts %(              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(        </digiprovMD>)
 end
 
 def emit_file_sec_open
-  puts %Q{    <fileSec ID="fsec-00000001">}
+  puts '    <fileSec ID="fsec-00000001">'
 end
 
 def emit_file_sec_close
-  puts "    </fileSec>"
+  puts '    </fileSec>'
 end
 
 def emit_file_grp_master_open
-  puts %{        <fileGrp ID="fg-master" USE="MASTER">}
+  puts %(        <fileGrp ID="fg-master" USE="MASTER">)
 end
 
 def emit_file_grp_dmaker_open
-  puts %{        <fileGrp ID="fg-dmaker" USE="DMAKER">}
+  puts %(        <fileGrp ID="fg-dmaker" USE="DMAKER">)
 end
 
 def emit_file(fname)
   match = /(.+)\.tif\z/.match(fname)
   raise "badly formed filename #{fname}" unless match
   id = match[1]
-  puts %{            <file ID="f-#{id}" MIMETYPE="image/tiff">}
-  puts %{                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="#{fname}"/>}
-  puts %{            </file>}
+  puts %(            <file ID="f-#{id}" MIMETYPE="image/tiff">)
+  puts %(                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="#{fname}"/>)
+  puts %(            </file>)
 end
 
 def emit_files(file_list)
@@ -154,43 +159,48 @@ def get_files(dir, pattern, exclude = nil)
 end
 
 def emit_file_grp_close
-  puts %{        </fileGrp>}
+  puts '        </fileGrp>'
 end
 
 def emit_struct_map_open(h)
-  puts %|    <structMap ID="smd-00000001" TYPE="#{h[:se_type]} BINDING_ORIENTATION:#{h[:binding]} SCAN_ORDER:#{h[:scan_order]} READ_ORDER:#{h[:read_order]}"> |
+  puts %(    <structMap ID="smd-00000001" TYPE="#{h[:se_type]} BINDING_ORIENTATION:#{h[:binding]} SCAN_ORDER:#{h[:scan_order]} READ_ORDER:#{h[:read_order]}"> )
 end
 
 def emit_struct_map_close
-  puts %|    </structMap>|
+  puts '    </structMap>'
 end
 
 def emit_struct_map_div_open
-  puts "      <div>"
+  puts '      <div>'
 end
 
 def emit_struct_map_div_close
-  puts "      </div>"
+  puts '      </div>'
 end
 
 def emit_struct_map_inner_div_open
-  puts %{        <div TYPE="INTELLECTUAL_ENTITY" ID="s-ie-00000001" DMDID="dmd-00000001 dmd-00000002" ADMID="rmd-00000001">}
+  puts %(        <div TYPE="INTELLECTUAL_ENTITY" ID="s-ie-00000001" DMDID="dmd-00000001 dmd-00000002" ADMID="rmd-00000001">)
 end
 
 def emit_struct_map_inner_div_close
-  puts %{        </div>}
+  puts '        </div>'
 end
 
-def emit_struct_map_slot_div(slot_label, order)
-  puts "            <div ID=\"s-#{slot_label}\" ORDER=\"#{order}\"> "
-  puts "                <fptr FILEID=\"f-#{slot_label}_m\"/> "
-  puts "                <fptr FILEID=\"f-#{slot_label}_d\"/> "
-  puts "            </div> "
+def emit_struct_map_slot_div(slot, order)
+  puts "            <div ID=\"s-#{slot.name}\" ORDER=\"#{order}\"> "
+  slot.masters.each do |m|
+    puts "                <fptr FILEID=\"f-#{m.rootname}\"/> "
+  end
+  slot.dmakers.each do |d|
+    puts "                <fptr FILEID=\"f-#{d.rootname}\"/> "
+  end
+  puts '            </div> '
 end
 
 def emit_struct_map_slot_divs(slot_list)
-  slot_list.each_index do |i|
-    emit_struct_map_slot_div(slot_list[i], i + 1)
+  array = slot_list.to_a
+  array.each_index do |i|
+    emit_struct_map_slot_div(array[i], i + 1)
   end
 end
 
@@ -230,13 +240,12 @@ def get_md_file_inventory(dir)
   fhash
 end
 
-
 def print_usage
-  $stderr.puts "Usage: #{$0} <object id> <source entity type> " +
-    "<binding orientation> <scan order> <read order> " +
-    "<path-to-text dir>"
-  $stderr.puts "   e.g., "
-  $stderr.puts "   ruby #{$0} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT'  /content/prod/rstar/content/nyu/aco/wip/se/nyu_aco000003/data > foo_mets.xml"
+  $stderr.puts "Usage: #{$PROGRAM_NAME} <object id> <source entity type> " \
+    '<binding orientation> <scan order> <read order> ' \
+    '<path-to-text dir>'
+  $stderr.puts '   e.g., '
+  $stderr.puts "   ruby #{$PROGRAM_NAME} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT'  /content/prod/rstar/content/nyu/aco/wip/se/nyu_aco000003/data > foo_mets.xml"
 end
 
 #------------------------------------------------------------------------------
@@ -271,11 +280,10 @@ def validate_and_extract_args(args_in)
   # key:    key   for          args_out hash
   # values: controlled vocabulary against which to validate
   # msg:    text for error message
-  [{idx: 1, key: :se_type,    values: valid_se_types,    msg: "se type"},
-   {idx: 2, key: :binding,    values: valid_bindings,    msg: "binding orientation"},
-   {idx: 3, key: :scan_order, values: valid_scan_orders, msg: "scan order"},
-   {idx: 4, key: :read_order, values: valid_read_orders, msg: "read order"}].each do |x|
-
+  [{ idx: 1, key: :se_type,    values: valid_se_types,    msg: "se type" },
+   { idx: 2, key: :binding,    values: valid_bindings,    msg: "binding orientation" },
+   { idx: 3, key: :scan_order, values: valid_scan_orders, msg: "scan order" },
+   { idx: 4, key: :read_order, values: valid_read_orders, msg: "read order" }].each do |x|
     # extract the candidate value
     candidate = args_in[x[:idx]]
 
@@ -296,16 +304,25 @@ def validate_and_extract_args(args_in)
     exit 1
   end
 
-
   # assemble file lists
   master_files = get_master_files(args_out[:dir])
   dmaker_files = get_dmaker_files(args_out[:dir])
-  slot_list    = gen_slot_list(args_out[:dir])
+
+  slot_list = ''
+  args = OpenStruct.new
+  args.masters = master_files
+  args.dmakers = dmaker_files
+  args.slot_class = Structure::BookSlot
+
   begin
-    assert_master_dmaker_match!(master_files, dmaker_files)
-  rescue Exception => e
-    errors << "#{e.message}"
+    slot_list = Structure::SlotList.new(args)
+    raise 'invalid slot list' unless slot_list.valid?
+  rescue StandardError => e
+    errors << e.message.to_s
   end
+
+  # reverse slot list if read order and scan order differ
+  slot_list.reverse! if args_out[:scan_order] != args_out[:read_order]
 
   args_out[:master_files] = master_files
   args_out[:dmaker_files] = dmaker_files
@@ -328,35 +345,13 @@ def validate_and_extract_args(args_in)
   args_out
 end
 
-
 def get_master_files(dir)
-  get_files(dir, '*_m.tif', /.+_ztarget_m.tif/)
+  get_files(dir, '*_m.tif', /.+_ztarget_m.tif/).collect { |f| Filename.new(f) }
 end
 
 def get_dmaker_files(dir)
-  get_files(dir, '*_d.tif')
+  get_files(dir, '*_d.tif').collect { |f| Filename.new(f) }
 end
-
-def gen_slot_list(dir)
-  # d files map one-to-one to the pages in the text
-  slots = get_files(dir, '*_d.tif')
-  slots.collect {|s| s.sub(/_d.tif\z/,'')}
-end
-
-def assert_master_dmaker_match!(m, d)
-  raise "mismatch in master / dmaker file count" unless m.length == d.length
-  errors = []
-  m.each_index do |i|
-    m_base = m[i].sub(/_m.tif\z/,'')
-    d_base = d[i].sub(/_d.tif\z/,'')
-    errors << "prefix mismatch: #{m[i]} #{d[i]}" unless m_base == d_base
-  end
-  unless errors.empty?
-    estr = errors.join("\n")
-    raise "mismatches in master / dmaker files:\n #{estr}"
-  end
-end
-
 
 #------------------------------------------------------------------------------
 # MAIN
@@ -372,7 +367,6 @@ emit_dmd_marcxml(md_files[:marcxml])
 emit_dmd_mods(md_files[:mods])
 emit_amd_sec_open
 emit_rights_md(md_files[:metsrights])
-#emit_digiprov_target(md_files[:target])
 emit_amd_sec_close
 emit_file_sec_open
 emit_file_grp_master_open

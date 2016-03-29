@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version191/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:mods="http://www.loc.gov/mods/v3" OBJID="ifa_egypt000061">
+  <?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.3"?>
+  <metsHdr CREATEDATE="2014-03-25T15:23:42Z" LASTMODDATE="2014-03-25T15:23:42Z" RECORDSTATUS="DRAFT">
+    <agent ROLE="DISSEMINATOR" TYPE="ORGANIZATION">
+      <name>New York University Libraries</name>
+    </agent>
+    <agent ROLE="CREATOR" TYPE="INDIVIDUAL">
+      <name>Joseph G. Pawletko</name>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="dmd-00000001">
+    <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="MARCXML" xlink:type="simple" xlink:href="bcaa1b64-bc6a-4150-8d80-660f7a4939bd_marcxml.xml"/>
+  </dmdSec>
+  <dmdSec ID="dmd-00000002">
+    <mdRef LOCTYPE="URL" MDTYPE="MODS" xlink:type="simple" xlink:href="bcaa1b64-bc6a-4150-8d80-660f7a4939bd_mods.xml"/>
+  </dmdSec>
+  <amdSec ID="amd-00000001">
+    <rightsMD ID="rmd-00000001">
+      <mdRef LOCTYPE="URL" MDTYPE="METSRIGHTS" xlink:type="simple" xlink:href="bcaa1b64-bc6a-4150-8d80-660f7a4939bd_metsrights.xml"/>
+    </rightsMD>
+    <digiprovMD ID="dpmd-00000001">
+      <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="CALIBRATION-TARGET-IMAGE" xlink:type="simple" xlink:href="ifa_egypt000061_ztarget_m.tif"/>
+    </digiprovMD>
+    <digiprovMD ID="dpmd-00000002">
+      <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="ifa_egypt000061_eoc.csv"/>
+    </digiprovMD>
+  </amdSec>
+  <fileSec ID="fsec-00000001">
+    <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001 dpmd-00000002">
+      <file ID="f-ifa_egypt000061_afr01_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_afr01_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_afr02_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_afr02_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_n000001_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_n000001_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_n000002_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_n000002_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_n000003_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_n000003_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_n000004_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_n000004_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk001_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk001_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk002_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk002_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk003_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk003_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z01_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z01_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z02_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z02_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z03_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z03_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z04_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z04_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z05_z01_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z05_z01_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z05_z02_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z05_z02_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z05_z03_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z05_z03_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z05_z04_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z05_z04_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z05_z05_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z05_z05_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z05_z06_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z05_z06_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z05_z07_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z05_z07_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z05_z08_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z05_z08_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z06_z01_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z06_z01_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z06_z02_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z06_z02_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z06_z03_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z06_z03_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z06_z04_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z06_z04_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z06_z05_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z06_z05_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z06_z06_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z06_z06_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z06_z07_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z06_z07_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z06_z08_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z06_z08_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk005_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk005_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk006_z01_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk006_z01_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk006_z02_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk006_z02_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk006_z03_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk006_z03_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk006_z04_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk006_z04_m.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk007_m" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk007_m.tif"/>
+      </file>
+    </fileGrp>
+    <fileGrp ID="fg-dmaker" USE="DMAKER">
+      <file ID="f-ifa_egypt000061_afr01_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_afr01_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_afr02_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_afr02_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_n000001_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_n000001_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_n000002_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_n000002_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_n000003_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_n000003_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_n000004_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_n000004_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk001_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk001_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk002_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk002_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk003_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk003_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z01_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z01_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z02_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z02_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z03_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z03_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z04_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z04_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z05_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z05_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk004_z06_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk004_z06_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk005_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk005_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk006_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk006_d.tif"/>
+      </file>
+      <file ID="f-ifa_egypt000061_zbk007_d" MIMETYPE="image/tiff">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="ifa_egypt000061_zbk007_d.tif"/>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap ID="smd-00000001" TYPE="SOURCE_ENTITY:TEXT BINDING_ORIENTATION:VERTICAL SCAN_ORDER:LEFT_TO_RIGHT READ_ORDER:LEFT_TO_RIGHT"> 
+    <div>
+      <div TYPE="INTELLECTUAL_ENTITY" ID="s-ie-00000001" DMDID="dmd-00000001 dmd-00000002" ADMID="rmd-00000001">
+        <div ID="s-ifa_egypt000061_afr01" ORDER="1"> 
+          <fptr FILEID="f-ifa_egypt000061_afr01_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_afr01_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_afr02" ORDER="2"> 
+          <fptr FILEID="f-ifa_egypt000061_afr02_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_afr02_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_n000001" ORDER="3"> 
+          <fptr FILEID="f-ifa_egypt000061_n000001_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_n000001_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_n000002" ORDER="4"> 
+          <fptr FILEID="f-ifa_egypt000061_n000002_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_n000002_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_n000003" ORDER="5"> 
+          <fptr FILEID="f-ifa_egypt000061_n000003_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_n000003_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_n000004" ORDER="6"> 
+          <fptr FILEID="f-ifa_egypt000061_n000004_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_n000004_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk001" ORDER="7"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk001_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk001_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk002" ORDER="8"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk002_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk002_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk003" ORDER="9"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk003_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk003_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk004_z01" ORDER="10"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z01_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z01_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk004_z02" ORDER="11"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z02_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z02_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk004_z03" ORDER="12"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z03_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z03_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk004_z04" ORDER="13"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z04_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z04_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk004_z05" ORDER="14"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z05_z01_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z05_z02_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z05_z03_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z05_z04_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z05_z05_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z05_z06_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z05_z07_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z05_z08_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z05_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk004_z06" ORDER="15"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z06_z01_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z06_z02_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z06_z03_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z06_z04_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z06_z05_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z06_z06_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z06_z07_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z06_z08_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk004_z06_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk005" ORDER="16"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk005_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk005_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk006" ORDER="17"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk006_z01_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk006_z02_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk006_z03_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk006_z04_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk006_d"/> 
+        </div> 
+        <div ID="s-ifa_egypt000061_zbk007" ORDER="18"> 
+          <fptr FILEID="f-ifa_egypt000061_zbk007_m"/> 
+          <fptr FILEID="f-ifa_egypt000061_zbk007_d"/> 
+        </div>
+      </div>
+    </div>
+  </structMap>
+</mets>

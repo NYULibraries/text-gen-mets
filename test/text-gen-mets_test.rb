@@ -1,7 +1,7 @@
 require 'test_helper'
 require 'open3'
 
-class TestTextGenMets < MiniTest::Unit::TestCase
+class TestTextGenMets < MiniTest::Test
 
   COMMAND = 'ruby bin/text-gen-mets.rb'
 
@@ -13,6 +13,9 @@ class TestTextGenMets < MiniTest::Unit::TestCase
 
   VALID_TEXT_DIFF_SCAN_READ    = 'test/fixtures/texts/valid-diff-scan-read-order'
   CANONICAL_XML_DIFF_SCAN_READ = 'test/fixtures/canonical/valid_mets-diff-scan-read-order.xml'
+
+  VALID_TEXT_OVERSIZED    = 'test/fixtures/texts/oversized'
+  CANONICAL_XML_OVERSIZED = 'test/fixtures/canonical/valid_mets-oversized.xml'
 
   def test_exit_status_with_valid_text
     o, _, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'LEFT_TO_RIGHT' #{VALID_TEXT}")
@@ -77,19 +80,19 @@ class TestTextGenMets < MiniTest::Unit::TestCase
     o, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'LEFT_TO_RIGHT' 'LEFT_TO_RIGHT' #{BAD_M_D_COUNT_TEXT}")
     assert(s.exitstatus != 0)
     assert(o == '')
-    assert_match(/mismatch in master \/ dmaker file count/, e)
+    assert_match(/invalid slot list/, e)
   end
 
   def test_mismatched_master_dmaker_file_prefixes
     o, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'LEFT_TO_RIGHT' 'LEFT_TO_RIGHT' #{BAD_M_D_PREFIX_TEXT}")
     assert(s.exitstatus != 0)
     assert(o == '')
-    assert_match(/prefix mismatch:/, e)
+    assert_match(/missing slot/, e)
   end
 
   def test_output_with_valid_text
     new_xml, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'LEFT_TO_RIGHT' #{VALID_TEXT}")
-    assert(s.exitstatus == 0)
+    assert(s.exitstatus == 0, 'invalid exit status')
     old_xml, e, s = Open3.capture3("cat #{CANONICAL_XML}")
     new_xml_a = new_xml.split("\n")
     old_xml_a = old_xml.split("\n")
@@ -107,7 +110,6 @@ class TestTextGenMets < MiniTest::Unit::TestCase
       assert(new == old, "xml mismatch: #{new} #{old}")
     end
   end
-
 
   def test_output_with_valid_text_with_different_scan_and_read_order
     new_xml, e, s = Open3.capture3("#{COMMAND} 'foo_aco000045' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'RIGHT_TO_LEFT' 'LEFT_TO_RIGHT' #{VALID_TEXT_DIFF_SCAN_READ}")
@@ -130,4 +132,24 @@ class TestTextGenMets < MiniTest::Unit::TestCase
     end
   end
 
+  def test_output_with_valid_oversized_text
+    new_xml, e, s = Open3.capture3("#{COMMAND} 'ifa_egypt000061' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'LEFT_TO_RIGHT' #{VALID_TEXT_OVERSIZED}")
+    assert(s.exitstatus == 0, "incorrect exit status. Errors: #{e}")
+    old_xml, e, s = Open3.capture3("cat #{CANONICAL_XML_OVERSIZED}")
+    new_xml_a = new_xml.split("\n")
+    old_xml_a = old_xml.split("\n")
+
+    new_xml_a.each_index do |i|
+      new = new_xml_a[i].strip
+      old = old_xml_a[i].strip
+
+      # replace dates
+      if /metsHdr/.match(new)
+        timestamp_regex = /[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z/
+        new.gsub!(timestamp_regex,'')
+        old.gsub!(timestamp_regex,'')
+      end
+      assert(new == old, "xml mismatch: #{new} #{old}")
+    end
+  end
 end
