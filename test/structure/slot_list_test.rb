@@ -82,11 +82,6 @@ module Structure
       assert_raises(ArgumentError) { Structure::SlotList.new(args) }
     end
 
-    def test_incoming_arguments_masters_nil
-      args.dmakers = []
-      assert_raises(ArgumentError) { Structure::SlotList.new(args) }
-    end
-
     def test_slots
       args.dmakers = dmakers
       args.masters = masters
