@@ -326,8 +326,7 @@ def validate_and_extract_args(args_in)
 
   unless errors.empty?
     estr = errors.join("\n")
-    $stderr.puts "ERROR:\n #{estr}"
-    print_usage
+    $stderr.puts "ERROR: #{candidate} : #{estr}"
     exit 1
   end
 
