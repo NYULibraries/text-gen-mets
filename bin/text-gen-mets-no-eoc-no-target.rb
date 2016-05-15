@@ -233,7 +233,7 @@ def get_md_file_inventory(dir)
 
   result = Dir.glob(File.join(dir, "*_ztarget_m.tif"))
   if result.length != 0
-    errors << "EOC FILE DETECTED. THIS SCRIPT IS FOR DIRS W/O EOC FILES\n"
+    errors << "TARGET FILE DETECTED. THIS SCRIPT IS FOR DIRS W/O TARGET FILES\n"
   end
 
   raise errors.to_s unless errors.empty?
