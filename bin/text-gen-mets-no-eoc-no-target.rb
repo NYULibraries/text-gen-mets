@@ -330,7 +330,7 @@ def validate_and_extract_args(args_in)
 
   begin
     md_files = get_md_file_inventory(args_in[5])
-  rescue Exception => e
+  rescue StandardError => e
     errors << "problem with metadata files: #{e.message}"
   end
   args_out[:md_files] = md_files
