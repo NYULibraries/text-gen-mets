@@ -4,7 +4,8 @@ class FilenameTest < MiniTest::Test
 
   attr_accessor :filename, :filename_no_ext, :filename_unknown_role,
                 :dmaker, :dmaker2, :master_oversized, :dmaker_front_matter,
-                :master_oversized_normalized, :dmaker_front_matter_oversized
+                :master_oversized_normalized, :dmaker_front_matter_oversized,
+                :filename_coerced_role
 
   def setup
     @filename         = Filename.new('a/b/c/foo_m.tif')
@@ -144,5 +145,10 @@ class FilenameTest < MiniTest::Test
   def test_to_str
     expected = 'a/b/c/foo_m.tif'
     assert_equal expected, filename.to_str
+  end
+
+  def test_coerce_role
+    expected = :dmaker
+    assert_equal expected, filename_coerced_role.role
   end
 end

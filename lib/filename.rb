@@ -38,7 +38,7 @@ class Filename
     @extension = File.extname(path)
     @name      = File.basename(path)
     @rootname  = name.sub(/#{extension}\z/, '')
-    @role      = self.class.role(rootname)
+    @role      = options[:role] || self.class.role(rootname)
     @rootname_minus_role = self.class.strip_role_string(rootname)
   end
 
