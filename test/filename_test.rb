@@ -10,6 +10,7 @@ class FilenameTest < MiniTest::Test
     @filename         = Filename.new('a/b/c/foo_m.tif')
     @filename_no_ext  = Filename.new('d/e/f/bar_d')
     @filename_unknown_role = Filename.new('x/y/z/baz')
+    @filename_coerced_role = Filename.new('a/b/c/foo_m.tif', {role: :dmaker})
 
     @dmaker_front_matter = Filename.new('nyu_aco000003_afr01_d.tif')
     @dmaker  = Filename.new('x/y/z/a_d.tif')
