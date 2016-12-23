@@ -151,4 +151,11 @@ class FilenameTest < MiniTest::Test
     expected = :dmaker
     assert_equal expected, filename_coerced_role.role
   end
+
+  def test_role_to_abbreviation
+    assert_equal 'm', filename.role_to_abbreviation
+    assert_equal 'd', filename_no_ext.role_to_abbreviation
+    assert_equal 'u', filename_unknown_role.role_to_abbreviation
+    assert_equal 'd', dmaker_front_matter_oversized.role_to_abbreviation
+  end
 end

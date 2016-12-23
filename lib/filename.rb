@@ -57,4 +57,8 @@ class Filename
   def rootname_minus_index_and_role
     rootname_minus_role.gsub(INDEX_REGEXP, '')
   end
+
+  def role_to_abbreviation
+    role.to_s.split('')[0]
+  end
 end
