@@ -33,12 +33,12 @@ class Filename
   attr_reader :path, :extension, :rootname, :name, :role, :rootname_minus_role
   alias to_str path
 
-  def initialize(path)
+  def initialize(path, options = {})
     @path      = path
     @extension = File.extname(path)
     @name      = File.basename(path)
     @rootname  = name.sub(/#{extension}\z/, '')
-    @role      = self.class.role(rootname)
+    @role      = options[:role] || self.class.role(rootname)
     @rootname_minus_role = self.class.strip_role_string(rootname)
   end
 
@@ -56,5 +56,9 @@ class Filename
 
   def rootname_minus_index_and_role
     rootname_minus_role.gsub(INDEX_REGEXP, '')
+  end
+
+  def role_to_abbreviation
+    role.to_s.split('')[0]
   end
 end
