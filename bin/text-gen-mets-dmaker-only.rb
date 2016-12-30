@@ -130,17 +130,18 @@ def emit_file_grp_dmaker_open
   puts %(        <fileGrp ID="fg-dmaker" USE="DMAKER">)
 end
 
-def emit_file(fname)
+def emit_file(fname, options)
   match = /(.+)\.tif\z/.match(fname)
   raise "badly formed filename #{fname}" unless match
-  id = match[1]
+  id = options[:id] 
+  raise 'missing id!' if id.nil?
   puts %(            <file ID="f-#{id}" MIMETYPE="image/tiff">)
   puts %(                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="#{fname}"/>)
   puts %(            </file>)
 end
 
 def emit_files(file_list)
-  file_list.each { |f| emit_file(f.name) }
+  file_list.each { |f| emit_file(f.name, id: "#{f.rootname_minus_role}_#{f.role_to_abbreviation}" ) }
 end
 
 def get_files(dir, pattern, exclude = nil)
@@ -187,7 +188,7 @@ end
 def emit_struct_map_slot_div(slot, order)
   puts "            <div ID=\"s-#{slot.name}\" ORDER=\"#{order}\"> "
   slot.masters.each do |m|
-    puts "                <fptr FILEID=\"f-#{m.rootname}\"/> "
+    puts "                <fptr FILEID=\"f-#{m.rootname_minus_role}_#{m.role_to_abbreviation}\"/> "
   end
   slot.dmakers.each do |d|
     puts "                <fptr FILEID=\"f-#{d.rootname}\"/> "
@@ -294,7 +295,7 @@ def validate_and_extract_args(args_in)
   end
 
   # assemble file lists
-  master_files = get_master_files(args_out[:dir])
+  master_files = get_dmaker_files_as_masters(args_out[:dir])
   dmaker_files = get_dmaker_files(args_out[:dir])
 
   slot_list = ''
@@ -339,6 +340,10 @@ end
 
 def get_dmaker_files(dir)
   get_files(dir, '*_d.tif').collect { |f| Filename.new(f) }
+end
+
+def get_dmaker_files_as_masters(dir)
+  get_files(dir, '*_d.tif').collect { |f| Filename.new(f, role: :master) }
 end
 
 #------------------------------------------------------------------------------
