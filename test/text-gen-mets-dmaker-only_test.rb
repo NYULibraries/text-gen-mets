@@ -59,12 +59,12 @@ class TestTextGenMetsDmakerOnly < MiniTest::Test
     assert_match(/incorrect read order/, e, 'unexpected error message')
   end
 
-  # def test_too_many_master_files
-  #   o, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'RIGHT_TO_LEFT' #{TOO_MANY_MASTERS}")
-  #   assert(s.exitstatus != 0)
-  #   assert(o == '')
-  #   assert_match(/incorrect read order/, e, 'unexpected error message')
-  # end
+  def test_too_many_master_files
+    o, e, s = Open3.capture3("#{COMMAND} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'HORIZONTAL' 'RIGHT_TO_LEFT' 'RIGHT_TO_LEFT' #{TOO_MANY_MASTERS}")
+    assert(s.exitstatus != 0, 'incorrect exit status')
+    assert(o == '')
+    assert_match(/incorrect number of master files/, e, 'unexpected error message')
+  end
 
   def test_output_with_dmaker_only_text
     new_xml, e, s = Open3.capture3("#{COMMAND} 'aub_aco000093' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'LEFT_TO_RIGHT' #{DMAKER_ONLY_TEXT}")

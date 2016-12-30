@@ -294,6 +294,9 @@ def validate_and_extract_args(args_in)
     exit 1
   end
 
+  # assert only one master, (the target file)
+  raise "incorrect number of master files" unless (get_files(args_out[:dir], '*_m.tif', /.+_ztarget_m.tif/).collect { |f| Filename.new(f) }) == []
+
   # assemble file lists
   master_files = get_dmaker_files_as_masters(args_out[:dir])
   dmaker_files = get_dmaker_files(args_out[:dir])
