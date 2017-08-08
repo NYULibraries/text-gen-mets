@@ -100,12 +100,6 @@ def emit_rights_md(fname)
   puts %(        </rightsMD>)
 end
 
-def emit_digiprov_eoc(fname)
-  puts %(        <digiprovMD ID="dpmd-00000002">)
-  puts %(              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="#{fname}"/>)
-  puts %(        </digiprovMD>)
-end
-
 def emit_file_sec_open
   puts '    <fileSec ID="fsec-00000001">'
 end
@@ -115,7 +109,7 @@ def emit_file_sec_close
 end
 
 def emit_file_grp_master_open
-  puts %(        <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001 dpmd-00000002">)
+  puts %(        <fileGrp ID="fg-master" USE="MASTER">)
 end
 
 def emit_file_grp_dmaker_open

@@ -23,7 +23,7 @@
     </rightsMD>
   </amdSec>
   <fileSec ID="fsec-00000001">
-    <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001 dpmd-00000002">
+    <fileGrp ID="fg-master" USE="MASTER">
       <file ID="f-aub_aco000093_n000001_m" MIMETYPE="image/tiff">
         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="aub_aco000093_n000001_d.tif"/>
       </file>
