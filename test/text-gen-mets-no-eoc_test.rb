@@ -3,7 +3,7 @@ require 'open3'
 
 class TestTextGenMetsNoEoc <  Minitest::Test
 
-  COMMAND = 'ruby bin/text-gen-mets-no-eoc.rb'
+  COMMAND = 'ruby bin/text-gen-mets.rb --no_eoc'
 
   VALID_TEXT          = 'test/fixtures/texts/valid-no-eoc'
   TEXT_WITH_EOC       = 'test/fixtures/texts/valid'             # this should fail as "no-eoc" script should not be used with texts that have eoc info

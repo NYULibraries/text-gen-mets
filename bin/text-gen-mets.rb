@@ -150,8 +150,10 @@ def emit_file_sec_close
   puts '    </fileSec>'
 end
 
-def emit_file_grp_master_open
-  puts %(        <fileGrp ID="fg-master" USE="MASTER" ADMID="dpmd-00000001 dpmd-00000002">)
+def emit_file_grp_master_open(options)
+  amdid = "dpmd-00000001"
+  amdid << " dpmd-00000002" unless options[:no_eoc]
+  puts %(        <fileGrp ID="fg-master" USE="MASTER" ADMID="#{amdid}">)
 end
 
 def emit_file_grp_dmaker_open
@@ -233,7 +235,17 @@ end
 #------------------------------------------------------------------------------
 # utility / validation / extraction methods:
 #------------------------------------------------------------------------------
-def get_md_file_inventory(dir)
+def get_md_file_inventory(dir, options)
+  md_files = get_md_files(dir)
+
+  errors = validate_md_files(md_files, options)
+  raise errors.to_s unless errors.empty?
+
+  extract_md_files(md_files)
+end
+
+
+def get_md_files(dir)
   inventory = {
     mods:        '_mods.xml',
     marcxml:     '_marcxml.xml',
@@ -243,19 +255,70 @@ def get_md_file_inventory(dir)
   }
 
   fhash  = {}
-  errors = []
   inventory.each_pair do |k,f|
-    result = Dir.glob(File.join(dir, "*#{f}"))
-    if result.length == 1
-      fhash[k] = File.basename(result[0])
-    else
-      errors << "missing or too many files ending in #{f}\n"
-    end
+    fhash[k] = Dir.glob(File.join(dir, "*#{f}"))
   end
-
-  raise errors.to_s unless errors.empty?
   fhash
 end
+
+
+def validate_md_files(md_files, options)
+  errors = []
+
+  validate_mods(errors, md_files[:mods], options)
+  validate_marcxml(errors, md_files[:marcxml], options)
+  validate_metsrights(errors, md_files[:metsrights], options)
+  validate_eoc(errors, md_files[:eoc], options)
+  validate_target(errors, md_files[:target], options)
+
+  errors
+end
+
+
+def validate_mods(errors, files, options)
+  errors << "missing or too many files ending in _mods.xml" unless files.length == 1 
+  errors
+end
+
+
+def validate_marcxml(errors, files, options)
+  errors << "missing or too many files ending in _marcxml.xml" unless files.length == 1
+  errors
+end
+
+
+def validate_metsrights(errors, files, options)
+  errors << "missing or too many files ending in _metsrights.xml" unless files.length == 1
+  errors
+end
+
+
+def validate_eoc(errors, files, options)
+  if options[:no_eoc]
+    if files.length != 0
+      errors << "EOC FILE DETECTED. THIS SCRIPT IS FOR DIRS W/O EOC FILES\n"
+    end
+  else
+    errors << "missing or too many files ending in _eoc.csv" unless files.length == 1
+  end
+  errors
+end
+
+
+def validate_target(errors, files, options)
+  errors << "missing or too many files ending in _ztarget_m.tif" unless files.length == 1
+  errors
+end
+
+
+def extract_md_files(md_files)
+  fhash = {}
+  md_files.each_pair do |k, v|
+    fhash[k] = (v.empty? ? nil : File.basename(v[0]))
+  end
+  fhash
+end
+
 
 def print_usage
   print_err usage
@@ -282,7 +345,7 @@ end
 # read_order = ARGV[4]
 # src_dir    = ARGV[5]
 #..............................................................................
-def extract_and_validate_args(args_in)
+def extract_and_validate_args(args_in, options)
   valid_se_types    = %w(SOURCE_ENTITY:TEXT)
   valid_bindings    = %w(VERTICAL HORIZONTAL)
   valid_scan_orders = %w(LEFT_TO_RIGHT RIGHT_TO_LEFT TOP_TO_BOTTOM BOTTOM_TO_TOP)
@@ -355,7 +418,7 @@ def extract_and_validate_args(args_in)
   args_out[:slot_list]    = slot_list
 
   begin
-    md_files = get_md_file_inventory(args_in[5])
+    md_files = get_md_file_inventory(args_in[5], options)
   rescue StandardError => e
     errors << "problem with metadata files: #{e.message}"
   end
@@ -382,7 +445,7 @@ end
 # MAIN
 #------------------------------------------------------------------------------
 options = parse_options!
-args    = extract_and_validate_args(ARGV)
+args    = extract_and_validate_args(ARGV, options)
 
 md_files = args[:md_files]
 emit_xml_header
@@ -397,7 +460,7 @@ emit_digiprov_target(md_files[:target])
 emit_digiprov_eoc(md_files[:eoc], options)
 emit_amd_sec_close
 emit_file_sec_open
-emit_file_grp_master_open
+emit_file_grp_master_open(options)
 emit_files(args[:master_files])
 emit_file_grp_close
 emit_file_grp_dmaker_open
