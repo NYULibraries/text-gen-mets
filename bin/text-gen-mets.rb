@@ -32,8 +32,34 @@
 #------------------------------------------------------------------------------
 require 'English'
 require 'ostruct'
+require 'optparse'
+
 require_relative '../lib/structure'
 require_relative '../lib/filename'
+
+#------------------------------------------------------------------------------
+def err_exit
+  exit 1
+end
+
+def print_err(msg)
+  $stderr.puts "#{msg}"
+end
+
+def print_err_exit(msg = '')
+  print_err(msg)
+  err_exit
+end
+
+#------------------------------------------------------------------------------
+def parse_options!
+  options = {}
+  OptionParser.new do |opts|
+    opts.banner = usage
+    opts.on('--no_eoc') { |x| options[:no_eoc] = true }
+  end.parse!
+  options
+end
 
 #------------------------------------------------------------------------------
 # XML emit methods:
@@ -108,10 +134,12 @@ def emit_digiprov_target(fname)
   puts %(        </digiprovMD>)
 end
 
-def emit_digiprov_eoc(fname)
-  puts %(        <digiprovMD ID="dpmd-00000002">)
-  puts %(              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="#{fname}"/>)
-  puts %(        </digiprovMD>)
+def emit_digiprov_eoc(fname, options)
+  unless options[:no_eoc]
+    puts %(        <digiprovMD ID="dpmd-00000002">)
+    puts %(              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="#{fname}"/>)
+    puts %(        </digiprovMD>)
+  end
 end
 
 def emit_file_sec_open
@@ -230,11 +258,20 @@ def get_md_file_inventory(dir)
 end
 
 def print_usage
-  $stderr.puts "Usage: #{$PROGRAM_NAME} <object id> <source entity type> " \
-    '<binding orientation> <scan order> <read order> ' \
-    '<path-to-text dir>'
-  $stderr.puts '   e.g., '
-  $stderr.puts "   ruby #{$PROGRAM_NAME} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT'  /content/prod/rstar/content/nyu/aco/wip/se/nyu_aco000003/data > foo_mets.xml"
+  print_err usage
+end
+
+def usage
+<<USAGE
+  usage: #{$PROGRAM_NAME} <object id> <source entity type> 
+    <binding orientation> <scan order> <read order> 
+    <path-to-text dir>
+
+    e.g., 
+    ruby #{$PROGRAM_NAME} 'nyu_aco000003' 'SOURCE_ENTITY:TEXT' 'VERTICAL' 'LEFT_TO_RIGHT' 'RIGHT_TO_LEFT'  /content/prod/rstar/content/nyu/aco/wip/se/nyu_aco000003/data > foo_mets.xml
+
+  options:
+USAGE
 end
 
 #------------------------------------------------------------------------------
@@ -245,7 +282,7 @@ end
 # read_order = ARGV[4]
 # src_dir    = ARGV[5]
 #..............................................................................
-def validate_and_extract_args(args_in)
+def extract_and_validate_args(args_in)
   valid_se_types    = %w(SOURCE_ENTITY:TEXT)
   valid_bindings    = %w(VERTICAL HORIZONTAL)
   valid_scan_orders = %w(LEFT_TO_RIGHT RIGHT_TO_LEFT TOP_TO_BOTTOM BOTTOM_TO_TOP)
@@ -344,7 +381,8 @@ end
 #------------------------------------------------------------------------------
 # MAIN
 #------------------------------------------------------------------------------
-args = validate_and_extract_args(ARGV)
+options = parse_options!
+args    = extract_and_validate_args(ARGV)
 
 md_files = args[:md_files]
 emit_xml_header
@@ -356,7 +394,7 @@ emit_dmd_mods(md_files[:mods])
 emit_amd_sec_open
 emit_rights_md(md_files[:metsrights])
 emit_digiprov_target(md_files[:target])
-emit_digiprov_eoc(md_files[:eoc])
+emit_digiprov_eoc(md_files[:eoc], options)
 emit_amd_sec_close
 emit_file_sec_open
 emit_file_grp_master_open
