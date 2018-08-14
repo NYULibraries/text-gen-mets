@@ -14,14 +14,28 @@ module Meta
       @options = options
       @errors  = []
       @files   = {}
+      @analyzed = false
     end
 
     def analyze
-      puts dir
       FILES.each_pair { |k, f| files[k] = Dir.glob(File.join(dir, "*#{f}")) }
+      @analyzed = true
     end
 
     def valid?
+      # guard against #valid? being called before analysis
+      analyze unless @analyzed
+      errors = []
+      validate
+      errors.empty?
     end
+    
+    def validate
+      FILES.each_pair do |k, v|
+        err_msg = "missing or too many files ending in #{v}" 
+        errors <<  err_msg unless files[k].length == 1
+      end
+    end
+
   end
 end

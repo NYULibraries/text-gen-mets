@@ -9,9 +9,7 @@ module Meta
 
     def test_valid_directory
       sut = Meta::Dpmd.new(ALL_FILES_DIR)
-
-      sut.analyze
-      puts sut.files
+      assert sut.valid?
     end
   end
 end
