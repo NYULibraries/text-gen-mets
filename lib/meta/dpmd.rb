@@ -64,7 +64,7 @@ module Meta
       expected_files.each_pair do |k, v|
         suffix = v[:suffix]
         unless get_files(suffix).length == 1
-          add_error "missing or too many files ending in #{suffix}x" 
+          add_error "missing or too many files ending in #{suffix}" 
         end
       end
     end
