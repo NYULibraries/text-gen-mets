@@ -27,5 +27,29 @@ module Meta
       assert_raises(ArgumentError) { Meta::METSFile.new(ARGS.merge(mdtype: 'OTHER', othermdtype: nil)) }
       assert_raises(ArgumentError) { Meta::METSFile.new(ARGS.merge(mdtype: 'OTHER', othermdtype: '')) }
     end
+
+    def test_path_method
+      assert_equal(ARGS[:path], Meta::METSFile.new(ARGS).path)
+    end
+
+    def test_filename_method
+      assert_equal('d.xml', Meta::METSFile.new(ARGS).filename)
+    end
+
+    def test_mdtype_method
+      assert_equal('MARCXML', Meta::METSFile.new(ARGS).mdtype)
+    end
+
+    def test_othermdtype_method
+      sut = Meta::METSFile.new(
+        ARGS.merge(mdtype:      'OTHER', 
+                   othermdtype: 'CALIBRATION-TARGET-IMAGE')
+      )
+      assert_equal('CALIBRATION-TARGET-IMAGE', sut.othermdtype)
+    end
+
+    def test_id_method
+      assert_equal('dpmd-00000001', Meta::METSFile.new(ARGS).id)
+    end
   end
 end

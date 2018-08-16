@@ -19,6 +19,26 @@ module Meta
       validate!
     end
 
+    def path
+      @args[:path]
+    end
+    
+    def filename
+      File.basename(@args[:path])
+    end
+    
+    def mdtype
+      @args[:mdtype]
+    end
+    
+    def othermdtype
+      @args[:othermdtype]
+    end
+    
+    def id
+      @args[:id]
+    end
+    
     private
     def validate!
       errors = []
