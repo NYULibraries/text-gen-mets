@@ -53,5 +53,12 @@ module Meta
       assert_match(/EOC FILE DETECTED./,    sut.errors.to_s)
       assert_match(/TARGET FILE DETECTED./, sut.errors.to_s)
     end
+
+    # def test_with_no_target_option_with_target_file
+    def test_with_no_target_option_with_target_file
+      sut = Meta::Dpmd.new(ALL_FILES_DIR)
+      assert_equal('dpmd-00000001 dpmd-00000002', sut.ids)
+    end
+
   end
 end
