@@ -25,8 +25,15 @@ module Meta
       errors << 'args must be a hash' unless @args.class == Hash
       
       [:path, :mdtype, :id].each do |k| 
-        errors << "missing :#{k} key/value pair' if (args[k].nil? || args[k].empty?)"
+        errors << "missing :#{k} key/value pair" if (@args[k].nil? || @args[k].empty?)
       end
+
+      if @args[:mdtype] == 'OTHER'
+        if (@args[:othermdtype].nil? || @args[:othermdtype].empty?)
+          errors << "missing :othermdtype key/value pair" 
+        end
+      end
+
       raise ArgumentError, errors.to_s unless errors.empty?
     end
 
