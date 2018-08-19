@@ -11,7 +11,9 @@ module Meta
       @dir     = dir
       @options = options
       @errors  = []
-      @files   = {}
+      @files   = []
+
+      setup
     end
 
     def valid?
@@ -34,13 +36,12 @@ module Meta
     end
 
     def ids
-      setup
       get_ids
     end
     
     private
     def get_ids
-      (files.collect { |k, v| v.id }).sort.join(' ')
+      (files.collect { |v| v.id }).sort.join(' ')
     end
 
     def get_files(suffix)
@@ -97,7 +98,7 @@ module Meta
           othermdtype: v[:othermdtype]
         )
 
-        files[k] = mf
+        @files << mf
       end
     end
 
@@ -111,18 +112,6 @@ module Meta
 
     def any_errors?
       @errors.empty?
-    end
-
-    def emit_target
-      unless options[:no_target]
-        @dpmd_index.succ
-        puts %(        <digiprovMD ID="dpmd-#{@dpmd_index}">)
-        puts %(              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="CALIBRATION-TARGET-IMAGE" xlink:type="simple" xlink:href="#{fname}"/>)
-        puts %(        </digiprovMD>)
-      end
-    end
-
-    def emit_eoc
     end
   end
 end
