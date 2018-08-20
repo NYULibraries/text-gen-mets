@@ -36,6 +36,7 @@ require 'optparse'
 
 require_relative '../lib/structure'
 require_relative '../lib/filename'
+require_relative '../lib/meta'
 
 #------------------------------------------------------------------------------
 def err_exit
@@ -56,7 +57,8 @@ def parse_options!
   options = {}
   OptionParser.new do |opts|
     opts.banner = usage
-    opts.on('--no_eoc') { |x| options[:no_eoc] = true }
+    opts.on('--no_eoc')    { |x| options[:no_eoc]    = true }
+    opts.on('--no_master') { |x| options[:no_master] = true }
   end.parse!
   options
 end
@@ -128,16 +130,10 @@ def emit_rights_md(fname)
   puts %(        </rightsMD>)
 end
 
-def emit_digiprov_target(fname)
-  puts %(        <digiprovMD ID="dpmd-00000001">)
-  puts %(              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="CALIBRATION-TARGET-IMAGE" xlink:type="simple" xlink:href="#{fname}"/>)
-  puts %(        </digiprovMD>)
-end
-
-def emit_digiprov_eoc(fname, options)
-  unless options[:no_eoc]
-    puts %(        <digiprovMD ID="dpmd-00000002">)
-    puts %(              <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="NYU-DLTS-EOC" xlink:type="simple" xlink:href="#{fname}"/>)
+def emit_digiprov(files)
+  files.each do |f|
+    puts %(        <digiprovMD ID="#{f.id}">)
+    puts %(              <mdRef LOCTYPE="URL" MDTYPE="#{f.mdtype}" OTHERMDTYPE="#{f.othermdtype}" xlink:type="simple" xlink:href="#{f.filename}"/>)
     puts %(        </digiprovMD>)
   end
 end
@@ -151,9 +147,7 @@ def emit_file_sec_close
 end
 
 def emit_file_grp_master_open(options)
-  amdid = "dpmd-00000001"
-  amdid << " dpmd-00000002" unless options[:no_eoc]
-  puts %(        <fileGrp ID="fg-master" USE="MASTER" ADMID="#{amdid}">)
+  puts %(        <fileGrp ID="fg-master" USE="MASTER" ADMID="#{options[:dpmd_ids]}">)
 end
 
 def emit_file_grp_dmaker_open
@@ -446,6 +440,8 @@ end
 #------------------------------------------------------------------------------
 options = parse_options!
 args    = extract_and_validate_args(ARGV, options)
+dpmd    = Meta::Dpmd.new(args[:dir], options)
+
 
 md_files = args[:md_files]
 emit_xml_header
@@ -456,11 +452,10 @@ emit_dmd_marcxml(md_files[:marcxml])
 emit_dmd_mods(md_files[:mods])
 emit_amd_sec_open
 emit_rights_md(md_files[:metsrights])
-emit_digiprov_target(md_files[:target])
-emit_digiprov_eoc(md_files[:eoc], options)
+emit_digiprov(dpmd.files)
 emit_amd_sec_close
 emit_file_sec_open
-emit_file_grp_master_open(options)
+emit_file_grp_master_open(dpmd_ids: dpmd.ids)
 emit_files(args[:master_files])
 emit_file_grp_close
 emit_file_grp_dmaker_open
