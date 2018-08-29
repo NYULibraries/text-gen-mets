@@ -39,6 +39,9 @@ require_relative '../lib/filename'
 require_relative '../lib/meta'
 
 #------------------------------------------------------------------------------
+REQUIRED_ARG_COUNT = 6
+
+#------------------------------------------------------------------------------
 def err_exit
   exit 1
 end
@@ -331,6 +334,16 @@ def usage
 USAGE
 end
 
+def assert_arg_count(args)
+  # argument count correct?
+  unless args.length == REQUIRED_ARG_COUNT
+    print_err "incorrect number of arguments"
+    print_usage
+    err_exit
+  end
+end
+
+
 #------------------------------------------------------------------------------
 # obj_id     = ARGV[0]
 # se_type    = ARGV[1]
@@ -347,13 +360,6 @@ def extract_and_validate_args(args_in, options)
 
   args_out = {}
   errors   = []
-
-  # argument count correct?
-  unless args_in.length == 6
-    $stderr.puts "incorrect number of arguments"
-    print_usage
-    exit 1
-  end
 
   # assume object identifier present because arg count is correct
   args_out[:obj_id]  = args_in[0]
@@ -439,6 +445,7 @@ end
 # MAIN
 #------------------------------------------------------------------------------
 options = parse_options!
+assert_arg_count(ARGV)
 args    = extract_and_validate_args(ARGV, options)
 dpmd    = Meta::Dpmd.new(args[:dir], options)
 
