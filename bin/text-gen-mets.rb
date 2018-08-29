@@ -58,7 +58,7 @@ def parse_options!
   OptionParser.new do |opts|
     opts.banner = usage
     opts.on('--no_eoc')    { |x| options[:no_eoc]    = true }
-    opts.on('--no_master') { |x| options[:no_master] = true }
+    opts.on('--no_target') { |x| options[:no_target] = true }
   end.parse!
   options
 end
