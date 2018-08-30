@@ -343,6 +343,54 @@ def assert_arg_count(args)
   end
 end
 
+def extract_positional_parameters(args)
+  args_out = {}
+  args_out[:obj_id]     = args[0]
+  args_out[:se_type]    = args[1]
+  args_out[:binding]    = args[2]
+  args_out[:scan_order] = args[3]
+  args_out[:read_order] = args[4]
+  args_out[:dir]        = args[5]
+
+  args_out
+end
+
+def validate_se_type(t, errors)
+  values = %w(SOURCE_ENTITY:TEXT)
+  (errors << "incorrect se type : #{t}") unless values.include?(t)
+end
+
+def validate_binding(t, errors)
+  values = %w(VERTICAL HORIZONTAL)
+  (errors << "incorrect binding orientation : #{t}") unless values.include?(t)
+end
+
+def validate_scan_order(t, errors)
+  values = %w(LEFT_TO_RIGHT RIGHT_TO_LEFT TOP_TO_BOTTOM BOTTOM_TO_TOP)
+  (errors << "incorrect scan order : #{t}") unless values.include?(t)
+end
+
+def validate_read_order(t, errors)
+  values = %w(LEFT_TO_RIGHT RIGHT_TO_LEFT TOP_TO_BOTTOM BOTTOM_TO_TOP)
+  (errors << "incorrect read order : #{t}") unless values.include?(t)
+end
+
+def validate_dir_or_die(d)
+  unless Dir.exists?(d)
+    # CANNOT CONTINUE
+    $stderr.puts "directory does not exist: #{d}"
+    exit 1
+  end
+end
+
+def validate_parameters(args, errors)
+  validate_se_type(args[:se_type], errors)
+  validate_binding(args[:binding], errors)
+  validate_scan_order(args[:scan_order], errors)
+  validate_read_order(args[:read_order], errors)
+  validate_dir_or_die(args[:dir])
+  errors
+end
 
 #------------------------------------------------------------------------------
 # obj_id     = ARGV[0]
@@ -353,45 +401,47 @@ end
 # src_dir    = ARGV[5]
 #..............................................................................
 def extract_and_validate_args(args_in, options)
-  valid_se_types    = %w(SOURCE_ENTITY:TEXT)
-  valid_bindings    = %w(VERTICAL HORIZONTAL)
-  valid_scan_orders = %w(LEFT_TO_RIGHT RIGHT_TO_LEFT TOP_TO_BOTTOM BOTTOM_TO_TOP)
-  valid_read_orders = %w(LEFT_TO_RIGHT RIGHT_TO_LEFT TOP_TO_BOTTOM BOTTOM_TO_TOP)
+  # valid_se_types    = %w(SOURCE_ENTITY:TEXT)
+  # valid_bindings    = %w(VERTICAL HORIZONTAL)
+  # valid_scan_orders = %w(LEFT_TO_RIGHT RIGHT_TO_LEFT TOP_TO_BOTTOM BOTTOM_TO_TOP)
+  # valid_read_orders = %w(LEFT_TO_RIGHT RIGHT_TO_LEFT TOP_TO_BOTTOM BOTTOM_TO_TOP)
 
-  args_out = {}
+  args_out = extract_positional_parameters(args_in)
   errors   = []
 
-  # assume object identifier present because arg count is correct
-  args_out[:obj_id]  = args_in[0]
+  # # assume object identifier present because arg count is correct
+  # args_out[:obj_id]  = args_in[0]
 
-  # construct array to validate arguments with controlled vocabularies
-  # idx:    index for value in args_in
-  # key:    key   for          args_out hash
-  # values: controlled vocabulary against which to validate
-  # msg:    text for error message
-  [{ idx: 1, key: :se_type,    values: valid_se_types,    msg: "se type" },
-   { idx: 2, key: :binding,    values: valid_bindings,    msg: "binding orientation" },
-   { idx: 3, key: :scan_order, values: valid_scan_orders, msg: "scan order" },
-   { idx: 4, key: :read_order, values: valid_read_orders, msg: "read order" }].each do |x|
-    # extract the candidate value
-    candidate = args_in[x[:idx]]
+  # # construct array to validate arguments with controlled vocabularies
+  # # idx:    index for value in args_in
+  # # key:    key   for          args_out hash
+  # # values: controlled vocabulary against which to validate
+  # # msg:    text for error message
+  # [{ idx: 1, key: :se_type,    values: valid_se_types,    msg: "se type" },
+  #  { idx: 2, key: :binding,    values: valid_bindings,    msg: "binding orientation" },
+  #  { idx: 3, key: :scan_order, values: valid_scan_orders, msg: "scan order" },
+  #  { idx: 4, key: :read_order, values: valid_read_orders, msg: "read order" }].each do |x|
+  #   # extract the candidate value
+  #   candidate = args_in[x[:idx]]
 
-    if x[:values].include?(candidate)
-      args_out[x[:key]] = candidate
-    else
-      errors << "incorrect #{x[:msg]} : #{candidate}"
-    end
-  end
+  #   if x[:values].include?(candidate)
+  #     args_out[x[:key]] = candidate
+  #   else
+  #     errors << "incorrect #{x[:msg]} : #{candidate}"
+  #   end
+  # end
 
-  # test directory
-  candidate = args_in[5]
-  if Dir.exists?(candidate)
-    args_out[:dir] = candidate
-  else
-    # CANNOT CONTINUE
-    $stderr.puts "directory does not exist: #{candidate}"
-    exit 1
-  end
+  # # test directory
+  # candidate = args_in[5]
+  # if Dir.exists?(candidate)
+  #   args_out[:dir] = candidate
+  # else
+  #   # CANNOT CONTINUE
+  #   $stderr.puts "directory does not exist: #{candidate}"
+  #   exit 1
+  # end
+
+  validate_parameters(args_out, errors)
 
   # assemble file lists
   master_files = get_master_files(args_out[:dir])
@@ -426,7 +476,7 @@ def extract_and_validate_args(args_in, options)
 
   unless errors.empty?
     estr = errors.join("\n")
-    $stderr.puts "ERROR: #{candidate} : #{estr}"
+    $stderr.puts "ERROR: #{args_out[:dir]} : #{estr}"
     exit 1
   end
 
