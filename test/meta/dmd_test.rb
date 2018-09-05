@@ -7,6 +7,11 @@ module Meta
     NO_MODS_DIR    = 'test/fixtures/texts/valid-no-mods'
     NO_MARCXML_DIR = 'test/fixtures/texts/valid-no-marcxml'
 
+    def test_dir
+      sut = Meta::Dmd.new(ALL_FILES_DIR)
+      assert_equal(ALL_FILES_DIR, sut.dir)
+    end
+
     def test_valid_directory
       sut = Meta::Dmd.new(ALL_FILES_DIR)
       assert sut.valid?

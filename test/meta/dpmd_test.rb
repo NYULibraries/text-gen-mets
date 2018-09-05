@@ -7,6 +7,11 @@ module Meta
     NO_EOC_DIR    = 'test/fixtures/texts/valid-no-eoc'
     NO_TARGET_DIR = 'test/fixtures/texts/valid-no-target'
 
+    def test_dir
+      sut = Meta::Dpmd.new(ALL_FILES_DIR)
+      assert_equal(ALL_FILES_DIR, sut.dir)
+    end
+
     def test_valid_directory
       sut = Meta::Dpmd.new(ALL_FILES_DIR)
       assert sut.valid?
@@ -65,6 +70,25 @@ module Meta
     def test_ids_with_no_target_file
       sut = Meta::Dpmd.new(NO_TARGET_DIR, no_target: true)
       assert_equal('dpmd-00000001', sut.ids)
+    end
+
+    def test_files_with_all_files
+      sut = Meta::Dpmd.new(ALL_FILES_DIR)
+      assert_match(/_ztarget_m.tif$/, sut.files[0].filename)
+      assert_match(/_eoc.csv$/,       sut.files[1].filename)
+      assert_equal(2, sut.files.length)
+    end
+
+    def test_files_with_no_target_file
+      sut = Meta::Dpmd.new(NO_TARGET_DIR, no_target: true)
+      assert_match(/_eoc.csv$/, sut.files[0].filename)
+      assert_equal(1, sut.files.length)
+    end
+
+    def test_ids_with_no_eoc_file
+      sut = Meta::Dpmd.new(NO_EOC_DIR, no_eoc: true)
+      assert_match(/_ztarget_m.tif$/, sut.files[0].filename)
+      assert_equal(1, sut.files.length)
     end
 
   end
