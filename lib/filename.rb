@@ -10,22 +10,25 @@ class Filename
   #  role                :master
 
   # TODO : probably an abstraction here: RoleIdentifier
-  MASTER_ROLE_REGEXP = /(_m)\z/.freeze
-  DMAKER_ROLE_REGEXP = /(_d)\z/.freeze
+  MASTER_ROLE_REGEXP   = /(_m)\z/.freeze
+  ORIGINAL_ROLE_REGEXP = /(_o)\z/.freeze
+  DMAKER_ROLE_REGEXP   = /(_d)\z/.freeze
   INDEX_REGEXP = /(_z?\d{2})\z/.freeze
 
   def self.strip_role_string(rn)
     case rn
-    when MASTER_ROLE_REGEXP then rn.sub(MASTER_ROLE_REGEXP, '')
-    when DMAKER_ROLE_REGEXP then rn.sub(DMAKER_ROLE_REGEXP, '')
+    when MASTER_ROLE_REGEXP   then rn.sub(MASTER_ROLE_REGEXP, '')
+    when ORIGINAL_ROLE_REGEXP then rn.sub(ORIGINAL_ROLE_REGEXP, '')
+    when DMAKER_ROLE_REGEXP   then rn.sub(DMAKER_ROLE_REGEXP, '')
     else rn
     end
   end
 
   def self.role(rn)
     case rn
-    when MASTER_ROLE_REGEXP then :master
-    when DMAKER_ROLE_REGEXP then :dmaker
+    when MASTER_ROLE_REGEXP   then :master
+    when ORIGINAL_ROLE_REGEXP then :original
+    when DMAKER_ROLE_REGEXP   then :dmaker
     else :unknown
     end
   end
