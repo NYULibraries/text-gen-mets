@@ -1,0 +1,1937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version191/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:mods="http://www.loc.gov/mods/v3" OBJID="nyu_aco000003">
+<?se-text-wip-template version="info:nyu/dl/v1.0/templates/se/text/wip/v0.0.3"?>
+  <metsHdr CREATEDATE="2014-03-25T15:23:42Z" LASTMODDATE="2014-03-25T15:23:42Z" RECORDSTATUS="DRAFT">
+        <agent ROLE="DISSEMINATOR" TYPE="ORGANIZATION">
+            <name>New York University Libraries</name>
+        </agent>
+        <agent ROLE="CREATOR" TYPE="INDIVIDUAL">
+            <name>Joseph G. Pawletko</name>
+        </agent>
+    </metsHdr>
+    <dmdSec ID="dmd-00000001">
+        <mdRef LOCTYPE="URL" MDTYPE="OTHER" OTHERMDTYPE="MARCXML" xlink:type="simple" xlink:href="bcaa1b64-bc6a-4150-8d80-660f7a4939bd_marcxml.xml"/>
+    </dmdSec>
+    <dmdSec ID="dmd-00000002">
+        <mdRef LOCTYPE="URL" MDTYPE="MODS" xlink:type="simple" xlink:href="bcaa1b64-bc6a-4150-8d80-660f7a4939bd_mods.xml"/>
+    </dmdSec>
+    <amdSec ID="amd-00000001">
+        <rightsMD ID="rmd-00000001">
+           <mdRef LOCTYPE="URL" MDTYPE="METSRIGHTS" xlink:type="simple" xlink:href="bcaa1b64-bc6a-4150-8d80-660f7a4939bd_metsrights.xml"/>
+        </rightsMD>
+    </amdSec>
+    <fileSec ID="fsec-00000001">
+        <fileGrp ID="fg-master" USE="MASTER">
+            <file ID="f-nyu_aco000003_afr01_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_afr01_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_afr02_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_afr02_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000001_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000001_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000002_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000002_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000003_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000003_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000004_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000004_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000005_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000005_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000006_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000006_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000007_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000007_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000008_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000008_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000009_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000009_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000010_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000010_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000011_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000011_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000012_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000012_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000013_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000013_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000014_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000014_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000015_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000015_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000016_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000016_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000017_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000017_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000018_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000018_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000019_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000019_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000020_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000020_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000021_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000021_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000022_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000022_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000023_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000023_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000024_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000024_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000025_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000025_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000026_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000026_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000027_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000027_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000028_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000028_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000029_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000029_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000030_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000030_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000031_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000031_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000032_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000032_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000033_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000033_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000034_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000034_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000035_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000035_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000036_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000036_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000037_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000037_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000038_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000038_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000039_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000039_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000040_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000040_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000041_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000041_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000042_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000042_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000043_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000043_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000044_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000044_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000045_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000045_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000046_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000046_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000047_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000047_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000048_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000048_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000049_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000049_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000050_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000050_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000051_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000051_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000052_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000052_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000053_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000053_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000054_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000054_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000055_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000055_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000056_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000056_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000057_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000057_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000058_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000058_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000059_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000059_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000060_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000060_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000061_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000061_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000062_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000062_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000063_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000063_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000064_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000064_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000065_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000065_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000066_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000066_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000067_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000067_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000068_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000068_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000069_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000069_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000070_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000070_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000071_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000071_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000072_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000072_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000073_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000073_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000074_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000074_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000075_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000075_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000076_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000076_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000077_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000077_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000078_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000078_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000079_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000079_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000080_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000080_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000081_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000081_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000082_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000082_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000083_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000083_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000084_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000084_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000085_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000085_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000086_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000086_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000087_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000087_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000088_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000088_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000089_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000089_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000090_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000090_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000091_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000091_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000092_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000092_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000093_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000093_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000094_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000094_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000095_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000095_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000096_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000096_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000097_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000097_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000098_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000098_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000099_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000099_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000100_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000100_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000101_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000101_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000102_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000102_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000103_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000103_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000104_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000104_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000105_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000105_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000106_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000106_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000107_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000107_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000108_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000108_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000109_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000109_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000110_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000110_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000111_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000111_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000112_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000112_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000113_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000113_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000114_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000114_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000115_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000115_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000116_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000116_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000117_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000117_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000118_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000118_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000119_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000119_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000120_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000120_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000121_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000121_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000122_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000122_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000123_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000123_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000124_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000124_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000125_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000125_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000126_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000126_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000127_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000127_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000128_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000128_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000129_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000129_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000130_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000130_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000131_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000131_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000132_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000132_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000133_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000133_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000134_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000134_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000135_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000135_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000136_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000136_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000137_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000137_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000138_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000138_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000139_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000139_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000140_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000140_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000141_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000141_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000142_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000142_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000143_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000143_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000144_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000144_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000145_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000145_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000146_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000146_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000147_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000147_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000148_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000148_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000149_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000149_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000150_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000150_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000151_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000151_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000152_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000152_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000153_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000153_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000154_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000154_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000155_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000155_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000156_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000156_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000157_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000157_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000158_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000158_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000159_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000159_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000160_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000160_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000161_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000161_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000162_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000162_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000163_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000163_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000164_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000164_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000165_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000165_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000166_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000166_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000167_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000167_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000168_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000168_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000169_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000169_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000170_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000170_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000171_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000171_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000172_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000172_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000173_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000173_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000174_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000174_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000175_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000175_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000176_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000176_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000177_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000177_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000178_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000178_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000179_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000179_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000180_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000180_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000181_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000181_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000182_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000182_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000183_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000183_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000184_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000184_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_zbk01_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_zbk01_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_zbk02_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_zbk02_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_zbk03_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_zbk03_o.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_zbk04_o" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_zbk04_o.tif"/>
+            </file>
+        </fileGrp>
+        <fileGrp ID="fg-dmaker" USE="DMAKER">
+            <file ID="f-nyu_aco000003_afr01_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_afr01_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_afr02_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_afr02_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000001_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000001_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000002_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000002_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000003_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000003_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000004_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000004_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000005_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000005_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000006_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000006_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000007_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000007_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000008_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000008_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000009_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000009_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000010_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000010_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000011_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000011_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000012_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000012_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000013_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000013_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000014_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000014_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000015_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000015_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000016_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000016_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000017_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000017_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000018_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000018_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000019_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000019_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000020_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000020_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000021_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000021_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000022_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000022_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000023_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000023_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000024_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000024_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000025_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000025_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000026_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000026_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000027_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000027_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000028_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000028_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000029_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000029_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000030_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000030_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000031_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000031_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000032_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000032_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000033_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000033_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000034_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000034_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000035_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000035_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000036_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000036_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000037_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000037_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000038_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000038_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000039_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000039_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000040_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000040_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000041_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000041_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000042_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000042_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000043_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000043_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000044_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000044_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000045_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000045_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000046_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000046_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000047_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000047_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000048_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000048_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000049_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000049_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000050_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000050_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000051_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000051_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000052_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000052_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000053_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000053_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000054_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000054_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000055_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000055_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000056_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000056_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000057_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000057_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000058_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000058_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000059_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000059_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000060_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000060_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000061_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000061_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000062_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000062_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000063_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000063_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000064_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000064_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000065_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000065_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000066_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000066_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000067_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000067_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000068_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000068_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000069_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000069_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000070_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000070_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000071_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000071_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000072_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000072_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000073_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000073_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000074_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000074_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000075_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000075_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000076_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000076_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000077_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000077_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000078_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000078_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000079_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000079_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000080_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000080_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000081_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000081_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000082_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000082_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000083_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000083_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000084_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000084_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000085_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000085_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000086_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000086_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000087_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000087_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000088_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000088_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000089_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000089_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000090_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000090_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000091_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000091_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000092_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000092_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000093_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000093_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000094_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000094_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000095_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000095_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000096_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000096_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000097_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000097_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000098_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000098_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000099_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000099_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000100_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000100_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000101_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000101_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000102_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000102_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000103_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000103_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000104_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000104_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000105_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000105_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000106_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000106_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000107_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000107_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000108_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000108_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000109_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000109_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000110_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000110_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000111_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000111_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000112_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000112_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000113_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000113_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000114_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000114_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000115_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000115_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000116_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000116_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000117_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000117_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000118_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000118_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000119_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000119_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000120_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000120_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000121_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000121_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000122_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000122_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000123_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000123_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000124_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000124_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000125_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000125_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000126_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000126_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000127_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000127_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000128_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000128_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000129_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000129_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000130_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000130_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000131_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000131_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000132_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000132_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000133_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000133_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000134_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000134_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000135_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000135_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000136_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000136_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000137_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000137_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000138_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000138_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000139_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000139_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000140_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000140_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000141_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000141_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000142_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000142_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000143_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000143_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000144_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000144_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000145_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000145_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000146_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000146_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000147_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000147_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000148_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000148_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000149_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000149_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000150_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000150_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000151_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000151_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000152_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000152_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000153_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000153_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000154_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000154_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000155_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000155_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000156_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000156_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000157_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000157_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000158_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000158_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000159_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000159_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000160_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000160_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000161_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000161_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000162_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000162_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000163_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000163_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000164_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000164_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000165_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000165_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000166_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000166_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000167_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000167_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000168_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000168_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000169_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000169_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000170_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000170_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000171_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000171_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000172_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000172_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000173_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000173_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000174_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000174_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000175_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000175_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000176_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000176_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000177_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000177_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000178_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000178_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000179_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000179_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000180_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000180_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000181_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000181_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000182_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000182_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000183_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000183_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_n000184_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_n000184_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_zbk01_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_zbk01_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_zbk02_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_zbk02_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_zbk03_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_zbk03_d.tif"/>
+            </file>
+            <file ID="f-nyu_aco000003_zbk04_d" MIMETYPE="image/tiff">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="nyu_aco000003_zbk04_d.tif"/>
+            </file>
+        </fileGrp>
+    </fileSec>
+    <structMap ID="smd-00000001" TYPE="SOURCE_ENTITY:TEXT BINDING_ORIENTATION:VERTICAL SCAN_ORDER:RIGHT_TO_LEFT READ_ORDER:RIGHT_TO_LEFT"> 
+      <div>
+        <div TYPE="INTELLECTUAL_ENTITY" ID="s-ie-00000001" DMDID="dmd-00000001 dmd-00000002" ADMID="rmd-00000001">
+            <div ID="s-nyu_aco000003_afr01" ORDER="1"> 
+                <fptr FILEID="f-nyu_aco000003_afr01_o"/> 
+                <fptr FILEID="f-nyu_aco000003_afr01_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_afr02" ORDER="2"> 
+                <fptr FILEID="f-nyu_aco000003_afr02_o"/> 
+                <fptr FILEID="f-nyu_aco000003_afr02_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000001" ORDER="3"> 
+                <fptr FILEID="f-nyu_aco000003_n000001_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000001_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000002" ORDER="4"> 
+                <fptr FILEID="f-nyu_aco000003_n000002_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000002_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000003" ORDER="5"> 
+                <fptr FILEID="f-nyu_aco000003_n000003_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000003_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000004" ORDER="6"> 
+                <fptr FILEID="f-nyu_aco000003_n000004_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000004_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000005" ORDER="7"> 
+                <fptr FILEID="f-nyu_aco000003_n000005_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000005_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000006" ORDER="8"> 
+                <fptr FILEID="f-nyu_aco000003_n000006_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000006_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000007" ORDER="9"> 
+                <fptr FILEID="f-nyu_aco000003_n000007_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000007_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000008" ORDER="10"> 
+                <fptr FILEID="f-nyu_aco000003_n000008_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000008_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000009" ORDER="11"> 
+                <fptr FILEID="f-nyu_aco000003_n000009_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000009_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000010" ORDER="12"> 
+                <fptr FILEID="f-nyu_aco000003_n000010_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000010_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000011" ORDER="13"> 
+                <fptr FILEID="f-nyu_aco000003_n000011_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000011_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000012" ORDER="14"> 
+                <fptr FILEID="f-nyu_aco000003_n000012_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000012_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000013" ORDER="15"> 
+                <fptr FILEID="f-nyu_aco000003_n000013_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000013_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000014" ORDER="16"> 
+                <fptr FILEID="f-nyu_aco000003_n000014_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000014_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000015" ORDER="17"> 
+                <fptr FILEID="f-nyu_aco000003_n000015_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000015_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000016" ORDER="18"> 
+                <fptr FILEID="f-nyu_aco000003_n000016_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000016_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000017" ORDER="19"> 
+                <fptr FILEID="f-nyu_aco000003_n000017_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000017_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000018" ORDER="20"> 
+                <fptr FILEID="f-nyu_aco000003_n000018_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000018_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000019" ORDER="21"> 
+                <fptr FILEID="f-nyu_aco000003_n000019_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000019_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000020" ORDER="22"> 
+                <fptr FILEID="f-nyu_aco000003_n000020_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000020_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000021" ORDER="23"> 
+                <fptr FILEID="f-nyu_aco000003_n000021_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000021_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000022" ORDER="24"> 
+                <fptr FILEID="f-nyu_aco000003_n000022_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000022_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000023" ORDER="25"> 
+                <fptr FILEID="f-nyu_aco000003_n000023_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000023_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000024" ORDER="26"> 
+                <fptr FILEID="f-nyu_aco000003_n000024_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000024_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000025" ORDER="27"> 
+                <fptr FILEID="f-nyu_aco000003_n000025_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000025_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000026" ORDER="28"> 
+                <fptr FILEID="f-nyu_aco000003_n000026_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000026_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000027" ORDER="29"> 
+                <fptr FILEID="f-nyu_aco000003_n000027_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000027_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000028" ORDER="30"> 
+                <fptr FILEID="f-nyu_aco000003_n000028_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000028_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000029" ORDER="31"> 
+                <fptr FILEID="f-nyu_aco000003_n000029_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000029_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000030" ORDER="32"> 
+                <fptr FILEID="f-nyu_aco000003_n000030_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000030_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000031" ORDER="33"> 
+                <fptr FILEID="f-nyu_aco000003_n000031_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000031_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000032" ORDER="34"> 
+                <fptr FILEID="f-nyu_aco000003_n000032_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000032_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000033" ORDER="35"> 
+                <fptr FILEID="f-nyu_aco000003_n000033_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000033_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000034" ORDER="36"> 
+                <fptr FILEID="f-nyu_aco000003_n000034_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000034_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000035" ORDER="37"> 
+                <fptr FILEID="f-nyu_aco000003_n000035_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000035_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000036" ORDER="38"> 
+                <fptr FILEID="f-nyu_aco000003_n000036_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000036_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000037" ORDER="39"> 
+                <fptr FILEID="f-nyu_aco000003_n000037_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000037_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000038" ORDER="40"> 
+                <fptr FILEID="f-nyu_aco000003_n000038_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000038_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000039" ORDER="41"> 
+                <fptr FILEID="f-nyu_aco000003_n000039_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000039_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000040" ORDER="42"> 
+                <fptr FILEID="f-nyu_aco000003_n000040_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000040_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000041" ORDER="43"> 
+                <fptr FILEID="f-nyu_aco000003_n000041_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000041_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000042" ORDER="44"> 
+                <fptr FILEID="f-nyu_aco000003_n000042_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000042_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000043" ORDER="45"> 
+                <fptr FILEID="f-nyu_aco000003_n000043_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000043_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000044" ORDER="46"> 
+                <fptr FILEID="f-nyu_aco000003_n000044_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000044_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000045" ORDER="47"> 
+                <fptr FILEID="f-nyu_aco000003_n000045_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000045_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000046" ORDER="48"> 
+                <fptr FILEID="f-nyu_aco000003_n000046_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000046_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000047" ORDER="49"> 
+                <fptr FILEID="f-nyu_aco000003_n000047_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000047_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000048" ORDER="50"> 
+                <fptr FILEID="f-nyu_aco000003_n000048_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000048_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000049" ORDER="51"> 
+                <fptr FILEID="f-nyu_aco000003_n000049_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000049_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000050" ORDER="52"> 
+                <fptr FILEID="f-nyu_aco000003_n000050_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000050_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000051" ORDER="53"> 
+                <fptr FILEID="f-nyu_aco000003_n000051_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000051_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000052" ORDER="54"> 
+                <fptr FILEID="f-nyu_aco000003_n000052_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000052_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000053" ORDER="55"> 
+                <fptr FILEID="f-nyu_aco000003_n000053_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000053_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000054" ORDER="56"> 
+                <fptr FILEID="f-nyu_aco000003_n000054_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000054_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000055" ORDER="57"> 
+                <fptr FILEID="f-nyu_aco000003_n000055_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000055_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000056" ORDER="58"> 
+                <fptr FILEID="f-nyu_aco000003_n000056_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000056_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000057" ORDER="59"> 
+                <fptr FILEID="f-nyu_aco000003_n000057_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000057_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000058" ORDER="60"> 
+                <fptr FILEID="f-nyu_aco000003_n000058_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000058_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000059" ORDER="61"> 
+                <fptr FILEID="f-nyu_aco000003_n000059_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000059_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000060" ORDER="62"> 
+                <fptr FILEID="f-nyu_aco000003_n000060_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000060_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000061" ORDER="63"> 
+                <fptr FILEID="f-nyu_aco000003_n000061_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000061_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000062" ORDER="64"> 
+                <fptr FILEID="f-nyu_aco000003_n000062_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000062_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000063" ORDER="65"> 
+                <fptr FILEID="f-nyu_aco000003_n000063_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000063_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000064" ORDER="66"> 
+                <fptr FILEID="f-nyu_aco000003_n000064_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000064_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000065" ORDER="67"> 
+                <fptr FILEID="f-nyu_aco000003_n000065_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000065_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000066" ORDER="68"> 
+                <fptr FILEID="f-nyu_aco000003_n000066_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000066_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000067" ORDER="69"> 
+                <fptr FILEID="f-nyu_aco000003_n000067_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000067_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000068" ORDER="70"> 
+                <fptr FILEID="f-nyu_aco000003_n000068_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000068_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000069" ORDER="71"> 
+                <fptr FILEID="f-nyu_aco000003_n000069_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000069_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000070" ORDER="72"> 
+                <fptr FILEID="f-nyu_aco000003_n000070_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000070_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000071" ORDER="73"> 
+                <fptr FILEID="f-nyu_aco000003_n000071_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000071_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000072" ORDER="74"> 
+                <fptr FILEID="f-nyu_aco000003_n000072_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000072_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000073" ORDER="75"> 
+                <fptr FILEID="f-nyu_aco000003_n000073_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000073_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000074" ORDER="76"> 
+                <fptr FILEID="f-nyu_aco000003_n000074_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000074_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000075" ORDER="77"> 
+                <fptr FILEID="f-nyu_aco000003_n000075_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000075_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000076" ORDER="78"> 
+                <fptr FILEID="f-nyu_aco000003_n000076_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000076_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000077" ORDER="79"> 
+                <fptr FILEID="f-nyu_aco000003_n000077_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000077_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000078" ORDER="80"> 
+                <fptr FILEID="f-nyu_aco000003_n000078_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000078_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000079" ORDER="81"> 
+                <fptr FILEID="f-nyu_aco000003_n000079_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000079_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000080" ORDER="82"> 
+                <fptr FILEID="f-nyu_aco000003_n000080_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000080_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000081" ORDER="83"> 
+                <fptr FILEID="f-nyu_aco000003_n000081_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000081_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000082" ORDER="84"> 
+                <fptr FILEID="f-nyu_aco000003_n000082_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000082_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000083" ORDER="85"> 
+                <fptr FILEID="f-nyu_aco000003_n000083_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000083_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000084" ORDER="86"> 
+                <fptr FILEID="f-nyu_aco000003_n000084_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000084_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000085" ORDER="87"> 
+                <fptr FILEID="f-nyu_aco000003_n000085_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000085_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000086" ORDER="88"> 
+                <fptr FILEID="f-nyu_aco000003_n000086_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000086_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000087" ORDER="89"> 
+                <fptr FILEID="f-nyu_aco000003_n000087_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000087_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000088" ORDER="90"> 
+                <fptr FILEID="f-nyu_aco000003_n000088_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000088_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000089" ORDER="91"> 
+                <fptr FILEID="f-nyu_aco000003_n000089_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000089_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000090" ORDER="92"> 
+                <fptr FILEID="f-nyu_aco000003_n000090_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000090_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000091" ORDER="93"> 
+                <fptr FILEID="f-nyu_aco000003_n000091_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000091_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000092" ORDER="94"> 
+                <fptr FILEID="f-nyu_aco000003_n000092_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000092_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000093" ORDER="95"> 
+                <fptr FILEID="f-nyu_aco000003_n000093_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000093_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000094" ORDER="96"> 
+                <fptr FILEID="f-nyu_aco000003_n000094_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000094_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000095" ORDER="97"> 
+                <fptr FILEID="f-nyu_aco000003_n000095_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000095_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000096" ORDER="98"> 
+                <fptr FILEID="f-nyu_aco000003_n000096_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000096_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000097" ORDER="99"> 
+                <fptr FILEID="f-nyu_aco000003_n000097_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000097_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000098" ORDER="100"> 
+                <fptr FILEID="f-nyu_aco000003_n000098_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000098_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000099" ORDER="101"> 
+                <fptr FILEID="f-nyu_aco000003_n000099_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000099_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000100" ORDER="102"> 
+                <fptr FILEID="f-nyu_aco000003_n000100_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000100_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000101" ORDER="103"> 
+                <fptr FILEID="f-nyu_aco000003_n000101_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000101_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000102" ORDER="104"> 
+                <fptr FILEID="f-nyu_aco000003_n000102_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000102_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000103" ORDER="105"> 
+                <fptr FILEID="f-nyu_aco000003_n000103_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000103_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000104" ORDER="106"> 
+                <fptr FILEID="f-nyu_aco000003_n000104_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000104_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000105" ORDER="107"> 
+                <fptr FILEID="f-nyu_aco000003_n000105_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000105_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000106" ORDER="108"> 
+                <fptr FILEID="f-nyu_aco000003_n000106_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000106_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000107" ORDER="109"> 
+                <fptr FILEID="f-nyu_aco000003_n000107_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000107_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000108" ORDER="110"> 
+                <fptr FILEID="f-nyu_aco000003_n000108_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000108_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000109" ORDER="111"> 
+                <fptr FILEID="f-nyu_aco000003_n000109_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000109_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000110" ORDER="112"> 
+                <fptr FILEID="f-nyu_aco000003_n000110_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000110_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000111" ORDER="113"> 
+                <fptr FILEID="f-nyu_aco000003_n000111_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000111_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000112" ORDER="114"> 
+                <fptr FILEID="f-nyu_aco000003_n000112_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000112_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000113" ORDER="115"> 
+                <fptr FILEID="f-nyu_aco000003_n000113_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000113_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000114" ORDER="116"> 
+                <fptr FILEID="f-nyu_aco000003_n000114_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000114_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000115" ORDER="117"> 
+                <fptr FILEID="f-nyu_aco000003_n000115_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000115_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000116" ORDER="118"> 
+                <fptr FILEID="f-nyu_aco000003_n000116_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000116_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000117" ORDER="119"> 
+                <fptr FILEID="f-nyu_aco000003_n000117_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000117_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000118" ORDER="120"> 
+                <fptr FILEID="f-nyu_aco000003_n000118_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000118_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000119" ORDER="121"> 
+                <fptr FILEID="f-nyu_aco000003_n000119_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000119_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000120" ORDER="122"> 
+                <fptr FILEID="f-nyu_aco000003_n000120_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000120_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000121" ORDER="123"> 
+                <fptr FILEID="f-nyu_aco000003_n000121_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000121_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000122" ORDER="124"> 
+                <fptr FILEID="f-nyu_aco000003_n000122_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000122_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000123" ORDER="125"> 
+                <fptr FILEID="f-nyu_aco000003_n000123_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000123_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000124" ORDER="126"> 
+                <fptr FILEID="f-nyu_aco000003_n000124_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000124_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000125" ORDER="127"> 
+                <fptr FILEID="f-nyu_aco000003_n000125_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000125_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000126" ORDER="128"> 
+                <fptr FILEID="f-nyu_aco000003_n000126_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000126_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000127" ORDER="129"> 
+                <fptr FILEID="f-nyu_aco000003_n000127_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000127_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000128" ORDER="130"> 
+                <fptr FILEID="f-nyu_aco000003_n000128_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000128_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000129" ORDER="131"> 
+                <fptr FILEID="f-nyu_aco000003_n000129_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000129_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000130" ORDER="132"> 
+                <fptr FILEID="f-nyu_aco000003_n000130_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000130_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000131" ORDER="133"> 
+                <fptr FILEID="f-nyu_aco000003_n000131_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000131_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000132" ORDER="134"> 
+                <fptr FILEID="f-nyu_aco000003_n000132_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000132_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000133" ORDER="135"> 
+                <fptr FILEID="f-nyu_aco000003_n000133_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000133_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000134" ORDER="136"> 
+                <fptr FILEID="f-nyu_aco000003_n000134_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000134_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000135" ORDER="137"> 
+                <fptr FILEID="f-nyu_aco000003_n000135_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000135_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000136" ORDER="138"> 
+                <fptr FILEID="f-nyu_aco000003_n000136_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000136_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000137" ORDER="139"> 
+                <fptr FILEID="f-nyu_aco000003_n000137_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000137_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000138" ORDER="140"> 
+                <fptr FILEID="f-nyu_aco000003_n000138_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000138_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000139" ORDER="141"> 
+                <fptr FILEID="f-nyu_aco000003_n000139_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000139_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000140" ORDER="142"> 
+                <fptr FILEID="f-nyu_aco000003_n000140_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000140_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000141" ORDER="143"> 
+                <fptr FILEID="f-nyu_aco000003_n000141_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000141_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000142" ORDER="144"> 
+                <fptr FILEID="f-nyu_aco000003_n000142_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000142_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000143" ORDER="145"> 
+                <fptr FILEID="f-nyu_aco000003_n000143_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000143_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000144" ORDER="146"> 
+                <fptr FILEID="f-nyu_aco000003_n000144_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000144_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000145" ORDER="147"> 
+                <fptr FILEID="f-nyu_aco000003_n000145_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000145_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000146" ORDER="148"> 
+                <fptr FILEID="f-nyu_aco000003_n000146_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000146_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000147" ORDER="149"> 
+                <fptr FILEID="f-nyu_aco000003_n000147_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000147_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000148" ORDER="150"> 
+                <fptr FILEID="f-nyu_aco000003_n000148_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000148_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000149" ORDER="151"> 
+                <fptr FILEID="f-nyu_aco000003_n000149_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000149_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000150" ORDER="152"> 
+                <fptr FILEID="f-nyu_aco000003_n000150_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000150_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000151" ORDER="153"> 
+                <fptr FILEID="f-nyu_aco000003_n000151_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000151_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000152" ORDER="154"> 
+                <fptr FILEID="f-nyu_aco000003_n000152_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000152_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000153" ORDER="155"> 
+                <fptr FILEID="f-nyu_aco000003_n000153_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000153_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000154" ORDER="156"> 
+                <fptr FILEID="f-nyu_aco000003_n000154_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000154_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000155" ORDER="157"> 
+                <fptr FILEID="f-nyu_aco000003_n000155_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000155_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000156" ORDER="158"> 
+                <fptr FILEID="f-nyu_aco000003_n000156_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000156_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000157" ORDER="159"> 
+                <fptr FILEID="f-nyu_aco000003_n000157_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000157_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000158" ORDER="160"> 
+                <fptr FILEID="f-nyu_aco000003_n000158_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000158_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000159" ORDER="161"> 
+                <fptr FILEID="f-nyu_aco000003_n000159_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000159_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000160" ORDER="162"> 
+                <fptr FILEID="f-nyu_aco000003_n000160_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000160_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000161" ORDER="163"> 
+                <fptr FILEID="f-nyu_aco000003_n000161_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000161_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000162" ORDER="164"> 
+                <fptr FILEID="f-nyu_aco000003_n000162_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000162_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000163" ORDER="165"> 
+                <fptr FILEID="f-nyu_aco000003_n000163_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000163_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000164" ORDER="166"> 
+                <fptr FILEID="f-nyu_aco000003_n000164_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000164_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000165" ORDER="167"> 
+                <fptr FILEID="f-nyu_aco000003_n000165_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000165_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000166" ORDER="168"> 
+                <fptr FILEID="f-nyu_aco000003_n000166_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000166_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000167" ORDER="169"> 
+                <fptr FILEID="f-nyu_aco000003_n000167_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000167_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000168" ORDER="170"> 
+                <fptr FILEID="f-nyu_aco000003_n000168_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000168_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000169" ORDER="171"> 
+                <fptr FILEID="f-nyu_aco000003_n000169_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000169_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000170" ORDER="172"> 
+                <fptr FILEID="f-nyu_aco000003_n000170_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000170_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000171" ORDER="173"> 
+                <fptr FILEID="f-nyu_aco000003_n000171_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000171_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000172" ORDER="174"> 
+                <fptr FILEID="f-nyu_aco000003_n000172_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000172_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000173" ORDER="175"> 
+                <fptr FILEID="f-nyu_aco000003_n000173_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000173_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000174" ORDER="176"> 
+                <fptr FILEID="f-nyu_aco000003_n000174_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000174_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000175" ORDER="177"> 
+                <fptr FILEID="f-nyu_aco000003_n000175_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000175_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000176" ORDER="178"> 
+                <fptr FILEID="f-nyu_aco000003_n000176_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000176_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000177" ORDER="179"> 
+                <fptr FILEID="f-nyu_aco000003_n000177_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000177_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000178" ORDER="180"> 
+                <fptr FILEID="f-nyu_aco000003_n000178_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000178_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000179" ORDER="181"> 
+                <fptr FILEID="f-nyu_aco000003_n000179_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000179_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000180" ORDER="182"> 
+                <fptr FILEID="f-nyu_aco000003_n000180_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000180_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000181" ORDER="183"> 
+                <fptr FILEID="f-nyu_aco000003_n000181_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000181_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000182" ORDER="184"> 
+                <fptr FILEID="f-nyu_aco000003_n000182_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000182_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000183" ORDER="185"> 
+                <fptr FILEID="f-nyu_aco000003_n000183_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000183_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_n000184" ORDER="186"> 
+                <fptr FILEID="f-nyu_aco000003_n000184_o"/> 
+                <fptr FILEID="f-nyu_aco000003_n000184_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_zbk01" ORDER="187"> 
+                <fptr FILEID="f-nyu_aco000003_zbk01_o"/> 
+                <fptr FILEID="f-nyu_aco000003_zbk01_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_zbk02" ORDER="188"> 
+                <fptr FILEID="f-nyu_aco000003_zbk02_o"/> 
+                <fptr FILEID="f-nyu_aco000003_zbk02_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_zbk03" ORDER="189"> 
+                <fptr FILEID="f-nyu_aco000003_zbk03_o"/> 
+                <fptr FILEID="f-nyu_aco000003_zbk03_d"/> 
+            </div> 
+            <div ID="s-nyu_aco000003_zbk04" ORDER="190"> 
+                <fptr FILEID="f-nyu_aco000003_zbk04_o"/> 
+                <fptr FILEID="f-nyu_aco000003_zbk04_d"/> 
+            </div> 
+        </div>
+      </div>
+    </structMap>
+</mets>

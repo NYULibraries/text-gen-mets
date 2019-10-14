@@ -3,7 +3,7 @@ module Structure
   class BookSlot
     attr_accessor :label, :name, :filenames
 
-    VALID_ROLES = [:master, :dmaker].freeze
+    VALID_ROLES = [:master, :dmaker, :original].freeze
 
     def initialize(args = {})
       @label = args[:label] || ''
@@ -13,7 +13,7 @@ module Structure
 
     def add(filename)
       role = filename.role
-      raise ArgumentError unless VALID_ROLES.include?(role)
+      raise(ArgumentError, "Invalid role: #{filename.role}") unless VALID_ROLES.include?(role)
 
       # if there is already an array for this role, then add filename
       # otherwise, insert a new key/value pair
@@ -40,15 +40,15 @@ module Structure
     end
 
     def valid?
-      assert_d_m_count
+      assert_d_m_o_count
     end
 
     private
 
-    def assert_d_m_count
+    def assert_d_m_o_count
       result = true
       result &&= (dmakers.count == 1)
-      result &&= (masters.count >= 1)
+      result &&= (masters.count >= 1) || (originals.count >= 1)
     end
   end
 end
