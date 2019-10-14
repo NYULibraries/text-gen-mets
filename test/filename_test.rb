@@ -5,7 +5,7 @@ class FilenameTest < MiniTest::Test
   attr_accessor :filename, :filename_no_ext, :filename_unknown_role,
                 :dmaker, :dmaker2, :master_oversized, :dmaker_front_matter,
                 :master_oversized_normalized, :dmaker_front_matter_oversized,
-                :filename_coerced_role
+                :filename_coerced_role, :original
 
   def setup
     @filename         = Filename.new('a/b/c/foo_m.tif')
@@ -20,11 +20,20 @@ class FilenameTest < MiniTest::Test
 
     @master_oversized = Filename.new('d/e/f/q_01_m.tif')
     @master_oversized_normalized = Filename.new('d/e/f/q_z01_m.tif')
+
+    @original = Filename.new('a/b/c/quux_o.tif')
   end
 
   def test_class_method_role_detect_master
     string   = 'baz_m'
     expected = :master
+
+    assert_equal expected, Filename.role(string)
+  end
+
+  def test_class_method_role_detect_original
+    string   = 'quux_o'
+    expected = :original
 
     assert_equal expected, Filename.role(string)
   end
@@ -81,6 +90,11 @@ class FilenameTest < MiniTest::Test
   def test_role_master
     expected = :master
     assert_equal expected, filename.role
+  end
+
+  def test_role_original
+    expected = :original
+    assert_equal expected, original.role
   end
 
   def test_role_dmaker
@@ -157,5 +171,6 @@ class FilenameTest < MiniTest::Test
     assert_equal 'd', filename_no_ext.role_to_abbreviation
     assert_equal 'u', filename_unknown_role.role_to_abbreviation
     assert_equal 'd', dmaker_front_matter_oversized.role_to_abbreviation
+    assert_equal 'o', original.role_to_abbreviation
   end
 end

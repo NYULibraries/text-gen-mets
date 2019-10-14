@@ -9,18 +9,21 @@ module Structure
   # load masters into slots
   # if slot not found for master
   class SlotList
-    attr_reader :dmakers, :masters, :slot_class
+    attr_reader :dmakers, :masters, :originals, :slot_class
     attr_accessor :slots
 
     def initialize(args)
-      @dmakers = args.dmakers
-      @masters = args.masters
+      @dmakers    = args.dmakers
+      @masters    = args.masters
+      @originals  = args.originals
       @slot_class = args.slot_class
       @slots = {}
       @reverse = false
 
-      raise(ArgumentError, 'dmakers cannot be nil') unless dmakers
-      raise(ArgumentError, 'masters cannot be nil') unless masters
+      if (masters.nil? && originals.nil?)
+        raise(ArgumentError, 'masters and originals cannot be nil') 
+      end
+      raise(ArgumentError, 'dmakers cannot be nil')    unless dmakers
       raise(ArgumentError, 'slot_class cannot be nil') unless slot_class
 
       populate_slots
@@ -52,7 +55,8 @@ module Structure
     def populate_slots
       create_slots
       load_dmakers
-      load_masters
+      load_masters   if masters
+      load_originals if originals
     end
 
     def create_slots
@@ -80,12 +84,25 @@ module Structure
       end
     end
 
+    def load_originals
+      originals.each do |original|
+        slot = slots[original_to_slot_name(original)] ||
+               slots[original_to_slot_name_parent(original)]
+        raise "missing slot for #{original.path}" unless slot
+        slot.add(original)
+      end
+    end
+
     def dmaker_to_slot_name(dmaker)
       dmaker.rootname_minus_role
     end
 
     def master_to_slot_name(master)
       master.rootname_minus_role
+    end
+
+    def original_to_slot_name(original)
+      original.rootname_minus_role
     end
 
     def master_to_slot_name_parent(master)
