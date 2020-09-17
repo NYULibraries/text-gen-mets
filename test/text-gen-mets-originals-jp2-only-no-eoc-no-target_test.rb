@@ -4,10 +4,9 @@ require 'open3'
 class TestTextGenMetsOriginalsJP2OnlyNoEocNoTarget < MiniTest::Test
 
   COMMAND = 'ruby bin/text-gen-mets-originals-jp2-only-no-eoc-no-target.rb'
-
-  VALID_TEXT          = 'test/fixtures/texts/original-jp2-only-no-eoc-no-target'
+  VALID_TEXT          = 'test/fixtures/texts/valid-original-jp2-only-no-eoc-no-target'
   EMPTY_TEXT          = 'test/fixtures/texts/empty-dir'
-  DMAKER_ONLY_TEXT    = 'test/fixtures/texts/original-jp2-only-no-eoc-no-target'
+  DMAKER_ONLY_TEXT    = 'test/fixtures/texts/valid-original-jp2-only-no-eoc-no-target'
   CANONICAL_DMAKER_ONLY_XML = 'test/fixtures/canonical/valid_mets-original-jp2-only-no-eoc-no-target.xml'
   TOO_MANY_MASTERS    = 'test/fixtures/texts/dmaker-only-too-many-masters'
 
